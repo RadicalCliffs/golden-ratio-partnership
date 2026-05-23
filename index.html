@@ -145,11 +145,11 @@ svg { display: block; }
 
 /* ── Center seam badge ── */
 .seam {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  position: absolute; top: 6%; left: 50%; transform: translate(-50%, 0);
   z-index: 5; text-align: center; pointer-events: none;
   animation: seamIn 1s 0.5s var(--ease-out) both;
 }
-@keyframes seamIn { from { opacity: 0; transform: translate(-50%, -42%); } to { opacity: 1; transform: translate(-50%, -50%); } }
+@keyframes seamIn { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
 .seam-badge {
   width: 76px; height: 76px; border-radius: 50%; margin: 0 auto;
   display: flex; align-items: center; justify-content: center;

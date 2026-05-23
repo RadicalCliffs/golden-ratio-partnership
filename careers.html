@@ -234,6 +234,34 @@ img, svg { display: block; max-width: 100%; }
 .role-panel[data-role="rn"] .role-col li::before { background: var(--sage-400); }
 .role-col li strong { color: var(--text-primary); font-weight: 600; }
 
+/* ── SAS-B prescribing explainer (NP panel) ── */
+.sas-note {
+  margin-top: 22px; padding: 30px 34px;
+  background: linear-gradient(135deg, var(--gold-50), var(--cream));
+  border: 1px solid var(--gold-200); border-left: 4px solid var(--gold-500);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+}
+.sas-title {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+  color: var(--text-primary); line-height: 1.15; margin-bottom: 10px;
+}
+.sas-lead { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+.sas-list { list-style: none; display: grid; gap: 10px; }
+.sas-list li {
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55;
+  padding-left: 26px; position: relative;
+}
+.sas-list li::before {
+  content: ''; position: absolute; left: 4px; top: 8px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500);
+}
+.sas-list li strong, .sas-lead strong { color: var(--text-primary); font-weight: 600; }
+.sas-foot {
+  margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--gold-200);
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+}
+.sas-foot strong { color: var(--gold-700); font-weight: 600; }
+
 /* ── Brand converge ── */
 .brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 0 8px; }
 .brand-chip {
@@ -559,6 +587,18 @@ img, svg { display: block; max-width: 100%; }
             <li>Compliant-by-design — you'll never be asked to cut a corner</li>
           </ul>
         </div>
+      </div>
+
+      <div class="sas-note">
+        <h4 class="sas-title">How you'll prescribe — the SAS-B pathway</h4>
+        <p class="sas-lead">Most medicinal cannabis products are <em>unapproved</em> therapeutic goods, so you prescribe them through the TGA's <strong>Special Access Scheme, Category&nbsp;B (SAS-B)</strong> — an approval to treat one patient at a time. Here's what that takes, and how we make it effortless:</p>
+        <ul class="sas-list">
+          <li><strong>You:</strong> an AHPRA-registered Nurse Practitioner prescribing within your scope of practice.</li>
+          <li><strong>A per-patient SAS-B application</strong> to the TGA (via the SAS &amp; AP Online System). Our software pre-fills it and our nursing team lodges and tracks it — approvals usually land in ~2–5 business days.</li>
+          <li><strong>A clinical justification</strong> for each patient: the condition, why approved medicines don't fit, and the benefit-vs-risk of the chosen product.</li>
+          <li><strong>State/territory sign-off where required</strong> — most products contain THC and are Schedule&nbsp;8 (Controlled Drugs), so some states need an extra permit. We handle the lodgement.</li>
+        </ul>
+        <p class="sas-foot"><strong>Not yet an active SAS-B prescriber? That's genuinely fine.</strong> What we're really looking for is the clinical expertise and the initiative to navigate the TGA and state channels and get yourself set up to prescribe — even if you're not there today. We'll back you the whole way. (As an NP you prescribe via SAS-B per patient — the Authorised Prescriber scheme is doctor-only — so we've built the clinic around making SAS-B fast and compliant.)</p>
       </div>
     </div>
 
