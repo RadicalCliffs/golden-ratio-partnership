@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Ratio Clinics | For Doctors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold-50: #faf7f0; --gold-100: #f3edda; --gold-200: #e8dbb5;
+  --gold-300: #dac688; --gold-400: #ccb162; --gold-500: #b99a3e;
+  --gold-600: #a58432; --gold-700: #876829; --gold-800: #6e5425;
+  --cream: #fdfbf6; --ivory: #faf8f3; --linen: #f5f1ea;
+  --sage-50: #f4f7f4; --sage-100: #e2ebe2; --sage-200: #c7d9c7;
+  --sage-400: #739c73; --sage-500: #537d53; --sage-600: #3f633f;
+  --text-primary: #2a2926; --text-secondary: #5c5a55;
+  --text-tertiary: #8a8882; --text-muted: #b0aea8;
+  --border-light: #ece9e1; --border-medium: #ddd9cf;
+  --surface-white: #ffffff; --success: #3d8c5c; --info: #4a7fb5;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+  --shadow-sm: 0 2px 4px rgba(42,41,38,0.05);
+  --shadow-md: 0 4px 12px rgba(42,41,38,0.07);
+  --shadow-lg: 0 8px 24px rgba(42,41,38,0.09);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body); background: var(--cream);
+  color: var(--text-primary); line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(253,251,246,0.9); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: var(--shadow-sm); }
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-600), var(--sage-500));
+  z-index: 200; transition: width 0.08s linear;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--gold-600); }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-600); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none;
+}
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+
+/* ── Hero ── */
+.hero {
+  padding: 140px 28px 80px; text-align: center; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, var(--gold-50) 0%, var(--cream) 100%);
+}
+.hero::after {
+  content: ''; position: absolute; inset: -10%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 25%, rgba(218,198,136,0.20), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(115,156,115,0.12), transparent 45%);
+  animation: heroFloat 16s ease-in-out infinite alternate;
+}
+@keyframes heroFloat {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to { transform: translate3d(0,-14px,0) scale(1.1); }
+}
+.hero > * { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 18px; font-size: 0.8rem; font-weight: 600;
+  border-radius: 100px; background: var(--surface-white);
+  color: var(--gold-700); border: 1px solid var(--gold-200);
+  margin-bottom: 28px; letter-spacing: 0.03em;
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-500); }
+.hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500; line-height: 1.12; letter-spacing: -0.02em;
+  max-width: 800px; margin: 0 auto 20px;
+}
+.hero p {
+  font-size: 1.1rem; color: var(--text-secondary); max-width: 600px;
+  margin: 0 auto 36px; line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; background: var(--gold-600); color: #fff;
+  font-weight: 600; font-size: 0.95rem; border-radius: 100px;
+  transition: all 0.2s; box-shadow: var(--shadow-sm);
+}
+.hero-cta:hover { background: var(--gold-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* ── Shared Section Styles ── */
+.section { padding: 80px 28px; }
+.section-alt { background: var(--surface-white); }
+.section-sage { background: var(--sage-50); }
+.container { max-width: 1100px; margin: 0 auto; }
+.container-narrow { max-width: 800px; margin: 0 auto; }
+.overline {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-600); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500; line-height: 1.2; margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 1.05rem; color: var(--text-secondary); max-width: 640px;
+  line-height: 1.7; margin-bottom: 48px;
+}
+.divider {
+  width: 50px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-300), var(--gold-500));
+  margin: 16px 0 0;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface-white); border-radius: var(--radius-lg);
+  padding: 32px; border: 1px solid var(--border-light);
+  transition: all 0.25s var(--ease-smooth);
+}
+.card:hover { box-shadow: var(--shadow-md); border-color: var(--border-medium); }
+.card-icon {
+  width: 48px; height: 48px; border-radius: 12px; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+.card-icon.gold { background: var(--gold-100); }
+.card-icon.sage { background: var(--sage-100); }
+.card-icon.blue { background: #e8f0fe; }
+.card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; }
+.card p { font-size: 0.925rem; color: var(--text-secondary); line-height: 1.65; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* ── Metric Callouts ── */
+.metric-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 32px 0; }
+.metric {
+  flex: 1; min-width: 160px; background: var(--surface-white);
+  border-radius: var(--radius-md); padding: 24px; text-align: center;
+  border: 1px solid var(--border-light);
+}
+.metric-value {
+  font-family: var(--font-display); font-size: 2rem;
+  font-weight: 600; color: var(--gold-600); line-height: 1;
+  margin-bottom: 6px;
+}
+.metric-label { font-size: 0.8rem; color: var(--text-tertiary); font-weight: 500; }
+
+/* ── Journey/Steps ── */
+.journey-steps { display: flex; gap: 0; position: relative; margin: 48px 0 32px; }
+.journey-step {
+  flex: 1; text-align: center; position: relative; padding: 0 12px;
+}
+.journey-step::before {
+  content: ''; position: absolute; top: 20px; left: 0; right: 0;
+  height: 2px; background: var(--gold-200); z-index: 0;
+}
+.journey-step:first-child::before { left: 50%; }
+.journey-step:last-child::before { right: 50%; }
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; margin: 0 auto 14px;
+  font-size: 0.85rem; font-weight: 700; position: relative; z-index: 1;
+  background: var(--gold-600); color: #fff;
+}
+.step-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+.step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
+
+/* ── Fee Table ── */
+.fee-table {
+  width: 100%; border-collapse: collapse; margin: 28px 0;
+  font-size: 0.925rem;
+}
+.fee-table th {
+  text-align: left; padding: 14px 20px; background: var(--gold-50);
+  font-weight: 600; font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--text-secondary);
+  border-bottom: 2px solid var(--gold-200);
+}
+.fee-table td {
+  padding: 14px 20px; border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.fee-table tr:hover td { background: var(--gold-50); }
+.fee-table .highlight { color: var(--gold-700); font-weight: 600; }
+
+/* ── Timeline ── */
+.timeline { position: relative; padding-left: 32px; margin: 36px 0; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient(180deg, var(--gold-300), var(--sage-400));
+  border-radius: 2px;
+}
+.timeline-item { position: relative; margin-bottom: 28px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -26px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold-500); border: 2px solid var(--cream);
+}
+.timeline-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.timeline-item .timeline-date {
+  font-size: 0.8rem; color: var(--gold-600); font-weight: 600;
+  margin-bottom: 4px;
+}
+.timeline-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Partnership Section ── */
+.partnership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 36px 0; }
+.partnership-card {
+  background: var(--surface-white); border-radius: var(--radius-lg);
+  padding: 32px; border: 1px solid var(--border-light);
+}
+.partnership-card h3 {
+  font-size: 1rem; font-weight: 600; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.partnership-card ul {
+  list-style: none; padding: 0;
+}
+.partnership-card li {
+  padding: 8px 0; font-size: 0.9rem; color: var(--text-secondary);
+  line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;
+}
+.partnership-card li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold-400); flex-shrink: 0; margin-top: 8px;
+}
+.partnership-highlight {
+  background: linear-gradient(135deg, var(--gold-50), var(--sage-50));
+  border: 1px solid var(--gold-200);
+}
+
+/* ── Accordion ── */
+.accordion { margin: 32px 0; }
+.accordion-item {
+  border: 1px solid var(--border-light); border-radius: var(--radius-md);
+  margin-bottom: 10px; overflow: hidden; background: var(--surface-white);
+}
+.accordion-trigger {
+  width: 100%; padding: 18px 24px; background: none; border: none;
+  cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); text-align: left; font-family: var(--font-body);
+  transition: background 0.2s;
+}
+.accordion-trigger:hover { background: var(--gold-50); }
+.accordion-trigger .arrow {
+  transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-500);
+}
+.accordion-item.open .accordion-trigger .arrow { transform: rotate(180deg); }
+.accordion-content {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out);
+}
+.accordion-content-inner {
+  padding: 0 24px 20px; font-size: 0.925rem;
+  color: var(--text-secondary); line-height: 1.7;
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--text-primary) 0%, #3d3b36 100%);
+  color: #fff; border-radius: var(--radius-xl); padding: 56px;
+  text-align: center; margin: 48px 0 0;
+}
+.cta-banner h2 {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 500; margin-bottom: 14px;
+}
+.cta-banner p {
+  font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 500px;
+  margin: 0 auto 28px;
+}
+.cta-banner .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; background: var(--gold-500); color: #fff;
+  font-weight: 600; border-radius: 100px; font-size: 0.95rem;
+  transition: all 0.2s; border: none; cursor: pointer;
+}
+.cta-banner .btn:hover { background: var(--gold-400); transform: translateY(-1px); }
+
+/* ── Footer ── */
+.footer {
+  background: var(--text-primary); color: rgba(255,255,255,0.6);
+  padding: 48px 28px 32px; text-align: center;
+}
+.footer p { font-size: 0.8rem; line-height: 1.6; }
+.footer .brand {
+  font-family: var(--font-display); font-size: 1.2rem;
+  color: rgba(255,255,255,0.9); margin-bottom: 12px;
+}
+
+/* ── Callout Box ── */
+.callout {
+  border-radius: var(--radius-md); padding: 24px 28px;
+  margin: 24px 0; font-size: 0.925rem; line-height: 1.7;
+}
+.callout.gold { background: var(--gold-50); border-left: 3px solid var(--gold-400); }
+.callout.sage { background: var(--sage-50); border-left: 3px solid var(--sage-400); }
+.callout.blue { background: #eef4fc; border-left: 3px solid var(--info); }
+.callout strong { color: var(--text-primary); }
+
+/* ── Animations ── */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-d1 { transition-delay: 0.1s; }
+.fade-in-d2 { transition-delay: 0.2s; }
+.fade-in-d3 { transition-delay: 0.3s; }
+
+/* ── Premium Pricing Visuals ── */
+.pricing-section {
+  background:
+    radial-gradient(ellipse at top left, rgba(218, 198, 136, 0.12), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(115, 156, 115, 0.08), transparent 50%),
+    var(--cream);
+  padding: 100px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(218, 198, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 198, 136, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+.pricing-section > .container { position: relative; z-index: 1; }
+
+/* Range hero: the headline number */
+.range-hero {
+  background: linear-gradient(135deg, #ffffff 0%, var(--ivory) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  margin: 48px 0 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(42,41,38,0.10), 0 1px 0 rgba(255,255,255,1) inset;
+}
+.range-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 360px; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  transform: translateX(-50%);
+}
+.range-hero-label {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-700);
+  margin-bottom: 24px;
+}
+.range-numbers {
+  display: flex; align-items: baseline; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.range-num {
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+.range-num.lo { color: var(--sage-600); }
+.range-num.hi { color: var(--gold-700); }
+.range-arrow {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-400);
+  font-weight: 300;
+}
+.range-avg-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, var(--gold-100), var(--gold-50));
+  border: 1px solid var(--gold-200);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold-800);
+  margin-top: 8px;
+}
+.range-avg-pill .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold-500);
+  box-shadow: 0 0 0 0 rgba(185, 154, 62, 0.4);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(185, 154, 62, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(185, 154, 62, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(185, 154, 62, 0); }
+}
+.range-hero-sub {
+  font-size: 1rem; color: var(--text-secondary);
+  max-width: 520px; margin: 24px auto 0;
+  line-height: 1.65;
+}
+
+/* Per-product pricing cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 16px 0 56px;
+}
+.product-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: relative;
+  transition: all 0.3s var(--ease-smooth);
+  overflow: hidden;
+}
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold-500);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -12px rgba(42,41,38,0.13);
+  border-color: var(--gold-200);
+}
+.product-card:hover::after { opacity: 1; }
+.product-card.flower::after { background: linear-gradient(90deg, var(--sage-500), var(--sage-400)); }
+.product-card.gummy::after { background: linear-gradient(90deg, var(--gold-500), var(--gold-400)); }
+.product-card.vape::after { background: linear-gradient(90deg, var(--info), #6ba0d4); }
+.product-card.oil::after { background: linear-gradient(90deg, #c19a47, var(--gold-300)); }
+
+.product-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+.product-card.flower .product-icon {
+  background: linear-gradient(135deg, var(--sage-100), var(--sage-50));
+}
+.product-card.gummy .product-icon {
+  background: linear-gradient(135deg, var(--gold-100), var(--gold-50));
+}
+.product-card.vape .product-icon {
+  background: linear-gradient(135deg, #e8f0fe, #f4f8fd);
+}
+.product-card.oil .product-icon {
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-100));
+}
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.product-format {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.product-price-range {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.product-detail {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Tier rail: visual revenue scale */
+.tier-rail-wrap { margin: 16px 0 56px; }
+.tier-rail-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 14px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary);
+}
+.tier-rail {
+  position: relative;
+  height: 14px;
+  background: linear-gradient(90deg, var(--sage-200), var(--gold-300) 50%, var(--gold-600));
+  border-radius: 100px;
+  margin-bottom: 32px;
+  box-shadow: inset 0 1px 2px rgba(42,41,38,0.06);
+}
+.tier-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px; height: 22px;
+  background: #fff;
+  border: 3px solid var(--gold-500);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(42,41,38,0.15);
+}
+.tier-marker.avg { border-color: var(--gold-700); width: 26px; height: 26px; }
+.tier-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.tier-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  position: relative;
+  transition: all 0.3s var(--ease-smooth);
+}
+.tier-card.standard {
+  border: 2px solid var(--gold-400);
+  background: linear-gradient(180deg, #fff, var(--gold-50));
+  box-shadow: 0 12px 28px -12px rgba(185,154,62,0.25);
+  transform: translateY(-6px);
+}
+.tier-card.standard::before {
+  content: 'AVERAGE';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-600);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.tier-card:hover { box-shadow: 0 12px 28px -10px rgba(42,41,38,0.12); transform: translateY(-3px); }
+.tier-card.standard:hover { transform: translateY(-9px); }
+.tier-stage {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-700); margin-bottom: 10px;
+}
+.tier-amount {
+  font-family: var(--font-display);
+  font-size: 1.85rem; font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em; line-height: 1;
+  margin-bottom: 4px;
+}
+.tier-amount .cents { font-size: 0.85rem; color: var(--text-tertiary); font-weight: 500; }
+.tier-lines {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.tier-comp {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Annual maths card */
+.annual-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: linear-gradient(135deg, #2a2926 0%, #3a3833 100%);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-top: 32px;
+  box-shadow: 0 30px 60px -20px rgba(42,41,38,0.30);
+}
+.annual-left {
+  padding: 48px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.annual-right {
+  padding: 48px;
+  background:
+    radial-gradient(circle at top right, rgba(218,198,136,0.12), transparent 60%);
+}
+.annual-overline {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-300);
+  margin-bottom: 14px;
+}
+.annual-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 500; line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.annual-body {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+}
+.annual-stack { display: flex; flex-direction: column; gap: 22px; }
+.annual-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.annual-row:last-child { border-bottom: none; padding-bottom: 0; }
+.annual-row-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+.annual-row-val {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.annual-row-val.gold { color: var(--gold-300); }
+
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-cards { grid-template-columns: repeat(3, 1fr); }
+  .tier-card.standard { grid-column: 1 / -1; }
+  .annual-card { grid-template-columns: 1fr; }
+  .annual-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+@media (max-width: 600px) {
+  .pricing-section { padding: 64px 20px; }
+  .range-hero { padding: 40px 24px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .tier-cards { grid-template-columns: 1fr; }
+  .annual-left, .annual-right { padding: 32px 24px; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .partnership-grid { grid-template-columns: 1fr; }
+  .journey-steps { flex-direction: column; gap: 20px; }
+  .journey-step::before { display: none; }
+  .journey-step { text-align: left; display: flex; gap: 16px; align-items: flex-start; padding: 0; }
+  .step-num { margin: 0; flex-shrink: 0; }
+  .cta-banner { padding: 40px 28px; }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 64px; left: 0; right: 0; background: var(--cream);
+    padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero { padding: 120px 20px 60px; }
+  .section { padding: 56px 20px; }
+  .metric-row { flex-direction: column; }
+  .fee-table { font-size: 0.85rem; }
+  .fee-table th, .fee-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Golden Ratio <span>Clinics</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#for-you">For You</a></li>
+      <li><a href="#opportunity">The Role</a></li>
+      <li><a href="#pay">How You're Paid</a></li>
+      <li><a href="#day">Your Day</a></li>
+      <li><a href="#prescribing">Prescribing</a></li>
+      <li><a href="#protection">Your Protection</a></li>
+      <li><a href="#team">The Team</a></li>
+      <li><a href="#time">Your Time</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Prepared for Dr Feroz Ameerjan</div>
+  <h1>Practice Medicine the Way You Trained To</h1>
+  <p>A boutique, telehealth medicinal cannabis clinic where your clinical judgement is the only thing that decides a script. Free consults for patients, a nurse-led team to absorb the admin, sessional pay that never rises with prescribing volume, and a compliance framework built to protect your registration. We're standing this clinic up now, and we'd like you to be the first doctor in it.</p>
+  <a href="#opportunity" class="hero-cta">See how it works ↓</a>
+</section>
+
+<!-- ══════════════ A NOTE FOR YOU ══════════════ -->
+<section class="section" id="for-you">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">A Note for Dr Ameerjan</div>
+      <h2 class="section-title">We Built This Role With a Clinician Like You in Mind</h2>
+      <p class="section-subtitle">Dr Ameerjan, your background isn't incidental to why we reached out. A career spent in aviation and defence medicine is a career spent making documented, defensible, standards-based decisions under genuine regulatory scrutiny. That's precisely the temperament we want at the heart of this clinic from day one.</p>
+    </div>
+
+    <div class="grid-3 fade-in">
+      <div class="card">
+        <div class="card-icon gold">✈️</div>
+        <h3>The Rigour of Aviation Medicine</h3>
+        <p>As a CASA Designated Aviation Medical Examiner and a member of the Australasian College and Society of Aerospace Medicine, you already practise the kind of protocol-driven, fully-documented assessment our compliance framework is designed to produce. You wouldn't be adapting to our standards; you'd already be fluent in them.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">🎖️</div>
+        <h3>A Defence-Grade Standard of Care</h3>
+        <p>Your work as a Senior Aviation Medical Officer with Australian Defence Health Services since 2012 means operating inside strict regulatory frameworks is second nature. That's exactly how we want to run, and as our first prescriber you'd help set that standard from day one: judgement-led, audit-ready, and never cutting a corner that would have to be explained later.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">🌏</div>
+        <h3>GP Breadth, Telehealth-Ready</h3>
+        <p>Your RACGP generalist grounding and international experience (the UAE Air Force, Qatar Airways) speak to a clinician comfortable assessing patients carefully across distance. A telehealth-first practice plays directly to that strength.</p>
+      </div>
+    </div>
+
+    <div class="callout gold fade-in" style="margin-top: 28px;">
+      <strong>In short:</strong> the clinics drawing regulatory trouble are run by clinicians who treat compliance as an afterthought. You've spent a career treating it as the job itself. That's why this role fits you better than most: careful prescribing, decoupled from volume, inside a framework built to protect your registration.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ THE ROLE ══════════════ -->
+<section class="section section-alt" id="opportunity">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">The Role</div>
+      <h2 class="section-title">A Founding Prescriber Role, Built Around the Doctor</h2>
+      <p class="section-subtitle">We're a small team of clinicians, operators and technologists building the kind of clinic we'd want our own families to attend. We're looking for our first Authorised Prescriber to lead clinical care: someone who wants to practise unhurried, defensible medicine without the volume pressure, billing friction, or admin grind of a typical practice.</p>
+    </div>
+
+    <div class="metric-row fade-in">
+      <div class="metric">
+        <div class="metric-value">$220-250</div>
+        <div class="metric-label">Sessional Rate, Per Hour</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">$0</div>
+        <div class="metric-label">What Your Patient Pays to See You</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">1,200-1,500</div>
+        <div class="metric-label">Supported Active Patient Book</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">Telehealth, Work From Anywhere</div>
+      </div>
+    </div>
+
+    <div class="grid-2 fade-in" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon gold">⚕️</div>
+        <h3>You Are the Lead Clinician</h3>
+        <p>This is a founding Authorised Prescriber position, not a seat on a doctor roster. As our first doctor, you set the clinical scope alongside us: the conditions we will and won't treat, the consultation standards, the follow-up cadence. As the clinic grows from one prescriber to four, you're the senior clinical voice the next doctors are mentored into.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">🌿</div>
+        <h3>Patient-First, Not Volume-First</h3>
+        <p>Initial consultations will be <strong>free to the patient</strong>, because we never want someone weighing up whether they can afford to ask for help. That removes any commercial pressure to churn appointments and lets you spend real time with the people in front of you. We're building reputation, not throughput.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 fade-in" style="margin-top: 20px;">
+      <div class="card">
+        <div class="card-icon blue">🏠</div>
+        <h3>Telehealth From Day One</h3>
+        <p>The role is fully remote and flexibly scheduled. Many of the patients who benefit most from medicinal cannabis are in chronic pain, managing anxiety, or simply too unwell to easily attend a clinic, so telehealth lets you meet them where they actually are and lets you practise from wherever suits you.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">🔁</div>
+        <h3>The Clinic Funds the Care, Not You</h3>
+        <p>Golden Ratio owns both the clinic and the pharmaceutical line, and runs on software we've built in-house. The margin on the medication, not your appointments, is what's designed to sustain longer consult slots, a real nursing team and free follow-ups. The economics are arranged so that good clinical care is the business model, not a cost to be trimmed.</p>
+      </div>
+    </div>
+
+    <div class="callout gold fade-in" style="margin-top: 32px;">
+      <strong>The philosophy in one line:</strong> remove cost as a barrier for the patient, remove admin and volume pressure for the doctor, and let careful prescribing be the whole point. A clinician whose income doesn't rise with consultation volume has no commercial reason to over-prescribe, which is exactly the kind of practice both your patients and the regulator want to see.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOW YOU'RE PAID ══════════════ -->
+<section class="section" id="pay">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Compensation &amp; Alignment</div>
+      <h2 class="section-title">Your Income Is Never Tied to a Script</h2>
+      <p class="section-subtitle">The single most important thing a prescriber should understand about how this works: you are paid for your time, full stop. Whether you write a script or decide not to, your pay is identical. That isn't an accounting quirk; it's the deliberate foundation the whole clinic is built on.</p>
+    </div>
+
+    <div class="grid-3 fade-in">
+      <div class="card">
+        <div class="card-icon gold">⏱️</div>
+        <h3>Sessional, $220-250/hr</h3>
+        <p>You're engaged on a sessional or hourly basis at <strong>$220-250 per hour</strong> for clinical consultations, prescribing, TGA notifications, follow-ups and clinical-governance oversight. Hours are agreed up front and flex with you, not with the script count.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">📊</div>
+        <h3>A Cost Line, Not a Revenue Line</h3>
+        <p>The clinic is funded by the wholesale margin on the medication it owns; your remuneration is a fixed cost the clinic pays, completely decoupled from what you prescribe. There is no bonus for volume, no per-script kicker, nothing that rewards writing more.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">🛡️</div>
+        <h3>Built for the AHPRA Era</h3>
+        <p>Regulators are actively investigating clinics where prescribing and income move together. Here they can't. That alignment is your protection: every decision you make is defensible because you had nothing to gain from making it. You practise medicine; the clinic handles the commerce.</p>
+      </div>
+    </div>
+
+    <div class="callout sage fade-in" style="margin-top: 32px;">
+      <strong>Why this matters for you specifically:</strong> the clinics getting into trouble are the ones that pay clinicians to keep the conveyor moving. We pay you to exercise judgement, including the judgement to say no. Your name on the prescription is only ever backed by your clinical reasoning, never by a commercial incentive, and that's a position you can comfortably defend to a board, a court, or your own conscience.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ YOUR DAY ══════════════ -->
+<section class="section section-alt" id="day">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">A Day in the Practice</div>
+      <h2 class="section-title">You See Prepared Patients and Only Do Doctor-Work</h2>
+      <p class="section-subtitle">By the time a patient reaches you, the intake, history and eligibility checks will already be done. Your time is spent on the parts of care that genuinely require a doctor, not on forms, scheduling or chasing follow-ups.</p>
+    </div>
+
+    <div class="journey-steps fade-in">
+      <div class="journey-step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Nurse Pre-Screens</div>
+          <div class="step-desc">Intake, medical history &amp; eligibility completed before you</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">You Consult</div>
+          <div class="step-desc">An unhurried telehealth appointment, notes pre-loaded</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">You Decide</div>
+          <div class="step-desc">Prescribe only when it's clinically appropriate, or don't</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Team Handles the Rest</div>
+          <div class="step-desc">TGA notifications drafted, pharmacy &amp; dispensing coordinated</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Structured Follow-Up</div>
+          <div class="step-desc">Nurse-coordinated reviews &amp; outcome tracking, you sign off</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout sage fade-in">
+      <strong>The nurse will be the patient relationship.</strong> An RN/EN will run intake, pre-screening and follow-up coordination, which means your clinical time is reserved for diagnosis, prescribing and complex review. Combined with our in-house apps and Best Practice integration, that's what will let one well-supported prescriber care for a sizeable book without ever rushing a consult.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRESCRIBING ══════════════ -->
+<section class="section section-sage" id="prescribing">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Clinical Autonomy</div>
+      <h2 class="section-title">Your Prescribing, Your Call: We Handle the Paperwork</h2>
+      <p class="section-subtitle">We're built around the TGA's Authorised Prescriber pathway as our primary route, with SAS-B for patients who fall outside AP categories. The regulatory machinery is ours to run; the clinical decisions are yours to make.</p>
+    </div>
+
+    <div class="grid-2 fade-in">
+      <div class="card">
+        <div class="card-icon gold">🏥</div>
+        <h3>The AP Pathway, Managed For You</h3>
+        <p>We prepare and manage your Authorised Prescriber application through the TGA, including the HREC or specialist-college endorsement. Once approved, you can prescribe to defined classes of patients without per-patient TGA approval.</p>
+        <p style="margin-top: 12px;"><strong>Turnaround:</strong> typically 2-4 weeks for endorsement and TGA approval, with us doing the legwork.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">📝</div>
+        <h3>SAS-B, Pre-Drafted</h3>
+        <p>For patients outside the AP class definition, we use SAS-B, a per-patient notification to the TGA. We maintain clinical-justification templates so the documentation is fast; you supply the reasoning and sign off, and the patient can be treated while the notification processes.</p>
+        <p style="margin-top: 12px;"><strong>Process:</strong> notification submitted within 28 days of first prescription.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 fade-in" style="margin-top: 20px;">
+      <div class="card">
+        <div class="card-icon blue">🌿</div>
+        <h3>A Formulary You Help Shape</h3>
+        <p>Because we own the pharmaceutical line, you'll have a stable, well-understood formulary to work from, and a real say in what we carry. You're never pushed toward a product; you prescribe what the evidence and the patient in front of you call for.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">📋</div>
+        <h3>A Scope You Set</h3>
+        <p>We'll maintain a clear, documented list of the conditions we treat and the ones we won't, and you help define it. Patients who aren't appropriate for our care are declined or referred, not squeezed in. The boundaries are agreed in advance so no one is making a borderline call under pressure.</p>
+      </div>
+    </div>
+
+    <div class="callout blue fade-in" style="margin-top: 32px;">
+      <strong>Aligned to RACGP prescribing guidelines and TGA Good Clinical Practice from the very first consult.</strong> Every consultation will be documented to a standard that would pass an audit tomorrow, not because we expect one, but because that's simply how careful medicine is recorded. You'll never be asked to cut a corner you'd have to explain later.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ YOUR PROTECTION ══════════════ -->
+<section class="section section-alt" id="protection">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Medico-Legal Protection</div>
+      <h2 class="section-title">We Protect Your Registration Like It's Ours</h2>
+      <p class="section-subtitle">A prescriber's most valuable asset is their registration. The entire governance framework below exists so that yours is never at risk from a documentation gap, a missed obligation, or a decision that can't be evidenced.</p>
+    </div>
+
+    <div class="grid-3 fade-in">
+      <div class="card">
+        <h3>Audit-Ready Documentation</h3>
+        <p>Structured consult notes, documented clinical justifications for every patient, and templates that capture what an auditor would look for, so the record always backs the decision.</p>
+      </div>
+      <div class="card">
+        <h3>Minimum Consult Times &amp; Load Caps</h3>
+        <p>No three-minute scripts. We'll enforce minimum consultation times and maximum daily patient-load caps, so you're never pressured into rushed or volume-driven decisions.</p>
+      </div>
+      <div class="card">
+        <h3>Mandatory Follow-Up &amp; Outcomes</h3>
+        <p>Scheduled, nurse-coordinated follow-ups and outcome tracking are built into the model, demonstrating ongoing care rather than one-off prescribing.</p>
+      </div>
+      <div class="card">
+        <h3>Real-Time Prescription Monitoring</h3>
+        <p>We'll register and check against SafeScript, ERRCD and QScript as appropriate to each patient's state, so Schedule 8 prescribing is always monitored and defensible.</p>
+      </div>
+      <div class="card">
+        <h3>State S8 Permits, Handled</h3>
+        <p>The most common compliance miss for new clinics is forgetting state-level S8 permits on top of TGA approval. We'll secure them in every state we treat patients, so you never carry that risk.</p>
+      </div>
+      <div class="card">
+        <h3>Clinical Governance &amp; Audits</h3>
+        <p>Quarterly clinical audits, a clear governance framework, and adverse-event processes you don't have to invent: the scaffolding that keeps a practice clean is designed in from the start, not bolted on later.</p>
+      </div>
+    </div>
+
+    <div class="callout gold fade-in" style="margin-top: 32px;">
+      <strong>The AHPRA crackdown is an opportunity for careful doctors, not a threat.</strong> It clears the market of the bad actors that have damaged the field's reputation. By joining a clinic built from day one to do everything regulators are asking for (documented justifications, real follow-up, judgement-based prescribing, income decoupled from volume) you insulate your name from the very thing taking other clinics down.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ THE TEAM & TOOLS ══════════════ -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Your Support</div>
+      <h2 class="section-title">A Team and a Tech Stack That Do the Admin</h2>
+      <p class="section-subtitle">You shouldn't be doing nursing intake, chasing pharmacies, or wrestling with software. Here's the support structure designed to keep your time clinical.</p>
+    </div>
+
+    <div class="grid-3 fade-in">
+      <div class="card">
+        <div class="card-icon sage">🩺</div>
+        <h3>A Nurse-Led Front Line</h3>
+        <p>An RN/EN will be the warm first voice, running intake, pre-screening, medical history, scheduling, follow-up coordination and adverse-event documentation. They'll be the patient's day-to-day relationship, and your buffer from the admin.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">🗂️</div>
+        <h3>A Practice Manager (As We Grow)</h3>
+        <p>From the second stage of growth, a practice manager takes on operations, compliance monitoring, staff coordination and reporting, so clinical governance has a dedicated operational partner, not just goodwill.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">📱</div>
+        <h3>Best Practice + Our Own Apps</h3>
+        <p>Clinical work will run on <strong>Best Practice</strong> as the EMR backbone, wrapped in an in-house app ecosystem that handles inventory, pharmacy coordination and patient flow. The technology serves you; it's not another system you have to fight.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ YOUR TIME & GROWTH ══════════════ -->
+<section class="section section-sage" id="time">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Protecting Your Time</div>
+      <h2 class="section-title">A Capped Load, and Room to Grow</h2>
+      <p class="section-subtitle">Growth in a clinical setting has to be earned, not forced. We'll add a new prescriber only once the current one is at a properly-managed load, and only once the support around them is genuinely in place. You're never the relief valve for a clinic that scaled too fast.</p>
+    </div>
+
+    <table class="fee-table fade-in">
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Prescribers</th>
+          <th>Active Patients</th>
+          <th>Your Focus</th>
+          <th>Timing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Launch</strong></td>
+          <td>1 (you)</td>
+          <td>~215</td>
+          <td>Establish clinical standards &amp; build the book</td>
+          <td>Months 1-4</td>
+        </tr>
+        <tr>
+          <td><strong>Validate</strong></td>
+          <td>1 → 2</td>
+          <td>~600</td>
+          <td>Onboard &amp; mentor a second AP</td>
+          <td>Months 5-8</td>
+        </tr>
+        <tr>
+          <td><strong>Expand</strong></td>
+          <td>2 → 3</td>
+          <td>~1,800</td>
+          <td>Lead clinical governance across the team</td>
+          <td>Months 9-14</td>
+        </tr>
+        <tr>
+          <td><strong>Mature</strong></td>
+          <td>3 → 4</td>
+          <td>~3,600</td>
+          <td>Senior oversight &amp; quality</td>
+          <td>Months 15-20</td>
+        </tr>
+        <tr>
+          <td><strong>Steady State</strong></td>
+          <td>4 (full roster)</td>
+          <td>~5,600</td>
+          <td>Clinical leadership of a stable practice</td>
+          <td>Month 24+</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid-3 fade-in" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon gold">👩‍⚕️</div>
+        <h3>Protecting Doctor Time</h3>
+        <p>Nurse-led intake and our app ecosystem mean your time is spent on diagnosis, prescribing and complex follow-up, not admin. A well-supported AP can responsibly care for around 1,200-1,500 active patients while keeping every appointment unhurried.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">🌿</div>
+        <h3>Continuity, Not Churn</h3>
+        <p>A mature book isn't thousands of first-time visits; it's a stable group of patients you've genuinely helped, returning to refill medication that's working. Continuity is the clinical aim, and it makes for a far more satisfying practice.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">🤲</div>
+        <h3>Cover &amp; Continuity Built In</h3>
+        <p>Clinical systems, templates and governance will live in the practice, not with any one doctor. Records sit in Best Practice, accessible to any authorised clinician, so leave, handover, or growth never leaves a patient stranded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="section" id="faq">
+  <div class="container-narrow">
+    <div class="fade-in">
+      <div class="overline">Common Questions</div>
+      <h2 class="section-title">What Prescribers Usually Ask</h2>
+    </div>
+
+    <div class="accordion fade-in" style="margin-top: 32px;">
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          How am I protected from the AHPRA crackdown?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            By joining a clinic built from the ground up to do everything regulators are asking for. Your income is fully decoupled from prescribing volume, so you have no commercial incentive to over-prescribe. Every consult meets minimum-time standards, carries a documented clinical justification, and is followed up, to a standard that would pass an audit at any time. The crackdown targets clinics that pay clinicians to keep the conveyor moving; this is the opposite of that.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          How exactly am I paid?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            Sessionally, at $220-250 per hour, for your clinical time: consultations, prescribing, TGA notifications, follow-ups and governance oversight. Your pay is a fixed cost to the clinic and is identical whether or not you write a script. There is no per-script payment, no volume bonus, and nothing that ties your earnings to what you prescribe. Hours are agreed in advance and flex with you.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          Do I have to handle the AP application myself?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            No. We prepare and manage your Authorised Prescriber application through the TGA, including arranging HREC or specialist-college endorsement, and we maintain the clinical-justification templates for both AP and SAS-B pathways. You provide the clinical reasoning and sign-off; we carry the administrative load. Turnaround for endorsement and approval is typically 2-4 weeks.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          What's the real patient load and time commitment?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            Hours are sessional and agreed with you. A well-supported AP can responsibly hold an active book of around 1,200-1,500 patients, but that's a steady-state figure built on nurse-led intake and structured monthly refills, with daily load caps and minimum consult times enforced so appointments stay unhurried. We'll add a second prescriber before any one doctor is stretched, so the load is managed up, never dumped on you.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          What can I prescribe, and who decides?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            You do. We carry a stable formulary from the pharmaceutical line we own, and you'll have a real say in what we stock, but no one is ever steered toward a product. We'll also maintain a clear, documented list of conditions we treat and don't, defined with you, so borderline cases are declined or referred rather than squeezed in. Every prescription rests on your clinical judgement alone.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          Is it genuinely fully remote?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            Yes. The clinic is telehealth-first, so you practise from wherever suits you, on a flexible schedule. We'll hold state S8 permits for every state we treat patients in, which means the geography is handled for you, so you can see eligible patients nationally without carrying the cross-border compliance risk yourself. In-person presence is on the longer-term roadmap, in the right city for the right reasons, but it's never a requirement of this role.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          What happens to my patients if I take leave or move on?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            Continuity is built into the structure, not dependent on any one person. Clinical systems, templates and governance frameworks will live in the practice, and patient records are kept in Best Practice and accessible to any authorised clinician. Because we plan to have multiple prescribers from the second stage of growth, cover for leave and clean handovers are part of the design, so patients are never left stranded.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-banner fade-in">
+      <h2>Let's Find Out If It's the Right Fit</h2>
+      <p>We've laid out how the clinic will work and what the role asks. The next step is just a conversation, no pressure, two clinicians figuring out whether this is the practice you've been looking for.</p>
+      <a href="mailto:contact@goldenratio.clinic?subject=Prescriber%20Enquiry%20-%20Golden%20Ratio%20Clinics&body=Hi%20Golden%20Ratio%20team%2C%0A%0AA%20little%20about%20me%20(registration%2C%20experience)%3A%0A%0AWhat%20I'd%20want%20to%20know%20more%20about%3A%0A%0APreferred%20hours%20%2F%20availability%3A%0A%0AThanks!" class="btn">Start the Conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="brand">Golden Ratio Clinics</div>
+  <p>This page is an overview prepared for prospective prescribing doctors.<br>
+  All clinical operations are conducted under TGA and AHPRA regulatory requirements.<br>
+  Remuneration and engagement terms are indicative and confirmed in writing as part of any offer.</p>
+  <p style="margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">&copy; 2025 Golden Ratio Clinics. All rights reserved.</p>
+</footer>
+<script>
+// Nav scroll effect + reading-progress bar
+const nav = document.getElementById('nav');
+const progress = document.getElementById('scrollProgress');
+function onScroll() {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// Accordion
+document.querySelectorAll('.accordion-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const content = btn.nextElementSibling;
+    const isOpen = item.classList.contains('open');
+
+    item.parentElement.querySelectorAll('.accordion-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.accordion-content').style.maxHeight = null;
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Count-up for numeric stats (skips ranges/arrows) ──
+(function () {
+  const els = document.querySelectorAll('.metric-value, .range-num, .tier-amount, .annual-row-val');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); run(e.target); } });
+  }, { threshold: 0.6 });
+
+  els.forEach(el => {
+    const raw = el.textContent.trim();
+    if (/[→\-—\/–]/.test(raw)) return;            // skip ranges & arrows
+    const m = raw.match(/^([^\d]*)([\d.,]+)(.*)$/);
+    if (!m) return;
+    el.dataset.cuPre = m[1];
+    el.dataset.cuSuf = m[3];
+    el.dataset.cuNum = m[2].replace(/,/g, '');
+    el.dataset.cuDec = (m[2].split('.')[1] || '').length;
+    el.dataset.cuComma = m[2].indexOf(',') >= 0 ? '1' : '';
+    el.textContent = m[1] + '0' + m[3];
+    io.observe(el);
+  });
+
+  function fmt(v, dec, comma) {
+    let s = dec > 0 ? v.toFixed(dec) : Math.round(v).toString();
+    if (comma) { const p = s.split('.'); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); s = p.join('.'); }
+    return s;
+  }
+  function run(el) {
+    const pre = el.dataset.cuPre || '', suf = el.dataset.cuSuf || '';
+    const target = parseFloat(el.dataset.cuNum || '0');
+    const dec = parseInt(el.dataset.cuDec || '0', 10);
+    const comma = el.dataset.cuComma === '1';
+    const dur = 1400, start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + fmt(target * eased, dec, comma) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>

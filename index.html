@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Golden Ratio Clinics — Choose Your Path</title>
+<title>Golden Ratio Clinics | Choose Your Path</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,6 +60,32 @@ svg { display: block; }
 }
 @keyframes slideInLeft { from { transform: translateX(-100%); } to { transform: translateX(0); } }
 @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+/* ── Doctor pane (deep forest bg, gold serif) ── */
+.pane.doctors {
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(217,182,94,0.16), transparent 55%),
+    linear-gradient(135deg, #0f2e23 0%, #16412f 55%, #1d5340 100%);
+  color: var(--gold-200);
+  animation: paneRise 0.95s 0.12s var(--ease-out) both;
+}
+@keyframes paneRise { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: scale(1); } }
+.doctors .pane-icon { background: rgba(217,182,94,0.12); border: 1px solid rgba(217,182,94,0.3); }
+.doctors .pane-overline { font-family: var(--sans); color: var(--gold-400); }
+.doctors .pane-title {
+  font-family: var(--serif); font-weight: 600; font-style: normal;
+  font-size: clamp(2.8rem, 6.5vw, 5rem); letter-spacing: -0.005em;
+  color: var(--gold-300); text-shadow: 0 2px 30px rgba(217,182,94,0.22);
+}
+.doctors .pane-tag { font-family: var(--sans); color: rgba(231,205,134,0.82); }
+.doctors .pane-cta {
+  background: var(--gold-300); color: #14352a; font-family: var(--sans);
+  box-shadow: 0 10px 30px -8px rgba(217,182,94,0.4);
+}
+.doctors .particle { background: rgba(217,182,94,0.5); }
+/* ECG pulse motif */
+.motif-pulse { width: 120%; height: 64%; top: 18%; left: -10%; opacity: 0.5; }
+.motif-pulse path { fill: none; stroke: var(--gold-400); stroke-width: 1.5; opacity: 0.4; stroke-linejoin: round; stroke-linecap: round; }
 
 /* ── Decorative motifs ── */
 .motif { position: absolute; inset: 0; pointer-events: none; opacity: 0.9; }
@@ -119,7 +145,7 @@ svg { display: block; }
 .nurses .pane-tag { font-family: var(--sans); color: rgba(231,205,134,0.82); }
 .investors .pane-tag { font-family: var(--sans); color: rgba(13,23,51,0.78); }
 
-/* CTA — polarised inverse pills */
+/* CTA: polarised inverse pills */
 .pane-cta {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 14px 30px; border-radius: 100px; font-weight: 700; font-size: 0.95rem;
@@ -184,7 +210,8 @@ svg { display: block; }
   .split { flex-direction: column; height: auto; min-height: 100vh; min-height: 100dvh; }
   .pane { flex: none; min-height: 52vh; min-height: 52dvh; padding: 70px 24px; }
   .pane.nurses { animation: fadeUp 0.8s var(--ease-out) both; }
-  .pane.investors { animation: fadeUp 0.8s 0.12s var(--ease-out) both; }
+  .pane.doctors { animation: fadeUp 0.8s 0.12s var(--ease-out) both; }
+  .pane.investors { animation: fadeUp 0.8s 0.24s var(--ease-out) both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .pane-tag { opacity: 1; transform: none; }
   .seam {
@@ -204,20 +231,35 @@ svg { display: block; }
 <main class="split" id="split">
 
   <!-- ── NURSES ── -->
-  <a class="pane nurses" href="careers.html" aria-label="For Nurses — view roles">
+  <a class="pane nurses" href="careers.html" aria-label="For Nurses: view roles">
     <svg class="motif motif-spiral" viewBox="0 0 800 800" aria-hidden="true"><path id="spiralPath" d=""></path></svg>
     <div class="particles" data-particles="nurses"></div>
     <div class="pane-inner">
       <div class="pane-icon">🩺</div>
       <div class="pane-overline">Join our founding team</div>
       <h1 class="pane-title">For&nbsp;Nurses</h1>
-      <p class="pane-tag">Two founding roles in a patient-first medicinal cannabis clinic — a Nurse Practitioner to lead prescribing, and an RN/EN to be the warm first voice. Telehealth, flexible, built the right way.</p>
+      <p class="pane-tag">Two founding roles in a patient-first medicinal cannabis clinic: a Nurse Practitioner to lead prescribing, and an RN/EN to be the warm first voice. Telehealth, flexible, built the right way.</p>
       <span class="pane-cta">See the roles <span class="arrow">→</span></span>
     </div>
   </a>
 
+  <!-- ── DOCTORS ── -->
+  <a class="pane doctors" href="doctors.html" aria-label="For Doctors: explore the prescriber role">
+    <svg class="motif motif-pulse" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M0,100 L140,100 L158,100 L168,62 L180,140 L192,100 L210,100 L360,100 L378,100 L388,62 L400,140 L412,100 L430,100 L580,100 L598,100 L608,62 L620,140 L632,100 L650,100 L800,100"></path>
+    </svg>
+    <div class="particles" data-particles="doctors"></div>
+    <div class="pane-inner">
+      <div class="pane-icon">⚕️</div>
+      <div class="pane-overline">Join our clinical team</div>
+      <h1 class="pane-title">For Doctors</h1>
+      <p class="pane-tag">A founding Authorised Prescriber role in a patient-first telehealth clinic: sessional pay that's never tied to scripts, a nurse-led team that handles the admin, and a compliance framework built to protect your registration.</p>
+      <span class="pane-cta">Explore the role <span class="arrow">→</span></span>
+    </div>
+  </a>
+
   <!-- ── INVESTORS ── -->
-  <a class="pane investors" href="investors.html" aria-label="For Investors — view the partnership overview">
+  <a class="pane investors" href="investors.html" aria-label="For Investors: view the partnership overview">
     <div class="motif motif-grid" aria-hidden="true"></div>
     <svg class="motif motif-chart" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <path class="area" d="M40,330 L130,300 L220,250 L310,235 L400,160 L500,95 L560,55 L560,360 L40,360 Z"></path>
@@ -232,7 +274,7 @@ svg { display: block; }
       <div class="pane-icon">📈</div>
       <div class="pane-overline">Partnership overview</div>
       <h1 class="pane-title">For Investors</h1>
-      <p class="pane-tag">The full business case for a closed-loop, telehealth medicinal cannabis clinic — unit economics, the scaling path from one prescriber to four, compliance moat, and the partnership opportunity.</p>
+      <p class="pane-tag">The full business case for a closed-loop, telehealth medicinal cannabis clinic: unit economics, the scaling path from one prescriber to four, compliance moat, and the partnership opportunity.</p>
       <span class="pane-cta">Read the plan <span class="arrow">→</span></span>
     </div>
   </a>
