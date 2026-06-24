@@ -87,6 +87,33 @@ svg { display: block; }
 .motif-pulse { width: 120%; height: 64%; top: 18%; left: -10%; opacity: 0.5; }
 .motif-pulse path { fill: none; stroke: var(--gold-400); stroke-width: 1.5; opacity: 0.4; stroke-linejoin: round; stroke-linecap: round; }
 
+/* ── Build pane (graphite bg, gold sans) ── */
+.pane.build {
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(217,182,94,0.14), transparent 55%),
+    radial-gradient(ellipse at 82% 82%, rgba(83,125,83,0.12), transparent 50%),
+    linear-gradient(135deg, #15171d 0%, #1f232e 55%, #282d3a 100%);
+  color: var(--gold-200);
+  animation: paneRise 0.95s 0.18s var(--ease-out) both;
+}
+.build .pane-icon { background: rgba(217,182,94,0.12); border: 1px solid rgba(217,182,94,0.3); }
+.build .pane-overline { font-family: var(--sans); color: var(--gold-400); }
+.build .pane-title {
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.4rem, 5.4vw, 4.2rem); letter-spacing: -0.02em;
+  color: var(--gold-300); text-shadow: 0 2px 30px rgba(217,182,94,0.2);
+}
+.build .pane-tag { font-family: var(--sans); color: rgba(231,205,134,0.82); }
+.build .pane-cta {
+  background: var(--gold-300); color: #1a1d24; font-family: var(--sans);
+  box-shadow: 0 10px 30px -8px rgba(217,182,94,0.4);
+}
+.build .particle { background: rgba(217,182,94,0.5); }
+/* network-nodes motif */
+.motif-nodes { width: 120%; height: 120%; top: -10%; left: -10%; opacity: 0.55; }
+.motif-nodes line { stroke: var(--gold-400); stroke-width: 1; opacity: 0.28; }
+.motif-nodes circle { fill: var(--gold-400); opacity: 0.4; }
+
 /* ── Decorative motifs ── */
 .motif { position: absolute; inset: 0; pointer-events: none; opacity: 0.9; }
 .motif-spiral { width: 120%; height: 120%; top: -10%; left: -20%; opacity: 0.5; }
@@ -212,6 +239,7 @@ svg { display: block; }
   .pane.nurses { animation: fadeUp 0.8s var(--ease-out) both; }
   .pane.doctors { animation: fadeUp 0.8s 0.12s var(--ease-out) both; }
   .pane.investors { animation: fadeUp 0.8s 0.24s var(--ease-out) both; }
+  .pane.build { animation: fadeUp 0.8s 0.36s var(--ease-out) both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .pane-tag { opacity: 1; transform: none; }
   .seam {
@@ -276,6 +304,25 @@ svg { display: block; }
       <h1 class="pane-title">For Investors</h1>
       <p class="pane-tag">The full business case for a closed-loop, telehealth medicinal cannabis clinic: unit economics, the scaling path from one prescriber to four, compliance moat, and the partnership opportunity.</p>
       <span class="pane-cta">Read the plan <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <!-- ── THE BUILD ── -->
+  <a class="pane build" href="costs.html" aria-label="The Build: costs and infrastructure">
+    <svg class="motif motif-nodes" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <line x1="80" y1="90" x2="200" y2="160"></line><line x1="200" y1="160" x2="320" y2="90"></line>
+      <line x1="200" y1="160" x2="120" y2="280"></line><line x1="200" y1="160" x2="300" y2="290"></line>
+      <line x1="120" y1="280" x2="300" y2="290"></line><line x1="80" y1="90" x2="320" y2="90"></line>
+      <circle cx="80" cy="90" r="5"></circle><circle cx="200" cy="160" r="7"></circle><circle cx="320" cy="90" r="5"></circle>
+      <circle cx="120" cy="280" r="5"></circle><circle cx="300" cy="290" r="5"></circle>
+    </svg>
+    <div class="particles" data-particles="build"></div>
+    <div class="pane-inner">
+      <div class="pane-icon">🖥️</div>
+      <div class="pane-overline">Costs &amp; infrastructure</div>
+      <h1 class="pane-title">The Build</h1>
+      <p class="pane-tag">How we stood up a full telehealth clinic for roughly a tenth of a traditional build: one Master PC as the brain, the cloud for the rest, and the receipts to prove it.</p>
+      <span class="pane-cta">See the numbers <span class="arrow">→</span></span>
     </div>
   </a>
 
