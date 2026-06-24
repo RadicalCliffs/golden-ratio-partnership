@@ -722,7 +722,7 @@ img { display: block; max-width: 100%; }
 .cost-note { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 10px; }
 
 /* ── Architecture diagram ── */
-.arch { max-width: 780px; margin: 8px auto 0; }
+.arch { max-width: 820px; margin: 8px auto 0; }
 .arch-label {
   text-align: center; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--gold-700); font-weight: 700; margin: 0 0 14px;
@@ -831,7 +831,7 @@ img { display: block; max-width: 100%; }
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span> Built lean, launched fast</div>
-  <h1>We Stood Up a Clinic for a Tenth of the Cost</h1>
+  <h1>We Stood Up a Clinic for a Fraction of the Cost</h1>
   <p>No fit-out. No reception. No server room. Golden Ratio runs on a single Master PC acting as the brain, Zedmed's cloud for practice management, and a stack of software we already own and operate. Here's every dollar it took to get live, what's paid, and what's left.</p>
   <a href="#architecture" class="hero-cta">See the build ↓</a>
 </section>
@@ -847,11 +847,11 @@ img { display: block; max-width: 100%; }
 
     <div class="metric-row fade-in">
       <div class="metric">
-        <div class="metric-value">$21.7k</div>
+        <div class="metric-value">$26.6k</div>
         <div class="metric-label">All-In to Launch</div>
       </div>
       <div class="metric">
-        <div class="metric-value">~10%</div>
+        <div class="metric-value">~13%</div>
         <div class="metric-label">Of a Traditional Clinic Build</div>
       </div>
       <div class="metric">
@@ -859,8 +859,8 @@ img { display: block; max-width: 100%; }
         <div class="metric-label">Left to Pay (Tomorrow)</div>
       </div>
       <div class="metric">
-        <div class="metric-value">$220</div>
-        <div class="metric-label">Monthly Software, All In</div>
+        <div class="metric-value">$230</div>
+        <div class="metric-label">Monthly Software &amp; Services</div>
       </div>
     </div>
 
@@ -873,6 +873,14 @@ img { display: block; max-width: 100%; }
           <div>
             <div class="arch-name">Patients</div>
             <div class="arch-sub">Find the clinic online, anywhere in Australia</div>
+          </div>
+        </div>
+        <div class="arch-node ghost">
+          <div class="arch-ico">📅</div>
+          <div>
+            <div class="arch-name">HealthEngine</div>
+            <div class="arch-sub">Australia's largest patient booking &amp; acquisition marketplace. Switched on once we're live</div>
+            <span class="chip ghost">$2,000/mo · future</span>
           </div>
         </div>
       </div>
@@ -903,8 +911,8 @@ img { display: block; max-width: 100%; }
           <div class="arch-ico">🖥️</div>
           <div>
             <div class="arch-name">Master PC, the Brain</div>
-            <div class="arch-sub">Mini-server &amp; orchestrator. Replaces an on-prem server rack</div>
-            <span class="chip paid">✓ $4,500 paid</span>
+            <div class="arch-sub">Mini-server &amp; orchestrator (Windows). Replaces an on-prem server rack. Runs Microsoft Office</div>
+            <span class="chip paid">✓ $4,500 paid</span> <span class="chip due">Office $439 · to buy</span>
           </div>
         </div>
         <div class="arch-node">
@@ -917,13 +925,36 @@ img { display: block; max-width: 100%; }
         </div>
       </div>
       <div class="arch-flow"></div>
+
+      <div class="arch-label">Staff access</div>
       <div class="arch-tier">
-        <div class="arch-node security wide">
+        <div class="arch-node">
+          <div class="arch-ico">💻</div>
+          <div>
+            <div class="arch-name">Nurse Workstation</div>
+            <div class="arch-sub">Budget Chromebook. Zedmed Cloud &amp; our apps run in-browser, so it's all the nurse needs</div>
+            <span class="chip due">$399 · to buy</span>
+          </div>
+        </div>
+      </div>
+      <div class="arch-flow"></div>
+
+      <div class="arch-label">Security, on every endpoint</div>
+      <div class="arch-tier">
+        <div class="arch-node security">
           <div class="arch-ico">🛡️</div>
           <div>
-            <div class="arch-name">Teramind: Security &amp; Monitoring</div>
-            <div class="arch-sub">Wraps the Master PC: activity monitoring, data-loss prevention, compliance audit trail</div>
+            <div class="arch-name">Teramind</div>
+            <div class="arch-sub">Activity monitoring, data-loss prevention, compliance audit trail</div>
             <span class="chip paid">✓ $1,988 paid</span>
+          </div>
+        </div>
+        <div class="arch-node security">
+          <div class="arch-ico">🐞</div>
+          <div>
+            <div class="arch-name">Malwarebytes</div>
+            <div class="arch-sub">Enterprise endpoint protection (annual)</div>
+            <span class="chip paid">✓ $1,500 paid</span>
           </div>
         </div>
       </div>
@@ -981,6 +1012,14 @@ img { display: block; max-width: 100%; }
             <span class="chip yr">$480/yr</span> <span class="chip paid">✓ paid</span>
           </div>
         </div>
+        <div class="arch-node">
+          <div class="arch-ico">☎️</div>
+          <div>
+            <div class="arch-name">1300 Number</div>
+            <div class="arch-sub">National phone line for patients</div>
+            <span class="chip due">$2-10/mo · to set up</span>
+          </div>
+        </div>
       </div>
       <div class="arch-flow"></div>
 
@@ -1005,7 +1044,7 @@ img { display: block; max-width: 100%; }
     <div class="fade-in">
       <div class="overline">Every Dollar</div>
       <h2 class="section-title">What We've Spent, and What's Left</h2>
-      <p class="section-subtitle">The complete accounting. Paid items are checked; the only two outstanding (Zedmed and Halo) are greyed and due tomorrow. People and a contingency buffer are listed separately so the launch cost stays honest.</p>
+      <p class="section-subtitle">The complete accounting. Paid items are checked; everything still owing is greyed, whether it's due tomorrow (Zedmed, Halo) or a small purchase still to make. People, future tools and a contingency buffer are listed separately so the launch cost stays honest.</p>
     </div>
 
     <p class="led-cap fade-in">Setup &amp; infrastructure (one-time)</p>
@@ -1017,16 +1056,20 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>Original website build</strong></td><td>Clinic + backend, across the family of sites</td><td>$8,000</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>Master PC</strong></td><td>The brain / mini-server</td><td>$4,500</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>Teramind</strong></td><td>Security &amp; monitoring ($1,500 + $488)</td><td>$1,988</td><td><span class="st-paid">✓ Paid</span></td></tr>
+        <tr><td><strong>Malwarebytes</strong></td><td>Enterprise endpoint protection (annual)</td><td>$1,500</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>HealthLink</strong></td><td>Secure clinical messaging (annual)</td><td>$599</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>Outlook / Microsoft 365</strong></td><td>Email, 3 accounts (annual)</td><td>$480</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>Seek</strong></td><td>Job advertising (one-time)</td><td>$450</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr><td><strong>My Health Record</strong></td><td>National record integration (annual)</td><td>$399</td><td><span class="st-paid">✓ Paid</span></td></tr>
         <tr class="due-row"><td><strong>Zedmed</strong></td><td>Cloud practice management</td><td>$4,000</td><td><span class="st-due">○ Due tomorrow</span></td></tr>
         <tr class="due-row"><td><strong>Halo Connect</strong></td><td>Zedmed API provider (annual)</td><td>$1,300</td><td><span class="st-due">○ Due tomorrow</span></td></tr>
+        <tr class="due-row"><td><strong>Lawyer</strong></td><td>Business setup &amp; structure review before go-live (est.)</td><td>~$2,500</td><td><span class="st-due">○ To buy</span></td></tr>
+        <tr class="due-row"><td><strong>Microsoft Office</strong></td><td>Home &amp; Business 2024, Windows workstation</td><td>$439</td><td><span class="st-due">○ To buy</span></td></tr>
+        <tr class="due-row"><td><strong>Nurse workstation</strong></td><td>Budget Chromebook (browser-based)</td><td>$399</td><td><span class="st-due">○ To buy</span></td></tr>
       </tbody>
     </table>
 
-    <p class="led-cap fade-in" style="margin-top: 40px;">Ongoing software (monthly)</p>
+    <p class="led-cap fade-in" style="margin-top: 40px;">Ongoing software &amp; services (monthly)</p>
     <table class="fee-table fade-in">
       <thead>
         <tr><th>Item</th><th>What it does</th><th>Cost (AUD)</th><th>Status</th></tr>
@@ -1035,7 +1078,8 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>Claude</strong></td><td>AI automation &amp; build assistant</td><td>$80 / mo</td><td><span class="st-paid">✓ Active</span></td></tr>
         <tr><td><strong>Vercel</strong></td><td>Website hosting &amp; deployment</td><td>$80 / mo</td><td><span class="st-paid">✓ Active</span></td></tr>
         <tr><td><strong>Supabase</strong></td><td>Backend database (scales with us)</td><td>$60 / mo</td><td><span class="st-paid">✓ Active</span></td></tr>
-        <tr><td colspan="2" style="text-align: right;"><strong>Monthly total</strong></td><td><strong>$220 / mo</strong></td><td></td></tr>
+        <tr class="due-row"><td><strong>1300 number</strong></td><td>National patient phone line</td><td>$2-10 / mo</td><td><span class="st-due">○ To set up</span></td></tr>
+        <tr><td colspan="2" style="text-align: right;"><strong>Monthly total</strong></td><td><strong>~$230 / mo</strong></td><td></td></tr>
       </tbody>
     </table>
 
@@ -1050,12 +1094,13 @@ img { display: block; max-width: 100%; }
       </tbody>
     </table>
 
-    <p class="led-cap fade-in" style="margin-top: 40px;">Potential (not committed)</p>
+    <p class="led-cap fade-in" style="margin-top: 40px;">Future &amp; potential (not committed)</p>
     <table class="fee-table fade-in">
       <thead>
         <tr><th>Item</th><th>What it does</th><th>Cost (AUD)</th><th>Status</th></tr>
       </thead>
       <tbody>
+        <tr class="due-row"><td><strong>HealthEngine</strong></td><td>Patient booking &amp; acquisition marketplace, once we're up and running (no annual discount)</td><td>$2,000 / mo</td><td><span class="st-due">○ Future</span></td></tr>
         <tr class="due-row"><td><strong>Prescript</strong></td><td>Medical recruiter, only if we need one</td><td>$16,000</td><td><span class="st-due">○ Not engaged</span></td></tr>
         <tr class="due-row"><td><strong>Contingency buffer</strong></td><td>Set aside for the unknown unknowns</td><td>$5,000</td><td><span class="st-due">○ Unspent</span></td></tr>
       </tbody>
@@ -1063,20 +1108,20 @@ img { display: block; max-width: 100%; }
 
     <div class="totals fade-in">
       <div class="total-card hero-total">
-        <div class="t-val">$21.7k</div>
+        <div class="t-val">$26.6k</div>
         <div class="t-lab">All-in to launch (setup &amp; infrastructure)</div>
       </div>
       <div class="total-card green">
-        <div class="t-val">$16.4k</div>
+        <div class="t-val">$17.9k</div>
         <div class="t-lab">Paid &amp; live already ✓</div>
       </div>
       <div class="total-card muted">
         <div class="t-val">$5.3k</div>
-        <div class="t-lab">Outstanding, due tomorrow</div>
+        <div class="t-lab">Due tomorrow (Zedmed + Halo)</div>
       </div>
       <div class="total-card muted">
-        <div class="t-val">$5.0k</div>
-        <div class="t-lab">Buffer set aside, unspent</div>
+        <div class="t-val">$3.3k</div>
+        <div class="t-lab">Small buys still to make</div>
       </div>
     </div>
   </div>
@@ -1087,7 +1132,7 @@ img { display: block; max-width: 100%; }
   <div class="container">
     <div class="fade-in">
       <div class="overline">The Headline</div>
-      <h2 class="section-title">About a Tenth of a Bricks-and-Mortar Build</h2>
+      <h2 class="section-title">A Fraction of a Bricks-and-Mortar Build</h2>
       <p class="section-subtitle">By skipping the physical clinic entirely (no lease, no fit-out, no reception, no signage, no on-premise servers and none of the ancillary costs that come with a real building) we launched a fully-compliant telehealth clinic for a fraction of what a traditional one would cost to open.</p>
     </div>
 
@@ -1098,7 +1143,7 @@ img { display: block; max-width: 100%; }
             <div class="scale-name">Golden Ratio Clinic <span>digital-first, telehealth</span></div>
           </div>
           <div class="scale-track">
-            <div class="scale-fill ours tiny" style="--w: 11%;"><span class="scale-val">~$21.7k</span></div>
+            <div class="scale-fill ours tiny" style="--w: 13%;"><span class="scale-val">~$26.6k</span></div>
           </div>
         </div>
         <div class="scale-row">
@@ -1106,32 +1151,32 @@ img { display: block; max-width: 100%; }
             <div class="scale-name">Traditional clinic <span>lease, fit-out, reception, on-prem servers</span></div>
           </div>
           <div class="scale-track">
-            <div class="scale-fill theirs" style="--w: 100%;"><span class="scale-val">$150k – $200k</span></div>
+            <div class="scale-fill theirs" style="--w: 100%;"><span class="scale-val">$150k - $200k</span></div>
           </div>
         </div>
         <div class="scale-axis">
           <span>$0</span><span>$50k</span><span>$100k</span><span>$150k</span><span>$200k</span>
         </div>
       </div>
-      <div class="scale-foot">Same compliance. Same clinical standard. <strong>Roughly one-tenth of the cost.</strong></div>
+      <div class="scale-foot">Same compliance. Same clinical standard. <strong>A fraction of the cost.</strong></div>
     </div>
 
     <div class="compare fade-in">
       <div class="c-box ours">
         <div class="c-tag">What it cost us</div>
-        <div class="c-val">$21.7k</div>
-        <div class="c-sub">Up and running, fully compliant. Plus ~$220/mo in software and a $5k buffer for surprises.</div>
+        <div class="c-val">$26.6k</div>
+        <div class="c-sub">Up and running, fully compliant. Plus ~$230/mo in software and a $5k buffer for surprises.</div>
       </div>
       <div class="c-vs">vs</div>
       <div class="c-box theirs">
         <div class="c-tag">A traditional clinic</div>
-        <div class="c-val">$150–200k</div>
+        <div class="c-val">$150-200k</div>
         <div class="c-sub">In fit-outs, reception, signage, servers and the ancillary costs of opening a physical practice, before a single patient.</div>
       </div>
     </div>
 
     <div class="callout gold fade-in" style="margin-top: 32px;">
-      <strong>The point isn't that we went cheap; it's that we went smart.</strong> Every regulatory box is ticked, the clinical standard is uncompromised, and the system is already live. We simply refused to pour six figures into a building when a Master PC, the right cloud, and disciplined spending could do the same job for a tenth of the price. The $5k contingency is there because there's always something, but look at the rest of this page, and you can see how far a dollar goes when it's spent with intent.
+      <strong>The point isn't that we went cheap; it's that we went smart.</strong> Every regulatory box is ticked, the clinical standard is uncompromised, and the system is already live. We simply refused to pour six figures into a building when a Master PC, the right cloud, and disciplined spending could do the same job for a fraction of the price. The $5k contingency is there because there's always something, but look at the rest of this page, and you can see how far a dollar goes when it's spent with intent.
     </div>
   </div>
 </section>
