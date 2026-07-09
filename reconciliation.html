@@ -326,10 +326,10 @@ table.scope td.c{text-align:center}
     <h1 class="reveal">Every dollar, <em>accounted for.</em></h1>
     <p class="lede reveal">A complete, receipted reconciliation of every dollar <b>Golden Ratio Clinics put into the operating account</b>, what it funded, correlated to the published <a href="costs.html" style="color:var(--gold);border-bottom:1px solid var(--line-bright)">cost sheet</a>, and set against the ~$8k that was originally scoped and paid. Pulled from the Revolut Business statement covering 1 Jan to 8 Jul 2026. Nothing rounded, nothing hidden.</p>
     <div class="telemetry reveal" id="telemetry">
-      <div class="tel"><div class="k">Opening balance</div><div class="v" data-count="316.38">AU$0</div><div class="sub">1 Jan 2026</div></div>
-      <div class="tel"><div class="k">Money in</div><div class="v pos" data-count="80238.18">AU$0</div><div class="sub">all sources · 6 months</div></div>
-      <div class="tel"><div class="k">Money out</div><div class="v neg" data-count="80553.56" data-prefix="-">AU$0</div><div class="sub">all destinations</div></div>
-      <div class="tel"><div class="k">Closing balance</div><div class="v" data-count="1.00">AU$0</div><div class="sub">8 Jul 2026 · reconciled</div></div>
+      <div class="tel"><div class="k">Funded by Golden Ratio</div><div class="v pos" data-count="22516">AU$0</div><div class="sub">7 Jun to 4 Jul 2026</div></div>
+      <div class="tel"><div class="k">Transfers reconciled</div><div class="v" data-count="21" data-plain="1">0</div><div class="sub">itemised &amp; receipted</div></div>
+      <div class="tel"><div class="k">Originally scoped</div><div class="v" data-count="8000">AU$0</div><div class="sub">website build, paid in full</div></div>
+      <div class="tel"><div class="k">Salary owed</div><div class="v neg" data-count="4000">AU$0</div><div class="sub">next month, due Friday</div></div>
     </div>
   </div>
 </header>
@@ -670,10 +670,12 @@ window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
 // count-up telemetry
 function countUp(el){
-  const target=parseFloat(el.dataset.count), prefix=el.dataset.prefix||'', dur=1300, t0=performance.now();
+  const target=parseFloat(el.dataset.count), prefix=el.dataset.prefix||'', plain=el.dataset.plain, dur=1300, t0=performance.now();
   function step(now){
     const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3), val=target*e;
-    el.textContent=prefix+'AU$'+val.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+    el.textContent = plain
+      ? Math.round(val).toString()
+      : prefix+'AU$'+val.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
     if(p<1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
