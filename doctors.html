@@ -62,7 +62,8 @@ img { display: block; max-width: 100%; }
   font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
 }
 .nav-logo span { color: var(--gold-600); }
-.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
+.nav-links li { white-space: nowrap; }
 .nav-links a {
   font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
   transition: color 0.2s;
@@ -746,15 +747,16 @@ img { display: block; max-width: 100%; }
     <a class="nav-logo" href="index.html">Golden Ratio <span>Clinics</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#whyyou">Why You</a></li>
-      <li><a href="#partnership">The Partnership</a></li>
-      <li><a href="#ethos">Our Ethos</a></li>
+      <li><a href="#partnership">Partnership</a></li>
+      <li><a href="#partners">Who We Are</a></li>
+      <li><a href="#ethos">Ethos</a></li>
       <li><a href="#opportunity">The Role</a></li>
-      <li><a href="#pay">How You're Paid</a></li>
+      <li><a href="#pay">Your Pay</a></li>
       <li><a href="#day">Your Day</a></li>
       <li><a href="#prescribing">Prescribing</a></li>
-      <li><a href="#protection">Your Protection</a></li>
-      <li><a href="#team">The Team</a></li>
-      <li><a href="#time">Your Time</a></li>
+      <li><a href="#protection">Protection</a></li>
+      <li><a href="#team">Support</a></li>
+      <li><a href="#time">Growth</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -777,12 +779,13 @@ img { display: block; max-width: 100%; }
     <div class="summary-card fade-in">
       <div class="overline">The Offer, in Thirty Seconds</div>
       <ul class="summary-list">
-        <li><strong>49% of the business and a board seat</strong>, with no capital to put in. The largest single shareholding, earned against time rather than bought.</li>
+        <li><strong>49% of the clinic and a board seat</strong>, with no capital to put in. Earned against your time rather than bought.</li>
         <li><strong>$150 an hour, plus half the value of every consult past the third.</strong> A new-patient hour is about $212.50; a mature hour of reviews is $275 to $300.</li>
         <li><strong>Paid for the consult you attend, never for the script you write.</strong> A refusal pays exactly what a prescription does.</li>
         <li><strong>Telehealth from Perth, patients nationwide.</strong> Keep your own rooms, your own patients and your own hours.</li>
         <li><strong>You already hold Authorised Prescriber status</strong>, so the clinic can treat in week one rather than week four.</li>
         <li><strong>Patients pay $49 to be seen and $29 to renew</strong>, or nothing at all through our referral door.</li>
+        <li><strong>Three operators behind it, none of them clinicians</strong>: cultivation, supply chain and technology. The clinical seat is the one we're offering you.</li>
       </ul>
       <p class="summary-foot">Everything below is the detail behind those six lines, including the parts we would expect you to argue with.</p>
     </div>
@@ -853,7 +856,7 @@ img { display: block; max-width: 100%; }
       <div class="card">
         <div class="card-icon sage">&#128499;&#65039;</div>
         <h3>Forty-Nine Per Cent, and No Cheque</h3>
-        <p>We're not going to make you drag a number out of us. The offer is <strong>49% of the business and a seat on the board</strong>, the largest single share in the company, with <strong>no capital contribution</strong>. You aren't buying in. The stake is earned against your time and agreed milestones and vests accordingly. To seat you, the two founding directors come down from 46.5% each to 22%, which should tell you how seriously the clinical half of this is taken.</p>
+        <p>We're not going to make you drag a number out of us. The offer is <strong>49% of the clinic and a seat on its board</strong>, with <strong>no capital contribution</strong>. You aren't buying in: the stake is earned against your time and agreed milestones, and vests accordingly. The remaining 51% is held by Golden Ratio, which is what keeps the clinic and the wider group aligned rather than negotiating with each other.</p>
       </div>
     </div>
 
@@ -870,49 +873,48 @@ img { display: block; max-width: 100%; }
       </div>
     </div>
 
-    <div class="fade-in" style="margin-top: 36px;">
-      <div class="overline">What the 49% Is Actually Worth</div>
-      <p class="section-subtitle" style="margin-bottom: 20px;">A percentage with no numbers behind it is just a nice-sounding word, so here is the arithmetic we run internally. Net profit is what's left after every running cost, including your own hourly. Your 49% is a share of that, paid as profit rather than wages.</p>
-    </div>
-
-    <table class="fee-table fade-in">
-      <thead>
-        <tr>
-          <th>Monthly Net Profit</th>
-          <th>Your 49%, Monthly</th>
-          <th>Where That Sits</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>$15,000</strong></td>
-          <td><strong>$7,350</strong></td>
-          <td>Roughly the first rung, on a small book still finding its feet.</td>
-        </tr>
-        <tr>
-          <td><strong>$24,000</strong></td>
-          <td><strong>~$11,760</strong></td>
-          <td>Our modelled Stage 1: about 215 active patients on one prescriber.</td>
-        </tr>
-        <tr>
-          <td><strong>$80,000</strong></td>
-          <td><strong>$39,200</strong></td>
-          <td>A second prescriber onboarded and the book past a thousand.</td>
-        </tr>
-        <tr>
-          <td><strong>$300,000</strong></td>
-          <td><strong>$147,000</strong></td>
-          <td>A mature four-prescriber clinic at steady state.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="callout blue fade-in" style="margin-top: 20px;">
-      <strong>Read those as projections, not promises.</strong> They're our own internal model and they assume the book grows the way we think it will. Early on there may be little or no profit to distribute at all, because a clinic that has just opened is paying for itself first. What we can say without hedging is the shape of it: your hourly is contractual and paid regardless, the 49% is the upside on top, and it costs you nothing to hold, since no capital is contributed for it.
+    <div class="callout blue fade-in" style="margin-top: 32px;">
+      <strong>How the group is put together, in plain terms.</strong> There are two companies. The <strong>clinic</strong> is the one you'd own 49% of and sit on the board of: it employs the clinical team, holds the patient relationships and carries the consult income. The <strong>wider Green Leaf Global business</strong> owns the pharmaceutical line and carries the wholesale margin on the medication, and has its own separate ownership. We'd rather set that out on a page you can read at your own pace than have it surface halfway through due diligence. What it means practically is that your 49% is a share of the clinic, and the numbers behind it are something we'll put in front of you properly in the first meeting rather than summarise into a table here.
     </div>
 
     <div class="callout gold fade-in" style="margin-top: 20px;">
       <strong>Why we'd hand over part of the business:</strong> we can build the software, the supply chain, the pharmacy relationship and the compliance machinery. All of that is well advanced. What none of us can manufacture is a clinician with a decade of credibility and a genuinely holistic way of treating people. That has to be someone's actual practice. If it's going to be the thing this clinic is known for, the person who brings it should own part of what it builds.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHO WE ARE ══════════════ -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="fade-in">
+      <div class="overline">Who You'd Be Partnering With</div>
+      <h2 class="section-title">Three Operators, and Not a Doctor Among Us</h2>
+      <p class="section-subtitle">You're being offered half a company, so you're entitled to know exactly who is on the other side of it. There are three of us. Between us we cover cultivation, supply chain, technology and running the thing day to day. What we do not have, and cannot hire our way around, is a clinician.</p>
+    </div>
+
+    <div class="grid-3 fade-in" style="margin-top: 36px;">
+      <div class="card">
+        <div class="card-icon gold">&#128104;&#8205;&#128187;</div>
+        <h3>Maximillian Matthews</h3>
+        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Operating Partner</p>
+        <p>Five years in the cannabis industry. Runs the practice day to day, and builds and maintains the in-house software the clinic runs on, from patient flow and inventory to pharmacy coordination. Draws the only non-clinical salary in the business, a $4,000 base, plus a profit share in the wider group.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon sage">&#127807;</div>
+        <h3>Quentin Tetz</h3>
+        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Director</p>
+        <p>Twenty-plus years in cannabis cultivation and a genuine pioneer in the space. He is the reason we can talk about owning the pharmaceutical line rather than reselling somebody else's, and the reason a formulary conversation with you would be a real one rather than a catalogue.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">&#128666;</div>
+        <h3>Jullian Westlake</h3>
+        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Director</p>
+        <p>Ten-plus years in hospitality, owning and running pubs and clubs across Australia, with the deep supply-chain knowledge that comes from moving stock at volume in a licensed, heavily regulated trade. That is the discipline behind our dispensing and inventory side.</p>
+      </div>
+    </div>
+
+    <div class="callout gold fade-in" style="margin-top: 32px;">
+      <strong>You'll have noticed the gap.</strong> Not one of the three of us is a doctor, and no amount of cultivation experience, supply chain or software closes that. A cannabis business run entirely by operators is precisely the thing the regulators are right to be sceptical of, and precisely the thing we do not want to build. That is why nearly half the clinic is being offered to a clinician rather than kept by us, and why the clinical half of the model is yours to set rather than ours to hand you. We would rather own a smaller share of a clinic with a serious doctor at the centre of it than all of one without.
     </div>
   </div>
 </section>
@@ -1398,7 +1400,9 @@ img { display: block; max-width: 100%; }
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
-            <strong>49%, and you don't pay for it.</strong> There's no buy-in and no cheque: the stake is earned against your time and agreed milestones, and vests on that basis. To make room, the two founding directors drop from 46.5% each to 22%, so you'd hold the largest single share in the company. It sits <em>on top of</em> the $150 hourly rather than reducing it, and it's documented in a proper shareholders' agreement with vesting, decision rights and exit terms written down before you start. The catch, such as it is: 49% is deliberately not 51%, so on a genuine deadlock the operating side keeps the casting vote on commercial decisions. Clinical decisions are never in that category. The other thing to read carefully is the vesting schedule, because an unvested stake is a promise rather than an asset, and we'd rather you understood that on day one than in year two.
+            <strong>49% of the clinic, and you don't pay for it.</strong> There's no buy-in and no cheque: the stake is earned against your time and agreed milestones, and vests on that basis. It sits <em>on top of</em> the $150 hourly rather than reducing it, and it's documented in a proper shareholders' agreement with vesting, decision rights and exit terms written down before you start.
+            <br><br>
+            Two things you should press us on rather than take on trust. First, 49% is deliberately not 51%: Golden Ratio holds the other 51%, so on a genuine deadlock the commercial casting vote sits with us. Clinical decisions are never in that category and we'd put that in writing. Second, the group structure. The clinic is one company; the pharmaceutical side, which carries the wholesale margin on the medication, sits in the wider Green Leaf Global business. Your 49% is of the clinic. That distinction matters to what the stake is worth, so we'd rather walk you through both sets of books in the first meeting than have you find it in a constitution later.
           </div>
         </div>
       </div>
@@ -1521,7 +1525,8 @@ $150 an hour for all your clinical time (consultations, prescribing, TGA notific
   <div class="container">
     <div class="cta-banner fade-in">
       <h2>Let's Talk About What We'd Build Together</h2>
-      <p>Dr Turton, the machinery is largely built: the software, the supply chain, the pharmacy, the compliance framework. What it's missing is a clinician whose medicine is worth building all of it around, and who owns part of the result. The next step is a conversation, including the parts of this you'd want built differently and the number that would make it worth your while. The clinical half of the model is genuinely open, and we'd far rather hear your objections now than design around them later.</p>
+      <p>Dr Turton, the machinery is largely built: the software, the supply chain, the pharmacy, the compliance framework. What it's missing is a clinician whose medicine is worth building all of it around, and who owns part of the result. The next step is a conversation, including the parts of this you'd want built differently. The clinical half of the model is genuinely open, and we'd far rather hear your objections now than design around them later.</p>
+      <p style="margin-top: 14px; font-size: 0.95rem;">The email below reaches me directly, and I'm happy to talk any evening that suits you.<br><strong>Maximillian Matthews</strong>, Operating Partner, Golden Ratio Clinics</p>
       <a href="mailto:contact@goldenratio.clinic?subject=Founding%20Partner%20%26%20Lead%20Clinician%20-%20Dr%20David%20Turton&body=Hi%20Golden%20Ratio%20team%2C%0A%0AHappy%20to%20have%20a%20conversation.%0A%0AWhat%20I%27d%20want%20to%20know%20more%20about%3A%0A%0AWhat%20I%27d%20want%20built%20differently%3A%0A%0AOn%20the%20partnership%20side%3A%0A%0APreferred%20times%20to%20talk%3A%0A%0ADavid" class="btn">Start the Conversation →</a>
     </div>
   </div>
