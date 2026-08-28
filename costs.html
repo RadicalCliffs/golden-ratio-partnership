@@ -1234,7 +1234,7 @@ img { display: block; max-width: 100%; }
     <div class="callout sage fade-in" style="margin-top: 24px;">
       <strong>Even on cautious assumptions, the build pays for itself almost immediately.</strong> That headline is the gross script margin to the business. After the doctor, the nurse, software and the operating partner's base salary (about $4.9k a week), there's still around $6,100 a week left, recouping the full build in about six weeks. And even if only half of those consults result in a script, the gross margin alone still clears the build inside about seven weeks.
     </div>
-    <p class="cost-note fade-in">Assumes 10 hours a week at 5.5 consults an hour &mdash; our realistic average once a full history, satisfactory answers and proper notes are accounted for &mdash; each resulting in a script (average value $345, about $200 margin to the clinic). Revenue here is script margin only &mdash; consult fees ($99 initial, $30 re-script, waived for jahman.clinic referrals) are deliberately excluded, so the figure is conservative. The headline figure is gross of ongoing staff and software costs unless stated otherwise.</p>
+    <p class="cost-note fade-in">Assumes 10 hours a week at 5.5 consults an hour (our realistic average once a full history, satisfactory answers and proper notes are accounted for), each resulting in a script (average value $345, about $200 margin to the clinic). Revenue here is script margin only. Consult fees ($99 initial, $30 re-script, waived for jahman.clinic referrals) are deliberately excluded, so the figure is conservative. The headline figure is gross of ongoing staff and software costs unless stated otherwise.</p>
   </div>
 </section>
 
@@ -1422,7 +1422,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   els.forEach(el => {
     const raw = el.textContent.trim();
-    if (/[→\-—\/–]/.test(raw)) return;            // skip ranges & arrows
+    if (/[→\-\/]/.test(raw)) return;            // skip ranges & arrows
     const m = raw.match(/^([^\d]*)([\d.,]+)(.*)$/);
     if (!m) return;
     el.dataset.cuPre = m[1];

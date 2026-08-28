@@ -786,7 +786,7 @@ img { display: block; max-width: 100%; }
       <div class="card">
         <div class="card-icon sage">🩺</div>
         <h3>How the Clinic Sustains Itself</h3>
-        <p>Initial consultations are <strong>$99</strong> and re-scripts <strong>$30</strong>, the bottom of a market that commonly charges $80&ndash;150 for each, and free altogether for patients referred through jahman.clinic. The consult fee covers the cost of clinical time rather than generating it: the clinic is sustained by the wholesale margin on the pharmaceutical line we own, which averages around <strong>$214 per dispensed script</strong>. That alignment is deliberate: we're paid when a patient is genuinely receiving the medication their clinician believes is right for them, not for the act of holding an appointment.</p>
+        <p>Initial consultations are <strong>$99</strong> and re-scripts <strong>$30</strong>, the bottom of a market that commonly charges $80-150 for each, and free altogether for patients referred through jahman.clinic. The consult fee covers the cost of clinical time rather than generating it: the clinic is sustained by the wholesale margin on the pharmaceutical line we own, which averages around <strong>$214 per dispensed script</strong>. That alignment is deliberate: we're paid when a patient is genuinely receiving the medication their clinician believes is right for them, not for the act of holding an appointment.</p>
       </div>
     </div>
 
@@ -969,7 +969,7 @@ img { display: block; max-width: 100%; }
     <div class="fade-in">
       <div class="overline">Patient Pricing</div>
       <h2 class="section-title">Priced So the Fee Is Never the Reason</h2>
-      <p class="section-subtitle">We've built our pricing around a simple commitment: a patient should never have to choose between asking for help and paying their bills. Getting assessed costs nothing, the doctor consult is $99 and a re-script $30 &mdash; the bottom of the market &mdash; and for patients referred through jahman.clinic the consult is free. The clinic is sustained by the medication itself, prescribed only when our doctors believe it's clinically appropriate, not by the appointment.</p>
+      <p class="section-subtitle">We've built our pricing around a simple commitment: a patient should never have to choose between asking for help and paying their bills. Getting assessed costs nothing, the doctor consult is $99 and a re-script $30, both at the bottom of the market, and for patients referred through jahman.clinic the consult is free. The clinic is sustained by the medication itself, prescribed only when our doctors believe it's clinically appropriate, not by the appointment.</p>
     </div>
 
     <table class="fee-table fade-in">
@@ -1706,7 +1706,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   els.forEach(el => {
     const raw = el.textContent.trim();
-    if (/[→\-—\/–]/.test(raw)) return;            // skip ranges & arrows
+    if (/[→\-\/]/.test(raw)) return;            // skip ranges & arrows
     const m = raw.match(/^([^\d]*)([\d.,]+)(.*)$/);
     if (!m) return;
     el.dataset.cuPre = m[1];
