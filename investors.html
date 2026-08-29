@@ -198,6 +198,8 @@ img { display: block; max-width: 100%; }
 .step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
 
 /* ── Fee Table ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+.table-scroll > .fee-table { margin: 0; min-width: 520px; }
 .fee-table {
   width: 100%; border-collapse: collapse; margin: 28px 0;
   font-size: 0.925rem;
@@ -880,7 +882,7 @@ img { display: block; max-width: 100%; }
 
     <h3 style="font-size: 1.1rem; margin: 48px 0 20px; font-weight: 600;">Team Structure &amp; Fees</h3>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Role</th>
@@ -909,7 +911,7 @@ img { display: block; max-width: 100%; }
           <td>Operations, compliance monitoring, staff coordination, reporting, app-ecosystem oversight.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="callout sage fade-in">
       <strong>The nurse is our secret weapon.</strong> They run intake, pre-screen, and follow-up, meaning the doctor only spends time on the parts that legally require a doctor. Combined with our app ecosystem and Best Practice integration, this is what lets one prescriber comfortably maintain an active book of 1,200-1,500 patients without compromising clinical quality.
@@ -973,7 +975,7 @@ img { display: block; max-width: 100%; }
       <p class="section-subtitle">We've built our pricing around a simple commitment: a patient should never have to choose between asking for help and paying their bills. Getting assessed costs nothing, the doctor consult is $49 and a re-script $29, under half what most clinics charge, and for patients referred through jahman.clinic the consult is free. Those fees keep the clinic running; the group's return comes from the medication itself, prescribed only when our doctors believe it's clinically appropriate, and never from the appointment.</p>
     </div>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Touchpoint</th>
@@ -1014,7 +1016,7 @@ img { display: block; max-width: 100%; }
           <td>The price the patient pays the pharmacy for the group's own pharmaceutical product. <strong>This is the entire revenue line, and it accrues to Green Leaf Global rather than to the clinic.</strong></td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="grid-2 fade-in" style="margin-top: 36px;">
       <div class="card">
@@ -1324,7 +1326,7 @@ img { display: block; max-width: 100%; }
       <p class="section-subtitle">Growth in a clinical setting has to be earned, not forced. Our plan adds a new prescriber only once the previous one is at a properly-managed patient load, and only once the operational, compliance and clinical-governance scaffolding is in place to support them. The numbers below are conservative, ungamed, and built on the unit economics of providing real care to real patients.</p>
     </div>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Stage</th>
@@ -1377,7 +1379,7 @@ img { display: block; max-width: 100%; }
           <td>Month 24+</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="grid-3 fade-in" style="margin-top: 36px;">
       <div class="card">

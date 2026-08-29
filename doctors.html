@@ -199,6 +199,8 @@ img { display: block; max-width: 100%; }
 .step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
 
 /* ── Fee Table ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+.table-scroll > .fee-table { margin: 0; min-width: 520px; }
 .fee-table {
   width: 100%; border-collapse: collapse; margin: 28px 0;
   font-size: 0.925rem;
@@ -756,7 +758,7 @@ img { display: block; max-width: 100%; }
       <li><a href="#prescribing">Prescribing</a></li>
       <li><a href="#protection">Protection</a></li>
       <li><a href="#team">Support</a></li>
-      <li><a href="#time">Growth</a></li>
+      <li><a href="#time">Your Hours</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -892,7 +894,7 @@ img { display: block; max-width: 100%; }
       <p class="section-subtitle" style="margin-bottom: 20px;">Your hourly pays for your own time and stops when you stop. Your 49% doesn't. Once a prescriber's own cost is covered, the clinic keeps a margin on every consult they run, and you own nearly half of that margin whether the consult was yours or theirs. So the plan to grow from one prescriber to four isn't something that happens around you; it's the main reason the equity is worth anything.</p>
     </div>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Prescribers</th>
@@ -907,7 +909,7 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>3</strong></td><td>~$9,750</td><td>~$4,770</td></tr>
         <tr><td><strong>4</strong> (full roster)</td><td>~$13,000</td><td><strong>~$6,365</strong></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 10px; line-height: 1.6;">Illustrative, and deliberately conservative. Assumes each prescriber works around 20 hours a week on a mature book running roughly three review hours to every new-patient hour, which is a blended clinic margin of about $37.50 per doctor-hour: $31 on a nine-review hour, $57 on a 5.5 new-patient hour. It counts only the consult margin left after each doctor's own hourly is covered, ignores growth in the book beyond the roster, and is a model rather than a forecast. The shape is the point: the fourth doctor pays you roughly four times what the first one does, for the same amount of your own time.</p>
 
     <div class="callout gold fade-in" style="margin-top: 20px;">
@@ -1045,7 +1047,7 @@ img { display: block; max-width: 100%; }
       <p class="section-subtitle">The structure is simple enough to explain in a sentence: <strong>$150 for every clinical hour</strong>, and once you've seen three patients inside that hour, <strong>the split starts and you take the larger half of every consult after that</strong>: $25 of a $49 new patient, $20 of a $29 review. The threshold isn't arbitrary: three initial consults bring in $147, so at three you are already taking essentially the clinic's entire consult income for that hour. Everything past the third is genuine surplus, and you take half of it, from a business you own 49% of. New-patient hours realistically land near $212.50, and a mature hour of nine reviews at $230.</p>
     </div>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Consults in the Hour</th>
@@ -1063,7 +1065,7 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>9</strong></td><td>$300</td><td><strong>$230</strong></td></tr>
         <tr><td><strong>10</strong></td><td>$325</td><td>$250</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 10px; line-height: 1.6;">The rule is the same for both columns: your $150 base is paid first, and the split starts once the consults in that hour have covered it. Three new patients at $49 come to $147, so the split starts at the fourth. Five re-scripts at $29 come to $145, so it starts at the sixth. After that a new patient is $25 to you and $24 to the clinic, and a re-script is $20 to you and $9. The bolded figures are the hours we'd expect to be typical: about 5.5 new patients, or about nine reviews.</p>
 
     <div class="grid-3 fade-in" style="margin-top: 36px;">
@@ -1285,12 +1287,36 @@ img { display: block; max-width: 100%; }
 <section class="section section-sage" id="time">
   <div class="container">
     <div class="fade-in">
-      <div class="overline">Protecting Your Time</div>
-      <h2 class="section-title">A Capped Load, and Room to Grow</h2>
-      <p class="section-subtitle">Growth in a clinical setting has to be earned, not forced. We'll add a new prescriber only once the current one is at a properly-managed load, and only once the support around them is genuinely in place. You're never the relief valve for a clinic that scaled too fast.</p>
+      <div class="overline">Your Hours</div>
+      <h2 class="section-title">You Pick the Number. We Hire Around It.</h2>
+      <p class="section-subtitle">We've proposed 10 to 15 hours because it fits alongside a practice you already have, but the number is genuinely yours. Here is what each choice produces, so you're picking with the figures in front of you rather than guessing. Anything you don't cover in a standard week is a gap we fill by hiring, never by leaning on you.</p>
     </div>
 
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
+      <thead>
+        <tr>
+          <th>Hours a Week</th>
+          <th>Your Weekly</th>
+          <th>Annual, at 46 Weeks</th>
+          <th>Active Book It Supports</th>
+          <th>Months to Fill It</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>10</strong></td><td>~$2,260</td><td>~$104,000</td><td>~290</td><td>~5</td></tr>
+        <tr><td><strong>15</strong></td><td><strong>~$3,380</strong></td><td><strong>~$156,000</strong></td><td><strong>~440</strong></td><td>~5</td></tr>
+        <tr><td><strong>20</strong></td><td>~$4,510</td><td>~$208,000</td><td>~580</td><td>~5</td></tr>
+        <tr><td><strong>25</strong></td><td>~$5,640</td><td>~$259,000</td><td>~730</td><td>~5</td></tr>
+        <tr><td><strong>30</strong></td><td>~$6,770</td><td>~$311,000</td><td>~880</td><td>~5</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 10px; line-height: 1.6;">Weekly figures use a mature mix of roughly three review hours to every new-patient hour, which blends to about $226 an hour. Annual allows six weeks off. The book is what monthly refills at those hours can carry without rushing anyone. The last column is the same in every row on purpose: new-patient intake scales with your hours exactly as capacity does, so whichever number you pick, your book reaches its steady state in about five months.</p>
+
+    <div class="callout gold fade-in" style="margin-top: 28px;">
+      <strong>The gaps are ours to fill, not yours.</strong> We want this clinic at four prescribers and several thousand patients, and none of that plan depends on you working a fifth day. If you take 10 hours we hire the next doctor sooner; if you take 25 we hire later. The growth comes from adding clinicians who each choose their own hours, because that is how you attract good doctors and how you keep them, and a clinic assembled that way has no reason to ever pressure the ones it already has. The part worth noticing: every prescriber we hire to cover your gap also pays into your 49%. Choosing fewer hours doesn't cost you the upside. It just changes which doctor generates it.
+    </div>
+
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr>
           <th>Stage</th>
@@ -1337,7 +1363,7 @@ img { display: block; max-width: 100%; }
           <td>Month 24+</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
   </div>
 </section>

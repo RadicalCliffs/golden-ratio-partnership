@@ -198,6 +198,8 @@ img { display: block; max-width: 100%; }
 .step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
 
 /* ── Fee Table ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+.table-scroll > .fee-table { margin: 0; min-width: 520px; }
 .fee-table {
   width: 100%; border-collapse: collapse; margin: 28px 0;
   font-size: 0.925rem;
@@ -1055,7 +1057,7 @@ img { display: block; max-width: 100%; }
         <div style="font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-tertiary); font-weight: 700; margin-bottom: 8px;">Where the buffer points next</div>
         <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.01em;">Most Likely Next Purchases</h3>
         <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 18px; max-width: 660px; line-height: 1.6;">What a compliant medicinal-cannabis telehealth clinic should invest in as it grows: protecting patients, hardening compliance, and scaling without strain. Roughly in priority order, and mostly modest.</p>
-        <table class="fee-table" style="margin: 0;">
+        <div class="table-scroll"><table class="fee-table" style="margin: 0;">
           <thead>
             <tr><th style="width: 28px;">#</th><th>Investment</th><th>What it ensures</th><th>Est. (AUD)</th><th>When</th></tr>
           </thead>
@@ -1068,7 +1070,7 @@ img { display: block; max-width: 100%; }
             <tr><td>6</td><td><strong>Patient outcomes / PROMs tracking</strong></td><td>Documented clinical outcomes: defensible prescribing and proof the model works</td><td>~$50-200/mo</td><td>As scale grows</td></tr>
             <tr><td>7</td><td><strong>Second clinician / admin hire</strong></td><td>Response times and patient experience hold as the book outgrows one prescriber</td><td>Salary (Stage 2)</td><td>At capacity</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p style="font-size: 0.78rem; color: var(--text-tertiary); margin-top: 14px; line-height: 1.5;">Most are modest monthly tools or one-offs, funded from operating profit as the need arrives, not bought all at once. The contingency buffer covers whichever lands first. Already in place, so deliberately off this list: Calilo (telephony, video consults and patient SMS in one), Xero for the books, and basic clinic + practitioner indemnity.</p>
       </div>
 
@@ -1086,7 +1088,7 @@ img { display: block; max-width: 100%; }
     </div>
 
     <p class="led-cap fade-in">Setup &amp; infrastructure (one-time)</p>
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr><th>Item</th><th>What it does</th><th>Cost (AUD)</th><th>Status</th></tr>
       </thead>
@@ -1110,10 +1112,10 @@ img { display: block; max-width: 100%; }
         <tr class="due-row"><td><strong>Lawyer</strong></td><td>Business setup &amp; structure review before go-live (not yet approached)</td><td>~$2,500</td><td><span class="st-due">○ Yet to pay</span></td></tr>
         <tr class="due-row"><td><strong>Google Cloud</strong></td><td>Patient &amp; staff login / identity management (not yet set up)</td><td>usage-based (small)</td><td><span class="st-due">○ Yet to pay</span></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p class="led-cap fade-in" style="margin-top: 40px;">Ongoing software &amp; services (monthly)</p>
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr><th>Item</th><th>What it does</th><th>Cost (AUD)</th><th>Status</th></tr>
       </thead>
@@ -1124,10 +1126,10 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>Calilo</strong></td><td>Phone, video consults &amp; patient SMS · number 08-800-42-420 ($9.95 one-time)</td><td>$20 / mo</td><td><span class="st-paid">✓ Active</span></td></tr>
         <tr><td colspan="2" style="text-align: right;"><strong>Monthly total</strong></td><td><strong>~$240 / mo</strong></td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p class="led-cap fade-in" style="margin-top: 40px;">People (ongoing)</p>
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr><th>Role</th><th>Arrangement</th><th>Cost (AUD)</th><th>Status</th></tr>
       </thead>
@@ -1136,10 +1138,10 @@ img { display: block; max-width: 100%; }
         <tr><td><strong>Registered Nurse</strong></td><td>Full-time employee</td><td>$75,000 / yr</td><td>Hiring</td></tr>
         <tr><td><strong>Operating Partner</strong></td><td>Runs the practice, IT &amp; marketing; base from day one, sliding scale tied to profit</td><td>$4,000 + GST / mo (min)</td><td>From day 1</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p class="led-cap fade-in" style="margin-top: 40px;">Future &amp; potential (not committed)</p>
-    <table class="fee-table fade-in">
+    <div class="table-scroll"><table class="fee-table fade-in">
       <thead>
         <tr><th>Item</th><th>What it does</th><th>Cost (AUD)</th><th>Status</th></tr>
       </thead>
@@ -1149,7 +1151,7 @@ img { display: block; max-width: 100%; }
         <tr class="due-row"><td><strong>Contingency buffer</strong></td><td>Set aside for the unknown unknowns</td><td>$5,000</td><td><span class="st-due">○ Unspent</span></td></tr>
         <tr class="due-row"><td><strong>Security probe (Fiverr)</strong></td><td>Independent ethical-hacker probe of the website: surfaces risks only, no fixes</td><td>~$800</td><td><span class="st-due">○ Optional</span></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p class="cost-note fade-in">Optional safeguard: because we don't take payments on the site, this is less about financial fraud and more about keeping patient information, and our patients, safe. For roughly $800 a freelance security tester probes the website and reports back any risks for us to address. Probing only, no fixes included.</p>
 
     <div class="totals fade-in">
@@ -1332,7 +1334,7 @@ img { display: block; max-width: 100%; }
     <div class="fade-in" style="margin-top: 44px;">
       <div class="led-cap">Where it gets exciting: take-home at each milestone</div>
       <p style="font-size: 0.9rem; color: var(--text-secondary); max-width: 680px; margin-bottom: 16px; line-height: 1.6;">As monthly net profit climbs with the book, the operating partner's salary steps up $1,000 at each early milestone, then $2,000 a milestone once profit passes $300k, and every partner's profit share grows alongside it. All figures are per month, and they only get bigger from here.</p>
-      <table class="fee-table">
+      <div class="table-scroll"><table class="fee-table">
         <thead>
           <tr>
             <th>Monthly net profit</th>
@@ -1351,7 +1353,7 @@ img { display: block; max-width: 100%; }
           <tr><td><strong>$600,000</strong></td><td>$11,000</td><td>$90,000</td><td class="highlight">$101,000</td><td class="highlight">$255,000</td></tr>
           <tr><td><strong>$1,000,000</strong></td><td>$13,000</td><td>$150,000</td><td class="highlight">$163,000</td><td class="highlight">$425,000</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p style="font-size: 0.78rem; color: var(--text-tertiary); margin-top: 12px; line-height: 1.5;">Net profit is the gross script margin after every running cost. The salary is paid as a cost before profit; the percentage shares are of what's left, so two directors at 42.5% each plus the operating partner at 15% account for all of it. Salary shown ex-GST; milestones are illustrative of the clinic growing from launch toward steady state.</p>
     </div>
   </div>
