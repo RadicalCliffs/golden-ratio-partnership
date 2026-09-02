@@ -738,6 +738,244 @@ img { display: block; max-width: 100%; }
   .fee-table { font-size: 0.85rem; }
   .fee-table th, .fee-table td { padding: 10px 12px; }
 }
+
+/* ══════════════════ VISUAL LAYER ══════════════════ */
+:root {
+  --grad-gold: linear-gradient(115deg, var(--gold-500), var(--gold-300) 45%, var(--sage-400));
+  --grad-warm: linear-gradient(135deg, #fffdf8, #f7f2e6);
+  --shadow-xl: 0 24px 60px -18px rgba(42,41,38,0.22), 0 6px 18px -8px rgba(42,41,38,0.10);
+  --ring: 0 0 0 1px var(--border-light);
+}
+
+/* paper grain over the whole page */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.4; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+}
+.nav, .scroll-progress { z-index: 200; }
+
+/* ── section rhythm and decorative spirals ── */
+.section { padding: 104px 28px; position: relative; overflow: hidden; }
+.section > .container, .section > .container-narrow { position: relative; z-index: 2; }
+.spiral {
+  position: absolute; pointer-events: none; z-index: 0;
+  opacity: 0.5; color: var(--gold-300);
+}
+.spiral.tr { top: -90px; right: -110px; width: 380px; transform: rotate(12deg); }
+.spiral.bl { bottom: -120px; left: -130px; width: 420px; transform: rotate(-160deg); }
+.section-sage .spiral { color: var(--sage-400); opacity: 0.34; }
+
+/* ── eyebrow with a drawn rule ── */
+.overline {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.72rem; letter-spacing: 0.16em;
+}
+.overline::after {
+  content: ''; height: 1px; width: 56px; flex: 0 0 56px;
+  background: linear-gradient(90deg, var(--gold-400), transparent);
+}
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.9rem); letter-spacing: -0.02em; }
+.section-title em, .grad {
+  font-style: normal;
+  background: var(--grad-gold); -webkit-background-clip: text;
+  background-clip: text; color: transparent;
+}
+
+/* ── cards get depth and an accent that draws on hover ── */
+.card {
+  position: relative; border-radius: var(--radius-lg);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+  overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad-gold); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+.card:hover::before { transform: scaleX(1); }
+.card-icon {
+  width: 46px; height: 46px; border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; }
+
+/* ── hero ── */
+.hero { padding: 168px 28px 104px; }
+.hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.5rem); max-width: 900px; }
+.hero p { font-size: 1.15rem; max-width: 660px; }
+.hero-badge { box-shadow: var(--shadow-sm); backdrop-filter: blur(6px); }
+.hero-cta { padding: 16px 38px; font-size: 1rem; box-shadow: 0 10px 26px -10px rgba(165,132,50,0.75); }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(165,132,50,0.85); }
+.hero-rule {
+  width: 74px; height: 3px; margin: 0 auto 30px; border-radius: 4px;
+  background: var(--grad-gold);
+}
+.scroll-cue {
+  margin-top: 52px; display: flex; flex-direction: column; align-items: center;
+  gap: 8px; color: var(--text-muted); font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.scroll-cue span.line {
+  width: 1px; height: 46px;
+  background: linear-gradient(180deg, var(--gold-400), transparent);
+  animation: cueDrop 2.4s var(--ease-smooth) infinite;
+}
+@keyframes cueDrop { 0%,100% { opacity: 0.35; transform: scaleY(0.6); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue span.line { animation: none; } }
+
+/* ── the at-a-glance panel ── */
+.summary-card {
+  padding: 40px 44px; border-left: 0; border-radius: var(--radius-xl);
+  background: var(--grad-warm); box-shadow: var(--shadow-xl);
+  position: relative; overflow: hidden;
+}
+.summary-card::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+  background: var(--grad-gold);
+}
+.summary-list li { padding: 14px 0 14px 34px; border-bottom: 1px dashed var(--border-medium); }
+.summary-list li:before {
+  content: '✦'; left: 0; top: 12px; width: auto; height: auto;
+  background: none; border-radius: 0; color: var(--gold-500); font-size: 0.95rem;
+}
+
+/* ── metrics as display numerals ── */
+.metric-row { gap: 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin: 44px 0; }
+.metric {
+  border: 0; border-right: 1px solid var(--border-light); border-radius: 0;
+  background: transparent; padding: 30px 22px; box-shadow: none;
+}
+.metric:last-child { border-right: 0; }
+.metric-value {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1;
+  background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.metric-label { font-size: 0.76rem; letter-spacing: 0.04em; margin-top: 10px; }
+
+/* ── callouts ── */
+.callout {
+  border-left-width: 4px; border-radius: var(--radius-lg);
+  padding: 28px 32px; box-shadow: var(--shadow-sm);
+}
+.callout strong:first-child { display: block; margin-bottom: 8px; font-size: 1.02rem; }
+
+/* ── the 49/51 split bar ── */
+.split-viz { margin: 34px 0 8px; }
+.split-bar {
+  display: flex; height: 76px; border-radius: 100px; overflow: hidden;
+  box-shadow: var(--shadow-md); border: 1px solid rgba(255,255,255,0.5);
+}
+.split-seg {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.28); gap: 2px;
+}
+.split-seg .pct { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; line-height: 1; }
+.split-seg .who { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.92; }
+.split-you { flex: 0 0 49%; background: linear-gradient(135deg, var(--gold-500), var(--gold-700)); }
+.split-us { flex: 0 0 51%; background: linear-gradient(135deg, var(--sage-500), var(--sage-600)); }
+.split-note { font-size: 0.82rem; color: var(--text-tertiary); text-align: center; margin-top: 12px; }
+
+/* ── people ── */
+.person-mono {
+  width: 60px; height: 60px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 16px;
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+  color: #fff; background: linear-gradient(135deg, var(--gold-500), var(--gold-700));
+  box-shadow: var(--shadow-md); letter-spacing: 0.02em;
+}
+.person-mono.sage { background: linear-gradient(135deg, var(--sage-500), var(--sage-600)); }
+.person-role {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-600); font-weight: 600; margin-bottom: 10px;
+}
+
+/* ── the stage ladder replaces the last table ── */
+.ladder { display: grid; gap: 14px; margin-top: 40px; }
+.rung {
+  display: grid; grid-template-columns: 92px 1fr auto; align-items: center; gap: 24px;
+  padding: 22px 26px; background: var(--surface-white);
+  border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+.rung:hover { transform: translateX(6px); box-shadow: var(--shadow-lg); }
+.rung::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--grad-gold); opacity: 0.85;
+}
+.rung-stage { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
+.rung-stage small { display: block; font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); font-weight: 600; margin-top: 3px; }
+.rung-focus { font-size: 0.92rem; color: var(--text-secondary); }
+.rung-meta { text-align: right; }
+.rung-docs { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--gold-600); line-height: 1; }
+.rung-docs small { font-family: var(--font-body); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); display: block; margin-top: 4px; font-weight: 600; }
+
+/* ── journey ── */
+.step-num {
+  width: 44px; height: 44px; font-family: var(--font-display); font-size: 1.15rem;
+  box-shadow: 0 6px 16px -6px rgba(165,132,50,0.6);
+}
+.journey-step::before { background: linear-gradient(90deg, var(--gold-200), var(--gold-300)); }
+
+/* ── accordion ── */
+.accordion-item { border-radius: var(--radius-md); transition: background 0.3s; }
+.accordion-item.open { background: var(--gold-50); }
+.accordion-trigger { font-weight: 600; }
+
+/* ── CTA banner ── */
+.cta-banner {
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);
+  position: relative; overflow: hidden;
+}
+.cta-banner h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+.btn { padding: 16px 38px; font-size: 1rem; border-radius: 100px; }
+
+/* ── reveal, with stagger ── */
+.fade-in { transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
+.grid-2 > .card, .grid-3 > .card, .grid-4 > .card { transition-delay: calc(var(--i, 0) * 70ms); }
+
+@media (max-width: 860px) {
+  .metric-row { border: 0; }
+  .metric { border-right: 0; border-bottom: 1px solid var(--border-light); }
+  .metric:last-child { border-bottom: 0; }
+  .rung { grid-template-columns: 1fr; gap: 10px; text-align: left; }
+  .rung-meta { text-align: left; }
+  .spiral { display: none; }
+  .summary-card { padding: 30px 26px; }
+  .split-seg .pct { font-size: 1.25rem; }
+  .split-seg .who { font-size: 0.6rem; }
+}
+.rung-meta { display: flex; align-items: center; gap: 18px; }
+.rung-pill {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sage-600); background: var(--sage-50); border: 1px solid var(--sage-200);
+  padding: 6px 12px; border-radius: 100px; white-space: nowrap;
+}
+@media (max-width: 860px) { .rung-meta { justify-content: flex-start; } }
+.nav-logo { white-space: nowrap; }
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 64px; left: 0; right: 0; background: var(--cream);
+    padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+  }
+}
+.nav-inner { gap: 40px; }
+.nav-links { flex: 1; justify-content: flex-end; }
+@media (max-width: 600px) {
+  .hero { padding: 128px 22px 72px; }
+  .hero p { text-align: left; font-size: 1.02rem; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .section { padding: 72px 22px; }
+  .summary-list li { padding-left: 28px; }
+}
 </style>
 </head>
 <body>
@@ -770,9 +1008,11 @@ img { display: block; max-width: 100%; }
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span> Prepared for Dr David Turton &middot; Perth, WA</div>
-  <h1>Not a Prescriber Seat. A Share of the Clinic.</h1>
+  <div class="hero-rule"></div>
+  <h1>Not a Prescriber Seat. <em class="grad">A Share of the Clinic.</em></h1>
   <p>Dr Turton, you've built a reputation for treating the whole person: sleep, breath, nutrition, movement and the cause sitting underneath the symptom, with cannabis as one instrument rather than the product being sold. You've built it inside someone else's clinic. We're offering you the same medicine at national scale, as a <strong>49% owner and lead clinician of Golden Ratio</strong>: a near-equal share of the business, the clinical standard set by you, and your name on the front of it. A competitive hourly rate before anything else, a share of the consults you run beyond the point your own time is covered, a nurse-led team on the admin, and a regulatory framework already built to survive an audit on a Tuesday morning. Your pay is identical whether you write the script or decide against it.</p>
   <a href="#whyyou" class="hero-cta">Why we came to you &darr;</a>
+  <div class="scroll-cue"><span class="line"></span>Read on</div>
 </section>
 
 <!-- ══════════════ SUMMARY ══════════════ -->
@@ -797,6 +1037,7 @@ img { display: block; max-width: 100%; }
 
 <!-- ══════════════ WHY YOU ══════════════ -->
 <section class="section" id="whyyou">
+  <svg class="spiral tr" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
   <div class="container">
     <div class="fade-in">
       <div class="overline">Why We Approached You</div>
@@ -805,12 +1046,12 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in" style="margin-top: 36px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon sage">&#127807;</div>
         <h3>Your Approach Is Already Our Clinical Model</h3>
         <p>Nutrition, breathwork, movement, sleep, meditation, temperature therapy, and real support around trauma, emotional health and addiction: that's the frame we want every Golden Ratio consultation to sit inside. We're not asking you to become a cannabis doctor. We're asking you to keep being the doctor you already are, in a clinic whose economics finally support it.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">&#9203;</div>
         <h3>Time Is the Only Thing That Makes It Possible</h3>
         <p>You can't cover sleep architecture, breathing patterns and a trauma history in a seven-minute slot. Because we pay for hours rather than scripts, a 45-minute consultation costs the clinic exactly what a five-minute one does, so there is no financial reason, anywhere in this business, to hurry you. Consultation length becomes a clinical decision again.</p>
@@ -818,17 +1059,17 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-3 fade-in" style="margin-top: 20px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon blue">&#128506;&#65039;</div>
         <h3>A National Book, Run From Perth</h3>
         <p>Golden Ratio is an Australia-wide telehealth clinic, not a state one. You'd practise from your own rooms in WA and see eligible people in every state and territory we've cleared, which is all of them, because the state-by-state authorisation work is done before a patient is booked, never after. Your reach stops being a function of who can drive to Osborne Park, without you moving house or joining a commute.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">&#9877;&#65039;</div>
         <h3>Approved, and Ready to Start</h3>
         <p>You already hold Authorised Prescriber status. That matters more than it sounds: a clinic that hires an unapproved doctor spends its first month waiting on endorsement and a TGA queue before it can treat anyone. With you, day one is day one. It also means the clinical scope conversation is a real one, because you already know what the approval does and doesn't cover.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:2">
         <div class="card-icon sage">&#9877;&#65039;</div>
         <h3>You'd Be Setting the Standard, Not Meeting One</h3>
         <p>As founding Authorised Prescriber you define what this clinic will and won't treat, how long a consult runs, what a proper follow-up looks like, and how much of the non-pharmacological work sits inside the care plan. Everything below is a proposal from us. The clinical half of it is yours to rewrite.</p>
@@ -843,6 +1084,7 @@ img { display: block; max-width: 100%; }
 
 <!-- ══════════════ THE PARTNERSHIP ══════════════ -->
 <section class="section section-alt" id="partnership">
+  <svg class="spiral bl" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
   <div class="container">
     <div class="fade-in">
       <div class="overline">Ownership</div>
@@ -850,13 +1092,21 @@ img { display: block; max-width: 100%; }
       <p class="section-subtitle">This is the part that makes the conversation worth having. You would come into Golden Ratio as a <strong>49% owner</strong> and its lead clinician, not as a sessional doctor on someone else's cap table. We've put the number on the page rather than making you ask for it, because a partnership that starts with a haggle tends to keep having one.</p>
     </div>
 
+    <div class="split-viz fade-in">
+      <div class="split-bar">
+        <div class="split-seg split-you"><span class="pct">49%</span><span class="who">You</span></div>
+        <div class="split-seg split-us"><span class="pct">51%</span><span class="who">Golden Ratio</span></div>
+      </div>
+      <div class="split-note">As close to an equal partnership as it is possible to be while one side still holds a commercial casting vote.</div>
+    </div>
+
     <div class="grid-2 fade-in" style="margin-top: 36px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon gold">&#129309;</div>
         <h3>A Genuine Stake, Properly Papered</h3>
         <p>Not a token allocation and not a handshake. A real founding shareholding, documented in a shareholders' agreement with vesting, decision rights and exit terms written down before you start. We'd rather spend the money on a good commercial lawyer at the beginning than have this conversation again in three years. Vesting and milestones are open to discussion; the 49% itself isn't a moving target.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon sage">&#128499;&#65039;</div>
         <h3>Forty-Nine Per Cent, and No Cheque</h3>
         <p>We're not going to make you drag the headline out of us. The offer is <strong>49% of the clinic and a seat on its board</strong>, with <strong>no capital contribution</strong>. You aren't buying in: the stake is earned against your time and agreed milestones, and vests accordingly. The remaining 51% is held by Golden Ratio, which is what keeps the clinic and the wider group aligned rather than negotiating with each other. Everything the 49% sits alongside, the hourly rate, the consult share, the hours and the vesting, is part of the same negotiation, and we'd rather agree the package with you than hand you a number and call it an offer.</p>
@@ -864,12 +1114,12 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in" style="margin-top: 20px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon blue">&#128100;</div>
         <h3>A Board Seat, Not Just a Byline</h3>
         <p>Lead clinician, named and visible. The clinical voice across every one of our patient-facing front doors, in the patient education we publish, in GP referral outreach, and in the media work that comes with being the careful clinic in a sector short of them. The doctors who follow you are hired by you and mentored into your standard.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">&#128176;</div>
         <h3>Equity On Top of Pay, Never Instead of It</h3>
         <p>The 49% is not a substitute for being paid properly. You're on an hourly rate from the first session, plus a share of the consults you run beyond the point that rate is covered, and none of it moves according to whether you write a script. Ownership sits on top. And because your stake is in the whole business, what it actually rewards is a clinic with a durable reputation, which in this sector is decided by prescribing carefully, not quickly.</p>
@@ -912,22 +1162,22 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-3 fade-in" style="margin-top: 36px;">
-      <div class="card">
-        <div class="card-icon gold">&#128104;&#8205;&#128187;</div>
+      <div class="card" style="--i:0">
+        <div class="person-mono">MM</div>
         <h3>Maximillian Matthews</h3>
-        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Operating Partner</p>
+        <div class="person-role">Operating Partner</div>
         <p>Five years in the cannabis industry. Runs the practice day to day, and builds and maintains the in-house software the clinic runs on, from patient flow and inventory to pharmacy coordination.</p>
       </div>
-      <div class="card">
-        <div class="card-icon sage">&#127807;</div>
+      <div class="card" style="--i:1">
+        <div class="person-mono sage">QT</div>
         <h3>Quentin Tetz</h3>
-        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Director</p>
+        <div class="person-role">Director</div>
         <p>Twenty-plus years in cannabis cultivation and a genuine pioneer in the space. He is the reason we can talk about owning the pharmaceutical line rather than reselling somebody else's, and the reason a formulary conversation with you would be a real one rather than a catalogue.</p>
       </div>
-      <div class="card">
-        <div class="card-icon blue">&#128666;</div>
+      <div class="card" style="--i:2">
+        <div class="person-mono">JW</div>
         <h3>Jullian Westlake</h3>
-        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">Director</p>
+        <div class="person-role">Director</div>
         <p>Ten-plus years in hospitality, owning and running pubs and clubs across Australia, with the deep supply-chain knowledge that comes from moving stock at volume in a licensed, heavily regulated trade. That is the discipline behind our dispensing and inventory side.</p>
       </div>
     </div>
@@ -940,6 +1190,7 @@ img { display: block; max-width: 100%; }
 
 <!-- ══════════════ OUR ETHOS ══════════════ -->
 <section class="section section-sage" id="ethos">
+  <svg class="spiral tr" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
   <div class="container">
     <div class="fade-in">
       <div class="overline">What We're Built On</div>
@@ -948,22 +1199,22 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-4 fade-in" style="margin-top: 36px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon sage">&#129504;</div>
         <h3>Understanding</h3>
         <p>Know the whole person before treating the presenting complaint. History, sleep, stress, trauma, what's already been tried and what it cost them. Understanding is what a long consultation actually buys.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">&#129309;</div>
         <h3>Respect</h3>
         <p>Patients arrive having been dismissed, lectured or moralised at, often for years and often about cannabis specifically. They're treated here as adults with a say in their own care, and they're told the truth, including when the answer is no.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:2">
         <div class="card-icon blue">&#10084;&#65039;</div>
         <h3>Love</h3>
         <p>The unfashionable one, and the one we mean most literally. Care given as if the person in front of you were family: unhurried, warm, and followed up because you actually want to know how they went.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:3">
         <div class="card-icon sage">&#129496;</div>
         <h3>Compassion</h3>
         <p>Someone deciding whether they can afford to ask for help is a clinical problem, not a marketing one. So the fee is held at $49 and the re-script at $29, the pre-screen costs nothing, and for anyone referred through our community door the consult is free. Nobody is turned away at the price.</p>
@@ -971,7 +1222,7 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in" style="margin-top: 20px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon gold">&#127758;</div>
         <h3>Access for First Nations Patients</h3>
         <p>Aboriginal and Torres Strait Islander Australians carry a heavier burden of chronic pain, trauma and sleep disorder than any other group in the country, and have the least access to a clinic like this one. Cost, distance and the very reasonable expectation of being judged are all in the way. This is exactly what <strong>jahman.clinic</strong> exists for: a referral-only front door where the initial consult is free, so a community health worker or a GP can send someone to us knowing the fee will never be the reason they don't turn up. Telehealth removes the distance, and how we train our nursing team is meant to remove the third barrier. We want to build this properly, with community-controlled health services rather than around them. It's a programme the clinic resources and staffs, not an extra column on your consulting list; what we'd want from the lead clinician is the clinical shape of it, not the legwork.</p>
@@ -1024,6 +1275,7 @@ img { display: block; max-width: 100%; }
 
 <!-- ══════════════ HOW YOU'RE PAID ══════════════ -->
 <section class="section" id="pay">
+  <svg class="spiral bl" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
   <div class="container">
     <div class="fade-in">
       <div class="overline">Compensation &amp; Alignment</div>
@@ -1034,17 +1286,17 @@ img { display: block; max-width: 100%; }
     
 
     <div class="grid-3 fade-in" style="margin-top: 36px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon gold">⏱️</div>
         <h3>The Base, Whatever the Hour Holds</h3>
         <p>The hourly covers all your clinical time: consultations, prescribing, TGA notifications, follow-ups and clinical-governance oversight. It's paid whether the hour holds two patients or one very complicated one, and an hour that runs long is the clinic's cost to absorb, not yours. Hours are agreed up front and flex with you.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon sage">🤝</div>
         <h3>You Split It With Yourself</h3>
         <p>Your hourly is paid before the clinic earns a cent, so the first consults of any hour are effectively the clinic handing you its entire consult income for that hour. Past that point you take the larger half of each consult and the clinic keeps the smaller one, and you own 49% of the clinic as well. It is close to the least adversarial structure we could design, and we'd rather walk you through the actual figures in person than publish them.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:2">
         <div class="card-icon blue">🛡️</div>
         <h3>Nothing Here Rewards Prescribing</h3>
         <p>Read the structure closely: you are paid per consult <em>attended</em>, never per script <em>written</em>. A twenty-minute conversation ending in <em>"no, this isn't right for you"</em> pays you exactly what a prescription does. That's the distinction regulators actually look for, and it is the one this model protects.</p>
@@ -1126,13 +1378,13 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon gold">🏥</div>
         <h3>Your AP Approval, Put Straight to Work</h3>
         <p>You already hold Authorised Prescriber status, which is a large part of why this conversation is worth having. It means no application, no waiting on HREC or college endorsement, and no dead weeks at the start: you can prescribe to your defined patient classes without per-patient TGA approval from the first consult we book.</p>
         <p style="margin-top: 12px;"><strong>What we take on:</strong> any variation needed to widen the product categories or patient classes, plus the ongoing TGA reporting that comes with holding an AP. You keep the approval; we keep the paperwork off your desk.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon sage">📝</div>
         <h3>SAS-B, Pre-Drafted</h3>
         <p>For patients outside the AP class definition, we use SAS-B, a per-patient notification to the TGA. We maintain clinical-justification templates so the documentation is fast; you supply the reasoning and sign off, and the patient can be treated while the notification processes.</p>
@@ -1141,12 +1393,12 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in" style="margin-top: 20px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon blue">🌿</div>
         <h3>A Formulary You Help Shape</h3>
         <p>Because we own the pharmaceutical line, you'll have a stable, well-understood formulary to work from, and a real say in what we carry. You're never pushed toward a product; you prescribe what the evidence and the patient in front of you call for.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">📋</div>
         <h3>A Scope You Set</h3>
         <p>We'll maintain a clear, documented list of the conditions we treat and the ones we won't, and you help define it. Patients who aren't appropriate for our care are declined or referred, not squeezed in. The boundaries are agreed in advance so no one is making a borderline call under pressure.</p>
@@ -1154,12 +1406,12 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-2 fade-in" style="margin-top: 20px;">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon sage">&#127963;&#65039;</div>
         <h3>Two Regulators, One Workflow</h3>
         <p>Commonwealth and state obligations are tracked against the same patient record rather than in two disconnected systems. The TGA side carries your AP approval and SAS-B notifications; the state side carries whichever S8 framework that patient sits under, WA's included. You see one completed checklist against one patient, and it's done before the consult reaches you.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon blue">&#127462;&#127482;</div>
         <h3>National From the First Consult</h3>
         <p>This is an Australia-wide clinic. Each state's authorisation and monitoring requirements are secured <em>before</em> the first patient is booked in that state, never after: NSW Health for unregistered S8, Queensland's Monitored Medicines framework, WA's thresholds, and the equivalents in VIC, SA, TAS, ACT and NT. You are never asked to prescribe into a jurisdiction we haven't already cleared, and you never carry the cross-border risk personally.</p>
@@ -1182,27 +1434,27 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-3 fade-in">
-      <div class="card">
+      <div class="card" style="--i:0">
         <h3>Audit-Ready Documentation</h3>
         <p>Structured consult notes, documented clinical justifications for every patient, and templates that capture what an auditor would look for, so the record always backs the decision.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <h3>Minimum Consult Times &amp; Load Caps</h3>
         <p>No three-minute scripts. Minimum consultation times are set per consult type, because a first assessment and a monthly review are not the same piece of work, and daily patient-load caps sit over the top of both. Neither moves for the pay curve, so you're never pressured into a rushed or volume-driven decision.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:2">
         <h3>Mandatory Follow-Up &amp; Outcomes</h3>
         <p>Scheduled, nurse-coordinated follow-ups and outcome tracking are built into the model, demonstrating ongoing care rather than one-off prescribing.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:3">
         <h3>Real-Time Monitoring, Every State</h3>
         <p>Every patient's history is checked in their state's real-time prescription monitoring system before a Schedule&nbsp;8 cannabis product is prescribed, and the check is recorded in the note. For your WA patients that's <strong>ScriptCheckWA</strong>; interstate it's SafeScript, QScript and the ERRCD as applicable. Monitoring is never the gap in one of our files.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:4">
         <h3>State S8 Authorisations, Handled</h3>
         <p>The most common compliance miss in this sector is forgetting the state layer on top of TGA approval. We hold it in every state we treat. In WA specifically, authorisation is required above the daily-THC thresholds (&gt;40mg oral, &gt;300mg inhaled) and for patients under 18, with prior substance use, or with a significant psychiatric history. Those triggers are checked per patient inside the workflow, not remembered.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:5">
         <h3>Clinical Governance &amp; Audits</h3>
         <p>Quarterly clinical audits, a clear governance framework, and adverse-event processes you don't have to invent: the scaffolding that keeps a practice clean is designed in from the start, not bolted on later.</p>
       </div>
@@ -1228,17 +1480,17 @@ img { display: block; max-width: 100%; }
     </div>
 
     <div class="grid-3 fade-in">
-      <div class="card">
+      <div class="card" style="--i:0">
         <div class="card-icon sage">🩺</div>
         <h3>A Nurse-Led Front Line</h3>
         <p>An RN/EN will be the warm first voice, running intake, pre-screening, medical history, scheduling, follow-up coordination and adverse-event documentation. They'll be the patient's day-to-day relationship, and your buffer from the admin.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:1">
         <div class="card-icon gold">🗂️</div>
         <h3>A Practice Manager (As We Grow)</h3>
         <p>From the second stage of growth, a practice manager takes on operations, compliance monitoring, staff coordination and reporting, so clinical governance has a dedicated operational partner, not just goodwill.</p>
       </div>
-      <div class="card">
+      <div class="card" style="--i:2">
         <div class="card-icon blue">📱</div>
         <h3>Best Practice + Our Own Apps</h3>
         <p>Clinical work will run on <strong>Best Practice</strong> as the EMR backbone, wrapped in an in-house app ecosystem that handles inventory, pharmacy coordination and patient flow. The technology serves you; it's not another system you have to fight.</p>
@@ -1250,6 +1502,7 @@ img { display: block; max-width: 100%; }
 
 <!-- ══════════════ YOUR TIME & GROWTH ══════════════ -->
 <section class="section section-sage" id="time">
+  <svg class="spiral tr" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
   <div class="container">
     <div class="fade-in">
       <div class="overline">Your Hours</div>
@@ -1263,54 +1516,48 @@ img { display: block; max-width: 100%; }
       <strong>The gaps are ours to fill, not yours.</strong> We want this clinic at four prescribers and several thousand patients, and none of that plan depends on you working a fifth day. Take fewer hours and we hire the next doctor sooner; take more and we hire later. The growth comes from adding clinicians who each choose their own hours, because that is how you attract good doctors and how you keep them, and a clinic assembled that way has no reason to ever pressure the ones it already has. The part worth noticing: every prescriber we hire to cover your gap also pays into your 49%. Choosing fewer hours doesn't cost you the upside. It just changes which doctor generates it.
     </div>
 
-    <div class="table-scroll"><table class="fee-table fade-in">
-      <thead>
-        <tr>
-          <th>Stage</th>
-          <th>Prescribers</th>
-          <th>Active Patients</th>
-          <th>Your Focus</th>
-          <th>Timing</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Launch</strong></td>
-          <td>1 (you)</td>
-          <td>~215</td>
-          <td>Establish clinical standards &amp; build the book</td>
-          <td>Months 1-4</td>
-        </tr>
-        <tr>
-          <td><strong>Validate</strong></td>
-          <td>1 → 2</td>
-          <td>~600</td>
-          <td>Onboard &amp; mentor a second AP</td>
-          <td>Months 5-8</td>
-        </tr>
-        <tr>
-          <td><strong>Expand</strong></td>
-          <td>2 → 3</td>
-          <td>~1,800</td>
-          <td>Lead clinical governance across the team</td>
-          <td>Months 9-14</td>
-        </tr>
-        <tr>
-          <td><strong>Mature</strong></td>
-          <td>3 → 4</td>
-          <td>~3,600</td>
-          <td>Senior oversight &amp; quality</td>
-          <td>Months 15-20</td>
-        </tr>
-        <tr>
-          <td><strong>Steady State</strong></td>
-          <td>4 (full roster)</td>
-          <td>~5,600</td>
-          <td>Clinical leadership of a stable practice</td>
-          <td>Month 24+</td>
-        </tr>
-      </tbody>
-    </table></div>
+        <div class="ladder fade-in">
+      <div class="rung">
+        <div class="rung-stage">Launch<small>Months 1-4</small></div>
+        <div class="rung-focus">Establish clinical standards &amp; build the book</div>
+        <div class="rung-meta">
+          <div class="rung-docs">~215<small>active patients</small></div>
+          <div class="rung-pill">1 prescriber</div>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-stage">Validate<small>Months 5-8</small></div>
+        <div class="rung-focus">Onboard &amp; mentor a second AP</div>
+        <div class="rung-meta">
+          <div class="rung-docs">~600<small>active patients</small></div>
+          <div class="rung-pill">1 to 2 prescribers</div>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-stage">Expand<small>Months 9-14</small></div>
+        <div class="rung-focus">Lead clinical governance across the team</div>
+        <div class="rung-meta">
+          <div class="rung-docs">~1,800<small>active patients</small></div>
+          <div class="rung-pill">2 to 3 prescribers</div>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-stage">Mature<small>Months 15-20</small></div>
+        <div class="rung-focus">Senior oversight &amp; quality</div>
+        <div class="rung-meta">
+          <div class="rung-docs">~3,600<small>active patients</small></div>
+          <div class="rung-pill">3 to 4 prescribers</div>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-stage">Steady State<small>Month 24+</small></div>
+        <div class="rung-focus">Clinical leadership of a stable practice</div>
+        <div class="rung-meta">
+          <div class="rung-docs">~5,600<small>active patients</small></div>
+          <div class="rung-pill">4 prescribers</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
