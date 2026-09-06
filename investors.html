@@ -13,12 +13,12 @@
 :root {
   --gold-50: #faf7f0; --gold-100: #f3edda; --gold-200: #e8dbb5;
   --gold-300: #dac688; --gold-400: #ccb162; --gold-500: #b99a3e;
-  --gold-600: #a58432; --gold-700: #876829; --gold-800: #6e5425;
+  --gold-600: #a58432; --gold-700: #876829; --gold-ink: #876829; --gold-800: #6e5425;
   --cream: #fdfbf6; --ivory: #faf8f3; --linen: #f5f1ea;
   --sage-50: #f4f7f4; --sage-100: #e2ebe2; --sage-200: #c7d9c7;
   --sage-400: #739c73; --sage-500: #537d53; --sage-600: #3f633f;
   --text-primary: #2a2926; --text-secondary: #5c5a55;
-  --text-tertiary: #8a8882; --text-muted: #b0aea8;
+  --text-tertiary: #6f6d68; --text-muted: #767470;
   --border-light: #ece9e1; --border-medium: #ddd9cf;
   --surface-white: #ffffff; --success: #3d8c5c; --info: #4a7fb5;
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -61,13 +61,13 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-display); font-size: 1.3rem;
   font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
 }
-.nav-logo span { color: var(--gold-600); }
+.nav-logo span { color: var(--gold-ink); }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--gold-600); }
+.nav-links a:hover { color: var(--gold-ink); }
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none;
 }
@@ -110,11 +110,11 @@ img { display: block; max-width: 100%; }
 }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 32px; background: var(--gold-600); color: #fff;
+  padding: 14px 32px; background: var(--gold-ink); color: #fff;
   font-weight: 600; font-size: 0.95rem; border-radius: 100px;
   transition: all 0.2s; box-shadow: var(--shadow-sm);
 }
-.hero-cta:hover { background: var(--gold-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.hero-cta:hover { background: var(--gold-800); transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
 /* ── Shared Section Styles ── */
 .section { padding: 80px 28px; }
@@ -124,7 +124,7 @@ img { display: block; max-width: 100%; }
 .container-narrow { max-width: 800px; margin: 0 auto; }
 .overline {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--gold-600); margin-bottom: 12px;
+  text-transform: uppercase; color: var(--gold-ink); margin-bottom: 12px;
 }
 .section-title {
   font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
@@ -172,7 +172,7 @@ img { display: block; max-width: 100%; }
 }
 .metric-value {
   font-family: var(--font-display); font-size: 2rem;
-  font-weight: 600; color: var(--gold-600); line-height: 1;
+  font-weight: 600; color: var(--gold-ink); line-height: 1;
   margin-bottom: 6px;
 }
 .metric-label { font-size: 0.8rem; color: var(--text-tertiary); font-weight: 500; }
@@ -192,7 +192,7 @@ img { display: block; max-width: 100%; }
   width: 40px; height: 40px; border-radius: 50%; display: flex;
   align-items: center; justify-content: center; margin: 0 auto 14px;
   font-size: 0.85rem; font-weight: 700; position: relative; z-index: 1;
-  background: var(--gold-600); color: #fff;
+  background: var(--gold-ink); color: #fff;
 }
 .step-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
 .step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
@@ -232,7 +232,7 @@ img { display: block; max-width: 100%; }
 }
 .timeline-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
 .timeline-item .timeline-date {
-  font-size: 0.8rem; color: var(--gold-600); font-weight: 600;
+  font-size: 0.8rem; color: var(--gold-ink); font-weight: 600;
   margin-bottom: 4px;
 }
 .timeline-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
@@ -278,7 +278,7 @@ img { display: block; max-width: 100%; }
 }
 .accordion-trigger:hover { background: var(--gold-50); }
 .accordion-trigger .arrow {
-  transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-500);
+  transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-ink);
 }
 .accordion-item.open .accordion-trigger .arrow { transform: rotate(180deg); }
 .accordion-content {
@@ -305,11 +305,11 @@ img { display: block; max-width: 100%; }
 }
 .cta-banner .btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 32px; background: var(--gold-500); color: #fff;
+  padding: 14px 32px; background: var(--gold-ink); color: #fff;
   font-weight: 600; border-radius: 100px; font-size: 0.95rem;
   transition: all 0.2s; border: none; cursor: pointer;
 }
-.cta-banner .btn:hover { background: var(--gold-400); transform: translateY(-1px); }
+.cta-banner .btn:hover { background: var(--gold-800); transform: translateY(-1px); }
 
 /* ── Footer ── */
 .footer {
@@ -408,7 +408,7 @@ img { display: block; max-width: 100%; }
 .range-num.hi { color: var(--gold-700); }
 .range-arrow {
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  color: var(--gold-400);
+  color: var(--gold-ink);
   font-weight: 300;
 }
 .range-avg-pill {
@@ -581,7 +581,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   top: -10px; left: 50%;
   transform: translateX(-50%);
-  background: var(--gold-600);
+  background: var(--gold-ink);
   color: #fff;
   padding: 3px 10px;
   border-radius: 100px;
@@ -1648,7 +1648,7 @@ img { display: block; max-width: 100%; }
   <p>This document was prepared as a confidential overview for prospective partners.<br>
   All financial projections are estimates based on market research and industry benchmarks.<br>
   Actual results may vary. All clinical operations are subject to TGA and AHPRA regulatory requirements.</p>
-  <p style="margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">&copy; 2025 Golden Ratio Clinics. All rights reserved.</p>
+  <p style="margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.62);">&copy; 2025 Golden Ratio Clinics. All rights reserved.</p>
 </footer>
 
 <script>

@@ -13,12 +13,12 @@
 :root {
   --gold-50: #faf7f0; --gold-100: #f3edda; --gold-200: #e8dbb5;
   --gold-300: #dac688; --gold-400: #ccb162; --gold-500: #b99a3e;
-  --gold-600: #a58432; --gold-700: #876829; --gold-800: #6e5425;
+  --gold-600: #a58432; --gold-700: #876829; --gold-ink: #876829; --gold-800: #6e5425;
   --cream: #fdfbf6; --ivory: #faf8f3; --linen: #f5f1ea;
   --sage-50: #f4f7f4; --sage-100: #e2ebe2; --sage-200: #c7d9c7;
   --sage-400: #739c73; --sage-500: #537d53; --sage-600: #3f633f;
   --text-primary: #2a2926; --text-secondary: #5c5a55;
-  --text-tertiary: #8a8882; --text-muted: #b0aea8;
+  --text-tertiary: #6f6d68; --text-muted: #767470;
   --border-light: #ece9e1; --border-medium: #ddd9cf;
   --surface-white: #ffffff; --success: #3d8c5c; --info: #4a7fb5;
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -57,11 +57,11 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
   display: flex; align-items: center; gap: 10px;
 }
-.nav-logo span { color: var(--gold-600); }
+.nav-logo span { color: var(--gold-ink); }
 .nav-logo .phi {
   display: inline-flex; align-items: center; justify-content: center;
   width: 26px; height: 26px; border-radius: 50%;
-  border: 1.5px solid var(--gold-400); color: var(--gold-600);
+  border: 1.5px solid var(--gold-400); color: var(--gold-ink);
   font-size: 0.9rem; font-weight: 600;
 }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
@@ -69,9 +69,9 @@ img, svg { display: block; max-width: 100%; }
   font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--gold-600); }
+.nav-links a:hover { color: var(--gold-ink); }
 .nav-links a.nav-apply {
-  padding: 8px 18px; background: var(--gold-600); color: #fff;
+  padding: 8px 18px; background: var(--gold-ink); color: #fff;
   border-radius: 100px; font-weight: 600;
 }
 .nav-links a.nav-apply:hover { background: var(--gold-700); color: #fff; }
@@ -123,11 +123,11 @@ img, svg { display: block; max-width: 100%; }
 .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 32px; background: var(--gold-600); color: #fff;
+  padding: 14px 32px; background: var(--gold-ink); color: #fff;
   font-weight: 600; font-size: 0.95rem; border-radius: 100px;
   transition: all 0.2s; box-shadow: var(--shadow-sm); border: none; cursor: pointer;
 }
-.btn-primary:hover { background: var(--gold-700); transform: translateY(-1px); box-shadow: var(--shadow-md); color: #fff; }
+.btn-primary:hover { background: var(--gold-800); transform: translateY(-1px); box-shadow: var(--shadow-md); color: #fff; }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 28px; background: var(--surface-white); color: var(--text-primary);
@@ -147,7 +147,7 @@ img, svg { display: block; max-width: 100%; }
 .hero-stat:last-child { border-right: none; }
 .hero-stat-val {
   font-family: var(--font-display); font-size: 2rem; font-weight: 600;
-  color: var(--gold-600); line-height: 1; margin-bottom: 6px;
+  color: var(--gold-ink); line-height: 1; margin-bottom: 6px;
 }
 .hero-stat-label { font-size: 0.78rem; color: var(--text-tertiary); font-weight: 500; }
 
@@ -160,7 +160,7 @@ img, svg { display: block; max-width: 100%; }
 .section-head { text-align: center; max-width: 680px; margin: 0 auto 12px; }
 .overline {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--gold-600); margin-bottom: 12px;
+  text-transform: uppercase; color: var(--gold-ink); margin-bottom: 12px;
 }
 .section-title {
   font-family: var(--font-display); font-size: clamp(1.7rem, 3.2vw, 2.5rem);
@@ -186,7 +186,7 @@ img, svg { display: block; max-width: 100%; }
 .role-btn.active { color: #fff; }
 .role-glider {
   position: absolute; top: 6px; bottom: 6px; left: 6px;
-  border-radius: 100px; background: var(--gold-600);
+  border-radius: 100px; background: var(--gold-ink);
   transition: transform 0.4s var(--ease-out), width 0.4s var(--ease-out);
   box-shadow: var(--shadow-sm); z-index: 0;
 }
@@ -276,9 +276,9 @@ img, svg { display: block; max-width: 100%; }
 .brand-chip:nth-child(3) .brand-dot { background: #e8f0fe; }
 .brand-chip:nth-child(4) .brand-dot { background: var(--gold-200); }
 .brand-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-.brand-url { font-size: 0.78rem; color: var(--gold-600); font-weight: 500; }
+.brand-url { font-size: 0.78rem; color: var(--gold-ink); font-weight: 500; }
 .brand-mood { font-size: 0.8rem; color: var(--text-tertiary); margin-top: 8px; line-height: 1.4; }
-.converge-arrows { display: flex; justify-content: center; margin: 18px 0; color: var(--gold-300); font-size: 1.4rem; letter-spacing: 0.4em; }
+.converge-arrows { display: flex; justify-content: center; margin: 18px 0; color: var(--gold-ink); font-size: 1.4rem; letter-spacing: 0.4em; }
 .brand-core {
   background: linear-gradient(135deg, var(--text-primary), #3a3833); color: #fff;
   border-radius: var(--radius-xl); padding: 40px; text-align: center;
@@ -317,7 +317,7 @@ img, svg { display: block; max-width: 100%; }
 .journey-row:last-child { border-bottom: none; }
 .journey-num {
   width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.85rem; background: var(--gold-600); color: #fff; flex-shrink: 0;
+  font-weight: 700; font-size: 0.85rem; background: var(--gold-ink); color: #fff; flex-shrink: 0;
 }
 .journey-body h4 { font-size: 0.98rem; font-weight: 600; margin-bottom: 3px; }
 .journey-body p { font-size: 0.88rem; color: var(--text-tertiary); line-height: 1.5; }
@@ -325,10 +325,10 @@ img, svg { display: block; max-width: 100%; }
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   padding: 6px 12px; border-radius: 100px; white-space: nowrap;
 }
-.owner-np { background: var(--gold-100); color: var(--gold-700); }
+.owner-np { background: var(--gold-100); color: var(--gold-800); }
 .owner-rn { background: var(--sage-100); color: var(--sage-600); }
 .owner-team { background: var(--linen); color: var(--text-tertiary); }
-.owner-pharm { background: #e8f0fe; color: var(--info); }
+.owner-pharm { background: #e8f0fe; color: #33608f; }
 
 /* ── Fit check ── */
 .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 12px 0 28px; }
@@ -344,7 +344,7 @@ img, svg { display: block; max-width: 100%; }
   color: #fff; font-size: 0.8rem; transition: all 0.2s; margin-top: 1px;
 }
 .fit-card.selected { border-color: var(--gold-500); background: var(--gold-50); }
-.fit-card.selected .fit-check { background: var(--gold-600); border-color: var(--gold-600); }
+.fit-card.selected .fit-check { background: var(--gold-600); border-color: var(--gold-ink); }
 .fit-text { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5; }
 .fit-card.selected .fit-text { color: var(--text-primary); }
 .fit-result {
@@ -371,7 +371,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .work-card.contractor:hover { border-color: var(--gold-500); }
 .work-badge {
-  position: absolute; top: -12px; right: 26px; background: var(--gold-600); color: #fff;
+  position: absolute; top: -12px; right: 26px; background: var(--gold-ink); color: #fff;
   font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   padding: 5px 13px; border-radius: 100px; box-shadow: var(--shadow-sm);
 }
@@ -393,7 +393,7 @@ img, svg { display: block; max-width: 100%; }
   font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5;
   padding: 10px 0 10px 28px; position: relative; border-top: 1px solid var(--border-light);
 }
-.work-list li::before { content: '✓'; position: absolute; left: 3px; top: 9px; color: var(--gold-600); font-weight: 700; font-size: 0.85rem; }
+.work-list li::before { content: '✓'; position: absolute; left: 3px; top: 9px; color: var(--gold-ink); font-weight: 700; font-size: 0.85rem; }
 .work-card.employee .work-list li::before { color: var(--sage-500); }
 .work-list li strong { color: var(--text-primary); font-weight: 600; }
 .work-foot {
@@ -424,7 +424,7 @@ img, svg { display: block; max-width: 100%; }
   text-align: left; font-family: var(--font-body); transition: background 0.2s;
 }
 .accordion-trigger:hover { background: var(--gold-50); }
-.accordion-trigger .arrow { transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-500); }
+.accordion-trigger .arrow { transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-ink); }
 .accordion-item.open .accordion-trigger .arrow { transform: rotate(180deg); }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
 .accordion-content-inner { padding: 0 24px 20px; font-size: 0.93rem; color: var(--text-secondary); line-height: 1.7; }
@@ -441,8 +441,8 @@ img, svg { display: block; max-width: 100%; }
 }
 .cta-banner h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; margin-bottom: 14px; position: relative; }
 .cta-banner p { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 540px; margin: 0 auto 28px; position: relative; }
-.cta-banner .btn-primary { background: var(--gold-500); position: relative; }
-.cta-banner .btn-primary:hover { background: var(--gold-400); }
+.cta-banner .btn-primary { background: var(--gold-ink); position: relative; }
+.cta-banner .btn-primary:hover { background: var(--gold-800); }
 
 /* ── Footer ── */
 .footer { background: var(--text-primary); color: rgba(255,255,255,0.6); padding: 48px 28px 32px; text-align: center; }
@@ -923,7 +923,7 @@ img, svg { display: block; max-width: 100%; }
   <p>This page is a confidential overview shared with prospective nursing candidates.<br>
   All clinical operations are conducted in accordance with TGA and AHPRA regulatory requirements.<br>
   Prescribing is undertaken by suitably qualified clinicians within their lawful scope of practice.</p>
-  <p style="margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">&copy; 2026 Golden Ratio Clinics. All rights reserved.</p>
+  <p style="margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.62);">&copy; 2026 Golden Ratio Clinics. All rights reserved.</p>
 </footer>
 
 <script>
