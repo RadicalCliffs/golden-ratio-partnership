@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Golden Ratio Franchises | Turnkey Telehealth Clinics for Prescribers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold-50: #faf7f0; --gold-100: #f3edda; --gold-200: #e8dbb5;
+  --gold-300: #dac688; --gold-400: #ccb162; --gold-500: #b99a3e;
+  --gold-600: #a58432; --gold-700: #876829; --gold-ink: #876829; --gold-800: #6e5425;
+  --cream: #fdfbf6; --ivory: #faf8f3; --linen: #f5f1ea;
+  --sage-50: #f4f7f4; --sage-100: #e2ebe2; --sage-200: #c7d9c7;
+  --sage-400: #739c73; --sage-500: #537d53; --sage-600: #3f633f;
+  --text-primary: #2a2926; --text-secondary: #5c5a55;
+  --text-tertiary: #6f6d68; --text-muted: #767470;
+  --border-light: #ece9e1; --border-medium: #ddd9cf;
+  --surface-white: #ffffff; --success: #3d8c5c; --info: #4a7fb5;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+  --shadow-sm: 0 2px 4px rgba(42,41,38,0.05);
+  --shadow-md: 0 4px 12px rgba(42,41,38,0.07);
+  --shadow-lg: 0 8px 24px rgba(42,41,38,0.09);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body); background: var(--cream);
+  color: var(--text-primary); line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(253,251,246,0.9); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: var(--shadow-sm); }
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-600), var(--sage-500));
+  z-index: 200; transition: width 0.08s linear;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--gold-ink); }
+.nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
+.nav-links li { white-space: nowrap; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-ink); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none;
+}
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+
+/* ── Hero ── */
+.hero {
+  padding: 140px 28px 80px; text-align: center; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, var(--gold-50) 0%, var(--cream) 100%);
+}
+.hero::after {
+  content: ''; position: absolute; inset: -10%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 25%, rgba(218,198,136,0.20), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(115,156,115,0.12), transparent 45%);
+  animation: heroFloat 16s ease-in-out infinite alternate;
+}
+@keyframes heroFloat {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to { transform: translate3d(0,-14px,0) scale(1.1); }
+}
+.hero > * { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 18px; font-size: 0.8rem; font-weight: 600;
+  border-radius: 100px; background: var(--surface-white);
+  color: var(--gold-700); border: 1px solid var(--gold-200);
+  margin-bottom: 28px; letter-spacing: 0.03em;
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-500); }
+.hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500; line-height: 1.12; letter-spacing: -0.02em;
+  max-width: 800px; margin: 0 auto 20px;
+}
+.hero p {
+  font-size: 1.1rem; color: var(--text-secondary); max-width: 600px;
+  margin: 0 auto 36px; line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; background: var(--gold-ink); color: #fff;
+  font-weight: 600; font-size: 0.95rem; border-radius: 100px;
+  transition: all 0.2s; box-shadow: var(--shadow-sm);
+}
+.hero-cta:hover { background: var(--gold-800); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* ── Shared Section Styles ── */
+.section { padding: 80px 28px; }
+.section-alt { background: var(--surface-white); }
+.section-sage { background: var(--sage-50); }
+.container { max-width: 1100px; margin: 0 auto; }
+.container-narrow { max-width: 800px; margin: 0 auto; }
+.overline {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-ink); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500; line-height: 1.2; margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 1.05rem; color: var(--text-secondary); max-width: 640px;
+  line-height: 1.7; margin-bottom: 48px;
+}
+.divider {
+  width: 50px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-300), var(--gold-500));
+  margin: 16px 0 0;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface-white); border-radius: var(--radius-lg);
+  padding: 32px; border: 1px solid var(--border-light);
+  transition: all 0.25s var(--ease-smooth);
+}
+.card:hover { box-shadow: var(--shadow-md); border-color: var(--border-medium); }
+.card-icon {
+  width: 48px; height: 48px; border-radius: 12px; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+.card-icon.gold { background: var(--gold-100); }
+.card-icon.sage { background: var(--sage-100); }
+.card-icon.blue { background: #e8f0fe; }
+.card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; }
+.card p { font-size: 0.925rem; color: var(--text-secondary); line-height: 1.65; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* ── Metric Callouts ── */
+.metric-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 32px 0; }
+.metric {
+  flex: 1; min-width: 160px; background: var(--surface-white);
+  border-radius: var(--radius-md); padding: 24px; text-align: center;
+  border: 1px solid var(--border-light);
+}
+.metric-value {
+  font-family: var(--font-display); font-size: 2rem;
+  font-weight: 600; color: var(--gold-ink); line-height: 1;
+  margin-bottom: 6px;
+}
+.metric-label { font-size: 0.8rem; color: var(--text-tertiary); font-weight: 500; }
+
+/* ── Journey/Steps ── */
+.journey-steps { display: flex; gap: 0; position: relative; margin: 48px 0 32px; }
+.journey-step {
+  flex: 1; text-align: center; position: relative; padding: 0 12px;
+}
+.journey-step::before {
+  content: ''; position: absolute; top: 20px; left: 0; right: 0;
+  height: 2px; background: var(--gold-200); z-index: 0;
+}
+.journey-step:first-child::before { left: 50%; }
+.journey-step:last-child::before { right: 50%; }
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; margin: 0 auto 14px;
+  font-size: 0.85rem; font-weight: 700; position: relative; z-index: 1;
+  background: var(--gold-ink); color: #fff;
+}
+.step-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+.step-desc { font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; }
+
+/* ── Fee Table ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+.table-scroll > .fee-table { margin: 0; min-width: 520px; }
+.fee-table {
+  width: 100%; border-collapse: collapse; margin: 28px 0;
+  font-size: 0.925rem;
+}
+.fee-table th {
+  text-align: left; padding: 14px 20px; background: var(--gold-50);
+  font-weight: 600; font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--text-secondary);
+  border-bottom: 2px solid var(--gold-200);
+}
+.fee-table td {
+  padding: 14px 20px; border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.fee-table tr:hover td { background: var(--gold-50); }
+.fee-table .highlight { color: var(--gold-700); font-weight: 600; }
+
+/* ── Timeline ── */
+.timeline { position: relative; padding-left: 32px; margin: 36px 0; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient(180deg, var(--gold-300), var(--sage-400));
+  border-radius: 2px;
+}
+.timeline-item { position: relative; margin-bottom: 28px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -26px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold-500); border: 2px solid var(--cream);
+}
+.timeline-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.timeline-item .timeline-date {
+  font-size: 0.8rem; color: var(--gold-ink); font-weight: 600;
+  margin-bottom: 4px;
+}
+.timeline-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Partnership Section ── */
+.partnership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 36px 0; }
+.partnership-card {
+  background: var(--surface-white); border-radius: var(--radius-lg);
+  padding: 32px; border: 1px solid var(--border-light);
+}
+.partnership-card h3 {
+  font-size: 1rem; font-weight: 600; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.partnership-card ul {
+  list-style: none; padding: 0;
+}
+.partnership-card li {
+  padding: 8px 0; font-size: 0.9rem; color: var(--text-secondary);
+  line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;
+}
+.partnership-card li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold-400); flex-shrink: 0; margin-top: 8px;
+}
+.partnership-highlight {
+  background: linear-gradient(135deg, var(--gold-50), var(--sage-50));
+  border: 1px solid var(--gold-200);
+}
+
+/* ── Accordion ── */
+.accordion { margin: 32px 0; }
+.accordion-item {
+  border: 1px solid var(--border-light); border-radius: var(--radius-md);
+  margin-bottom: 10px; overflow: hidden; background: var(--surface-white);
+}
+.accordion-trigger {
+  width: 100%; padding: 18px 24px; background: none; border: none;
+  cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); text-align: left; font-family: var(--font-body);
+  transition: background 0.2s;
+}
+.accordion-trigger:hover { background: var(--gold-50); }
+.accordion-trigger .arrow {
+  transition: transform 0.3s var(--ease-out); font-size: 1.1rem; color: var(--gold-ink);
+}
+.accordion-item.open .accordion-trigger .arrow { transform: rotate(180deg); }
+.accordion-content {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out);
+}
+.accordion-content-inner {
+  padding: 0 24px 20px; font-size: 0.925rem;
+  color: var(--text-secondary); line-height: 1.7;
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--text-primary) 0%, #3d3b36 100%);
+  color: #fff; border-radius: var(--radius-xl); padding: 56px;
+  text-align: center; margin: 48px 0 0;
+}
+.cta-banner h2 {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 500; margin-bottom: 14px;
+}
+.cta-banner p {
+  font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 500px;
+  margin: 0 auto 28px;
+}
+.cta-banner .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; background: var(--gold-ink); color: #fff;
+  font-weight: 600; border-radius: 100px; font-size: 0.95rem;
+  transition: all 0.2s; border: none; cursor: pointer;
+}
+.cta-banner .btn:hover { background: var(--gold-800); transform: translateY(-1px); }
+
+/* ── Footer ── */
+.footer {
+  background: var(--text-primary); color: rgba(255,255,255,0.6);
+  padding: 48px 28px 32px; text-align: center;
+}
+.footer p { font-size: 0.8rem; line-height: 1.6; }
+.footer .brand {
+  font-family: var(--font-display); font-size: 1.2rem;
+  color: rgba(255,255,255,0.9); margin-bottom: 12px;
+}
+
+/* ── Callout Box ── */
+.summary-card {
+  background: var(--surface-white); border: 1px solid var(--border-light);
+  border-left: 3px solid var(--gold-400); border-radius: var(--radius-md);
+  padding: 28px 32px; box-shadow: var(--shadow-lg);
+}
+.summary-list { list-style: none; margin: 14px 0 0; padding: 0; }
+.summary-list li {
+  padding: 10px 0 10px 26px; position: relative;
+  font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+.summary-list li:last-child { border-bottom: 0; }
+.summary-list li:before {
+  content: ""; position: absolute; left: 4px; top: 19px;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--gold-400);
+}
+.summary-list strong { color: var(--text-primary); }
+.summary-foot { margin-top: 16px; font-size: 0.85rem; color: var(--text-tertiary); line-height: 1.6; }
+.callout {
+  border-radius: var(--radius-md); padding: 24px 28px;
+  margin: 24px 0; font-size: 0.925rem; line-height: 1.7;
+}
+.callout.gold { background: var(--gold-50); border-left: 3px solid var(--gold-400); }
+.callout.sage { background: var(--sage-50); border-left: 3px solid var(--sage-400); }
+.callout.blue { background: #eef4fc; border-left: 3px solid var(--info); }
+.callout strong { color: var(--text-primary); }
+
+/* ── Animations ── */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-d1 { transition-delay: 0.1s; }
+.fade-in-d2 { transition-delay: 0.2s; }
+.fade-in-d3 { transition-delay: 0.3s; }
+
+/* ── Premium Pricing Visuals ── */
+.pricing-section {
+  background:
+    radial-gradient(ellipse at top left, rgba(218, 198, 136, 0.12), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(115, 156, 115, 0.08), transparent 50%),
+    var(--cream);
+  padding: 100px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(218, 198, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 198, 136, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+.pricing-section > .container { position: relative; z-index: 1; }
+
+/* Range hero: the headline number */
+.range-hero {
+  background: linear-gradient(135deg, #ffffff 0%, var(--ivory) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  margin: 48px 0 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(42,41,38,0.10), 0 1px 0 rgba(255,255,255,1) inset;
+}
+.range-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 360px; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  transform: translateX(-50%);
+}
+.range-hero-label {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-700);
+  margin-bottom: 24px;
+}
+.range-numbers {
+  display: flex; align-items: baseline; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.range-num {
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+.range-num.lo { color: var(--sage-600); }
+.range-num.hi { color: var(--gold-700); }
+.range-arrow {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-400);
+  font-weight: 300;
+}
+.range-avg-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, var(--gold-100), var(--gold-50));
+  border: 1px solid var(--gold-200);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold-800);
+  margin-top: 8px;
+}
+.range-avg-pill .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold-500);
+  box-shadow: 0 0 0 0 rgba(185, 154, 62, 0.4);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(185, 154, 62, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(185, 154, 62, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(185, 154, 62, 0); }
+}
+.range-hero-sub {
+  font-size: 1rem; color: var(--text-secondary);
+  max-width: 520px; margin: 24px auto 0;
+  line-height: 1.65;
+}
+
+/* Per-product pricing cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 16px 0 56px;
+}
+.product-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: relative;
+  transition: all 0.3s var(--ease-smooth);
+  overflow: hidden;
+}
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold-500);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -12px rgba(42,41,38,0.13);
+  border-color: var(--gold-200);
+}
+.product-card:hover::after { opacity: 1; }
+.product-card.flower::after { background: linear-gradient(90deg, var(--sage-500), var(--sage-400)); }
+.product-card.gummy::after { background: linear-gradient(90deg, var(--gold-500), var(--gold-400)); }
+.product-card.vape::after { background: linear-gradient(90deg, var(--info), #6ba0d4); }
+.product-card.oil::after { background: linear-gradient(90deg, #c19a47, var(--gold-300)); }
+
+.product-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+.product-card.flower .product-icon {
+  background: linear-gradient(135deg, var(--sage-100), var(--sage-50));
+}
+.product-card.gummy .product-icon {
+  background: linear-gradient(135deg, var(--gold-100), var(--gold-50));
+}
+.product-card.vape .product-icon {
+  background: linear-gradient(135deg, #e8f0fe, #f4f8fd);
+}
+.product-card.oil .product-icon {
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-100));
+}
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.product-format {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.product-price-range {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.product-detail {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Tier rail: visual revenue scale */
+.tier-rail-wrap { margin: 16px 0 56px; }
+.tier-rail-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 14px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary);
+}
+.tier-rail {
+  position: relative;
+  height: 14px;
+  background: linear-gradient(90deg, var(--sage-200), var(--gold-300) 50%, var(--gold-600));
+  border-radius: 100px;
+  margin-bottom: 32px;
+  box-shadow: inset 0 1px 2px rgba(42,41,38,0.06);
+}
+.tier-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px; height: 22px;
+  background: #fff;
+  border: 3px solid var(--gold-500);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(42,41,38,0.15);
+}
+.tier-marker.avg { border-color: var(--gold-700); width: 26px; height: 26px; }
+.tier-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.tier-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  position: relative;
+  transition: all 0.3s var(--ease-smooth);
+}
+.tier-card.standard {
+  border: 2px solid var(--gold-400);
+  background: linear-gradient(180deg, #fff, var(--gold-50));
+  box-shadow: 0 12px 28px -12px rgba(185,154,62,0.25);
+  transform: translateY(-6px);
+}
+.tier-card.standard::before {
+  content: 'AVERAGE';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-ink);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.tier-card:hover { box-shadow: 0 12px 28px -10px rgba(42,41,38,0.12); transform: translateY(-3px); }
+.tier-card.standard:hover { transform: translateY(-9px); }
+.tier-stage {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-700); margin-bottom: 10px;
+}
+.tier-amount {
+  font-family: var(--font-display);
+  font-size: 1.85rem; font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em; line-height: 1;
+  margin-bottom: 4px;
+}
+.tier-amount .cents { font-size: 0.85rem; color: var(--text-tertiary); font-weight: 500; }
+.tier-lines {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.tier-comp {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Annual maths card */
+.annual-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: linear-gradient(135deg, #2a2926 0%, #3a3833 100%);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-top: 32px;
+  box-shadow: 0 30px 60px -20px rgba(42,41,38,0.30);
+}
+.annual-left {
+  padding: 48px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.annual-right {
+  padding: 48px;
+  background:
+    radial-gradient(circle at top right, rgba(218,198,136,0.12), transparent 60%);
+}
+.annual-overline {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-300);
+  margin-bottom: 14px;
+}
+.annual-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 500; line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.annual-body {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+}
+.annual-stack { display: flex; flex-direction: column; gap: 22px; }
+.annual-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.annual-row:last-child { border-bottom: none; padding-bottom: 0; }
+.annual-row-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+.annual-row-val {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.annual-row-val.gold { color: var(--gold-300); }
+
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-cards { grid-template-columns: repeat(3, 1fr); }
+  .tier-card.standard { grid-column: 1 / -1; }
+  .annual-card { grid-template-columns: 1fr; }
+  .annual-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+@media (max-width: 600px) {
+  .pricing-section { padding: 64px 20px; }
+  .range-hero { padding: 40px 24px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .tier-cards { grid-template-columns: 1fr; }
+  .annual-left, .annual-right { padding: 32px 24px; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .partnership-grid { grid-template-columns: 1fr; }
+  .journey-steps { flex-direction: column; gap: 20px; }
+  .journey-step::before { display: none; }
+  .journey-step { text-align: left; display: flex; gap: 16px; align-items: flex-start; padding: 0; }
+  .step-num { margin: 0; flex-shrink: 0; }
+  .cta-banner { padding: 40px 28px; }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 64px; left: 0; right: 0; background: var(--cream);
+    padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero { padding: 120px 20px 60px; }
+  .section { padding: 56px 20px; }
+  .metric-row { flex-direction: column; }
+  .fee-table { font-size: 0.85rem; }
+  .fee-table th, .fee-table td { padding: 10px 12px; }
+}
+
+/* ══════════════════ VISUAL LAYER ══════════════════ */
+:root {
+  --grad-gold: linear-gradient(115deg, var(--gold-ink), var(--gold-600) 45%, var(--sage-500));
+  --grad-warm: linear-gradient(135deg, #fffdf8, #f7f2e6);
+  --shadow-xl: 0 24px 60px -18px rgba(42,41,38,0.22), 0 6px 18px -8px rgba(42,41,38,0.10);
+  --ring: 0 0 0 1px var(--border-light);
+}
+
+/* paper grain over the whole page */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.4; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+}
+.nav, .scroll-progress { z-index: 200; }
+
+/* ── section rhythm and decorative spirals ── */
+.section { padding: 104px 28px; position: relative; overflow: hidden; }
+.section > .container, .section > .container-narrow { position: relative; z-index: 2; }
+.spiral {
+  position: absolute; pointer-events: none; z-index: 0;
+  opacity: 0.5; color: var(--gold-300);
+}
+.spiral.tr { top: -90px; right: -110px; width: 380px; transform: rotate(12deg); }
+.spiral.bl { bottom: -120px; left: -130px; width: 420px; transform: rotate(-160deg); }
+.section-sage .spiral { color: var(--sage-400); opacity: 0.34; }
+
+/* ── eyebrow with a drawn rule ── */
+.overline {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.72rem; letter-spacing: 0.16em;
+}
+.overline::after {
+  content: ''; height: 1px; width: 56px; flex: 0 0 56px;
+  background: linear-gradient(90deg, var(--gold-400), transparent);
+}
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.9rem); letter-spacing: -0.02em; }
+.section-title em, .grad {
+  font-style: normal;
+  background: var(--grad-gold); -webkit-background-clip: text;
+  background-clip: text; color: transparent;
+}
+
+/* ── cards get depth and an accent that draws on hover ── */
+.card {
+  position: relative; border-radius: var(--radius-lg);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+  overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad-gold); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+.card:hover::before { transform: scaleX(1); }
+.card-icon {
+  width: 46px; height: 46px; border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; }
+
+/* ── hero ── */
+.hero { padding: 168px 28px 104px; }
+.hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.5rem); max-width: 900px; }
+.hero p { font-size: 1.15rem; max-width: 660px; }
+.hero-badge { box-shadow: var(--shadow-sm); backdrop-filter: blur(6px); }
+.hero-cta { padding: 16px 38px; font-size: 1rem; box-shadow: 0 10px 26px -10px rgba(165,132,50,0.75); }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(165,132,50,0.85); }
+.hero-rule {
+  width: 74px; height: 3px; margin: 0 auto 30px; border-radius: 4px;
+  background: var(--grad-gold);
+}
+.scroll-cue {
+  margin-top: 52px; display: flex; flex-direction: column; align-items: center;
+  gap: 8px; color: var(--text-muted); font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.scroll-cue span.line {
+  width: 1px; height: 46px;
+  background: linear-gradient(180deg, var(--gold-400), transparent);
+  animation: cueDrop 2.4s var(--ease-smooth) infinite;
+}
+@keyframes cueDrop { 0%,100% { opacity: 0.35; transform: scaleY(0.6); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue span.line { animation: none; } }
+
+/* ── the at-a-glance panel ── */
+.summary-card {
+  padding: 40px 44px; border-left: 0; border-radius: var(--radius-xl);
+  background: var(--grad-warm); box-shadow: var(--shadow-xl);
+  position: relative; overflow: hidden;
+}
+.summary-card::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+  background: var(--grad-gold);
+}
+.summary-list li { padding: 14px 0 14px 34px; border-bottom: 1px dashed var(--border-medium); }
+.summary-list li:before {
+  content: '✦'; left: 0; top: 12px; width: auto; height: auto;
+  background: none; border-radius: 0; color: var(--gold-500); font-size: 0.95rem;
+}
+
+/* ── metrics as display numerals ── */
+.metric-row { gap: 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin: 44px 0; }
+.metric {
+  border: 0; border-right: 1px solid var(--border-light); border-radius: 0;
+  background: transparent; padding: 30px 22px; box-shadow: none;
+}
+.metric:last-child { border-right: 0; }
+.metric-value {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1;
+  background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.metric-label { font-size: 0.76rem; letter-spacing: 0.04em; margin-top: 10px; }
+
+/* ── callouts ── */
+.callout {
+  border-left-width: 4px; border-radius: var(--radius-lg);
+  padding: 28px 32px; box-shadow: var(--shadow-sm);
+}
+.callout strong:first-child { display: block; margin-bottom: 8px; font-size: 1.02rem; }
+
+/* ── the 49/51 split bar ── */
+.split-viz { margin: 34px 0 8px; }
+.split-bar {
+  display: flex; height: 76px; border-radius: 100px; overflow: hidden;
+  box-shadow: var(--shadow-md); border: 1px solid rgba(255,255,255,0.5);
+}
+.split-seg {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.28); gap: 2px;
+}
+.split-seg .pct { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; line-height: 1; }
+.split-seg .who { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.92; }
+.split-you { flex: 0 0 49%; background: linear-gradient(135deg, var(--gold-500), var(--gold-700)); }
+.split-us { flex: 0 0 51%; background: linear-gradient(135deg, var(--sage-500), var(--sage-600)); }
+.split-note { font-size: 0.82rem; color: var(--text-tertiary); text-align: center; margin-top: 12px; }
+
+/* ── people ── */
+.person-mono {
+  width: 60px; height: 60px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 16px;
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+  color: #fff; background: linear-gradient(135deg, var(--gold-500), var(--gold-700));
+  box-shadow: var(--shadow-md); letter-spacing: 0.02em;
+}
+.person-mono.sage { background: linear-gradient(135deg, var(--sage-500), var(--sage-600)); }
+.person-role {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-ink); font-weight: 600; margin-bottom: 10px;
+}
+
+/* ── the stage ladder replaces the last table ── */
+.ladder { display: grid; gap: 14px; margin-top: 40px; }
+.rung {
+  display: grid; grid-template-columns: 92px 1fr auto; align-items: center; gap: 24px;
+  padding: 22px 26px; background: var(--surface-white);
+  border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+.rung:hover { transform: translateX(6px); box-shadow: var(--shadow-lg); }
+.rung::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--grad-gold); opacity: 0.85;
+}
+.rung-stage { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
+.rung-stage small { display: block; font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); font-weight: 600; margin-top: 3px; }
+.rung-focus { font-size: 0.92rem; color: var(--text-secondary); }
+.rung-meta { text-align: right; }
+.rung-docs { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--gold-ink); line-height: 1; }
+.rung-docs small { font-family: var(--font-body); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); display: block; margin-top: 4px; font-weight: 600; }
+
+/* ── journey ── */
+.step-num {
+  width: 44px; height: 44px; font-family: var(--font-display); font-size: 1.15rem;
+  box-shadow: 0 6px 16px -6px rgba(165,132,50,0.6);
+}
+.journey-step::before { background: linear-gradient(90deg, var(--gold-200), var(--gold-300)); }
+
+/* ── accordion ── */
+.accordion-item { border-radius: var(--radius-md); transition: background 0.3s; }
+.accordion-item.open { background: var(--gold-50); }
+.accordion-trigger { font-weight: 600; }
+
+/* ── CTA banner ── */
+.cta-banner {
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);
+  position: relative; overflow: hidden;
+}
+.cta-banner h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+.btn { padding: 16px 38px; font-size: 1rem; border-radius: 100px; }
+
+/* ── reveal, with stagger ── */
+.fade-in { transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
+.grid-2 > .card, .grid-3 > .card, .grid-4 > .card { transition-delay: calc(var(--i, 0) * 70ms); }
+
+@media (max-width: 860px) {
+  .metric-row { border: 0; }
+  .metric { border-right: 0; border-bottom: 1px solid var(--border-light); }
+  .metric:last-child { border-bottom: 0; }
+  .rung { grid-template-columns: 1fr; gap: 10px; text-align: left; }
+  .rung-meta { text-align: left; }
+  .spiral { display: none; }
+  .summary-card { padding: 30px 26px; }
+  .split-seg .pct { font-size: 1.25rem; }
+  .split-seg .who { font-size: 0.6rem; }
+}
+.rung-meta { display: flex; align-items: center; gap: 18px; }
+.rung-pill {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sage-600); background: var(--sage-50); border: 1px solid var(--sage-200);
+  padding: 6px 12px; border-radius: 100px; white-space: nowrap;
+}
+@media (max-width: 860px) { .rung-meta { justify-content: flex-start; } }
+.nav-logo { white-space: nowrap; }
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 64px; left: 0; right: 0; background: var(--cream);
+    padding: 20px 28px; gap: 16px; border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+  }
+}
+.nav-inner { gap: 40px; }
+.nav-links { flex: 1; justify-content: flex-end; }
+@media (max-width: 600px) {
+  .hero { padding: 128px 22px 72px; }
+  .hero p { text-align: left; font-size: 1.02rem; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .section { padding: 72px 22px; }
+  .summary-list li { padding-left: 28px; }
+}
+
+/* ── Franchise page overrides ── */
+.hero.franchise { padding: 150px 28px 90px; }
+.hero.franchise h1 {
+  font-weight: 700; font-size: clamp(2.9rem, 8vw, 6rem); line-height: 1.02;
+  letter-spacing: -0.03em; max-width: 1000px; margin-bottom: 22px;
+}
+.hero.franchise h1 .grad { font-weight: 700; }
+.hero.franchise .tagline {
+  font-family: var(--font-display); font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  color: var(--text-primary); max-width: 760px; margin: 0 auto 18px; line-height: 1.35;
+}
+.hero.franchise p { max-width: 680px; }
+.deal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 auto; max-width: 1100px; }
+.deal-tile {
+  background: var(--surface-white); border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+  padding: 26px 22px; text-align: center; box-shadow: var(--shadow-sm);
+}
+.deal-tile .v { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; color: var(--gold-ink); line-height: 1; }
+.deal-tile .l { font-size: 0.82rem; color: var(--text-tertiary); margin-top: 8px; line-height: 1.45; }
+.deal-tile.sage .v { color: var(--sage-600); }
+.pay-table td:nth-child(3), .pay-table th:nth-child(3) { white-space: nowrap; }
+.pay-table td:nth-child(4) { font-size: 0.8rem; color: var(--text-tertiary); }
+.table-scroll > .pay-table { min-width: 780px; }
+.tag { display: inline-block; white-space: nowrap; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 100px; padding: 3px 9px; vertical-align: middle; }
+.tag.req { background: var(--gold-100); color: var(--gold-800); }
+.tag.opt { background: var(--sage-100); color: var(--sage-600); }
+.tag.us { background: #e8f0fe; color: #2f5f96; }
+.who-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 36px 0 0; }
+@media (max-width: 900px) { .deal-strip { grid-template-columns: repeat(2, 1fr); } .who-row { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .deal-strip { grid-template-columns: 1fr 1fr; } .deal-tile .v { font-size: 1.9rem; } }
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Golden Ratio <span>Franchises</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#deal">The Deal</a></li>
+      <li><a href="#stack">What You Get</a></li>
+      <li><a href="#medicine">The Medicine</a></li>
+      <li><a href="#costs">What You Pay</a></li>
+      <li><a href="#apply">Apply</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero franchise">
+  <div class="hero-badge"><span class="dot"></span> Turnkey Telehealth Clinics for Australian Prescribers</div>
+  <h1>Golden Ratio <em class="grad">Franchises</em></h1>
+  <p class="tagline">We build the clinic and run the technology. You practise medicine and keep every dollar the clinic makes.</p>
+  <p>A finished telehealth clinic, about $200,000 of platform and infrastructure, handed to you with your name on the door. No franchise fee, no royalty on consults, no share of your profit. We make our money on the medicine, and we say so up front.</p>
+  <a href="#deal" class="hero-cta">See the deal &darr;</a>
+  <div class="scroll-cue"><span class="line"></span>Read on</div>
+</section>
+
+<!-- ══════════════ THE DEAL ══════════════ -->
+<section class="section" id="deal">
+  <svg class="spiral tr" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
+  <div class="container">
+    <div class="overline fade-in">The Deal</div>
+    <h2 class="section-title fade-in">Four Numbers. <em class="grad">The Rest Is Detail.</em></h2>
+    <p class="section-subtitle fade-in">There are a million web development companies and every one of them will quote you for a website. There is one company that will hand you a compliant, stocked, shipping telehealth clinic and then stay to run the technology. This is what that looks like on paper.</p>
+
+    <div class="deal-strip fade-in">
+      <div class="deal-tile"><div class="v">$200k</div><div class="l">Of platform, integration and IT, built and handed over. On the low end, if you priced it as work.</div></div>
+      <div class="deal-tile sage"><div class="v">100%</div><div class="l">Of clinic profit stays with you. Consult fees, follow-ups, everything the clinic bills.</div></div>
+      <div class="deal-tile"><div class="v">$0</div><div class="l">Franchise fee. No royalty on consults, no percentage of revenue, no clawback.</div></div>
+      <div class="deal-tile sage"><div class="v">1</div><div class="l">Formulary. Our first-of-its-kind PGR-free medicine, exclusive to Golden Ratio clinics.</div></div>
+    </div>
+
+    <div class="who-row fade-in">
+      <div class="partnership-card">
+        <h3>What Golden Ratio Does</h3>
+        <ul>
+          <li><span>Builds and deploys your clinic: patient website, booking, telehealth, backend, database and staff console, on your brand.</span></li>
+          <li><span>Integrates Zedmed practice management, eScripts, secure clinical messaging and My Health Record.</span></li>
+          <li><span>Connects your clinic to the pharmacy and warehouse so dispensing and shipping happen without you touching them.</span></li>
+          <li><span>Hands you a compliance framework built for TGA and AHPRA scrutiny, and keeps it current as the rules move.</span></li>
+          <li><span>Handles every IT problem for the life of the clinic. Outages, patches, security, upgrades. Ours, not yours.</span></li>
+          <li><span>Supplies the medicine. That is where we earn.</span></li>
+        </ul>
+      </div>
+      <div class="partnership-card partnership-highlight">
+        <h3>What You Do</h3>
+        <ul>
+          <li><span>Practise. You are the prescriber and the clinic is yours: the patients, the book, the brand, the profit.</span></li>
+          <li><span>Prescribe our formula as your first-line medicine where it is clinically right, and anything else where it is not. Clinical judgement stays with you.</span></li>
+          <li><span>Pay the running costs of your own tooling. The licences and subscriptions listed further down are yours, non-negotiable, and they are small.</span></li>
+          <li><span>Hold your own AHPRA registration, Authorised Prescriber status or SAS pathway, indemnity and business insurance.</span></li>
+          <li><span>Optionally, buy our setup and marketing help for a fee. Or do it yourself. Your call.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout gold fade-in" style="margin-top: 32px;">
+      <strong>Why we would give away $200,000 of work.</strong> Because we are not a software company. We are a medicine company that built the software so its own clinic could run properly, and it turned out that the clinic was the hard part everyone else was missing. Every clinic on our platform prescribes our formulary, so every clinic we hand over is worth more to us running than the build cost us to make. You keep the clinic. We keep the medicine. Neither of us needs to take a cut of the other.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHAT YOU GET ══════════════ -->
+<section class="section section-alt" id="stack">
+  <div class="container">
+    <div class="overline fade-in">What You Get</div>
+    <h2 class="section-title fade-in">The Whole Clinic. <em class="grad">Not a Website.</em></h2>
+    <p class="section-subtitle fade-in">This is the stack running our own clinic today, live and seeing patients. You get the same one, on your brand, with us behind it.</p>
+
+    <div class="grid-3 fade-in">
+      <div class="card" style="--i:0">
+        <div class="card-icon gold">&#127760;</div>
+        <h3>Patient Front End</h3>
+        <p>Your public site, eligibility screening, online booking, telehealth room, intake questionnaires and patient portal. Hosted on Vercel, on your domain, mobile-first, and fast enough that nobody drops off before the booking page.</p>
+      </div>
+      <div class="card" style="--i:1">
+        <div class="card-icon sage">&#128736;</div>
+        <h3>Backend, Database and Staff Console</h3>
+        <p>The engine room: a Supabase database, the API layer, the nurse and doctor console, the referral line, rosters, follow-up queues and the automations that move a patient from enquiry to consult to script without a human copying anything between systems.</p>
+      </div>
+      <div class="card" style="--i:2">
+        <div class="card-icon blue">&#127973;</div>
+        <h3>Zedmed and eScripts</h3>
+        <p>Zedmed Cloud for bookings, clinical notes, billing and eRx, Australian-hosted with no server to maintain. Linked to your clinic through Halo Connect, a healthcare-grade, ISO 27001 API bridge, so the console and the practice-management system agree with each other.</p>
+      </div>
+      <div class="card" style="--i:0">
+        <div class="card-icon gold">&#128230;</div>
+        <h3>Pharmacy and Warehouse</h3>
+        <p>Scripts flow to the dispensing pharmacy and orders hand off to the warehouse automatically. Stock, shipping and tracking are handled at our end. Your patients get their medicine; you never run a stock count.</p>
+      </div>
+      <div class="card" style="--i:1">
+        <div class="card-icon sage">&#128737;</div>
+        <h3>Compliance Framework</h3>
+        <p>TGA notifications, Authorised Prescriber reporting, AHPRA-ready consult records, advertising guardrails, real-time consult rules, secure messaging through HealthLink and My Health Record integration. Built for the audit, not after it.</p>
+      </div>
+      <div class="card" style="--i:2">
+        <div class="card-icon blue">&#128295;</div>
+        <h3>All IT, Forever</h3>
+        <p>Monitoring, patching, endpoint and network security, backups, incident response, upgrades and every "the login is not working" call. One number, and it is ours. You will never hire an IT contractor for this clinic.</p>
+      </div>
+    </div>
+
+    <div class="journey-steps fade-in">
+      <div class="journey-step"><div class="step-num">1</div><div class="step-title">Apply</div><div class="step-desc">A half-hour call. Registration, prescriber status, where you want to practise and how many hours.</div></div>
+      <div class="journey-step"><div class="step-num">2</div><div class="step-title">Configure</div><div class="step-desc">Your brand, your domain, your rooms. Zedmed and the security stack provisioned in your name.</div></div>
+      <div class="journey-step"><div class="step-num">3</div><div class="step-title">Onboard</div><div class="step-desc">Console training for you and your nurse. Formulary, protocols and the referral line switched on.</div></div>
+      <div class="journey-step"><div class="step-num">4</div><div class="step-title">Launch</div><div class="step-desc">First patient within weeks of the call, not quarters. We are on the line for the first month.</div></div>
+      <div class="journey-step"><div class="step-num">5</div><div class="step-title">Run</div><div class="step-desc">You see patients. We run the platform. The profit is yours.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ THE MEDICINE ══════════════ -->
+<section class="section section-sage" id="medicine">
+  <div class="container">
+    <div class="overline fade-in">The Medicine</div>
+    <h2 class="section-title fade-in">First-of-Its-Kind PGR-Free. <em class="grad">Exclusive to Our Clinics.</em></h2>
+    <p class="section-subtitle fade-in">Plant growth regulators are used across the industry to push yield and shelf appearance. Our formula is grown without them, and it is available only through Golden Ratio clinics. That exclusivity is the whole business model, so here is how it works and where the line is.</p>
+
+    <div class="grid-3 fade-in">
+      <div class="card" style="--i:0">
+        <div class="card-icon gold">&#127807;</div>
+        <h3>What It Is</h3>
+        <p>A PGR-free medicinal cannabis formulary, first of its kind on the Australian market, produced to pharmaceutical standard and supplied through our dispensing pharmacy. Your patients cannot get it anywhere except a Golden Ratio clinic, and that is a reason for them to choose yours.</p>
+      </div>
+      <div class="card" style="--i:1">
+        <div class="card-icon sage">&#9878;</div>
+        <h3>Where the Line Is</h3>
+        <p>You prescribe our formula first-line where it is clinically appropriate. Where it is not, you prescribe what is, and the platform supports that. Nobody is paid per script, not you and not us, and no volume target exists anywhere in this arrangement. The regulator has been clear about what it will not tolerate, and neither will we.</p>
+      </div>
+      <div class="card" style="--i:2">
+        <div class="card-icon blue">&#128176;</div>
+        <h3>How We Get Paid</h3>
+        <p>On the medicine, at the pharmacy. Not on your consults, not on your revenue, not on your profit. This is why there is no franchise fee: the build is our cost of putting the formulary in front of patients, and it pays for itself when your clinic is busy and well run. Our incentive is your clinic thriving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHAT YOU PAY ══════════════ -->
+<section class="section" id="costs">
+  <svg class="spiral tr" viewBox="0 0 233 144" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.1"><rect x="0.5" y="0.5" width="232" height="143"/><rect x="0.5" y="0.5" width="144" height="143"/><rect x="0.5" y="0.5" width="89" height="89"/><rect x="0.5" y="0.5" width="55" height="55"/><rect x="34.5" y="0.5" width="21" height="21"/><path d="M232.5 143.5 A232 143 0 0 0 144.5 0.5" stroke-width="1.6"/><path d="M144.5 0.5 A144 143 0 0 0 89.5 89.5" stroke-width="1.6"/><path d="M89.5 89.5 A89 89 0 0 0 0.5 55.5" stroke-width="1.6"/><path d="M0.5 55.5 A55 55 0 0 0 55.5 0.5" stroke-width="1.6"/></g></svg>
+  <div class="container">
+    <div class="overline fade-in">What You Pay</div>
+    <h2 class="section-title fade-in">Your Tooling Is Yours. <em class="grad">And It Is Small.</em></h2>
+    <p class="section-subtitle fade-in">The build is free. The licences that keep it running are in your name and on your card, because a clinic should own its own data, its own practice-management account and its own security posture. These are the figures we pay ourselves today for the identical stack. <span class="tag req">Required</span> items are non-negotiable. <span class="tag opt">Optional</span> items we recommend. <span class="tag us">Golden Ratio</span> items are services you can buy from us for a fee, or not.</p>
+
+    <h3 class="fade-in" style="margin-top: 32px;">One-off and annual</h3>
+    <div class="table-scroll"><table class="fee-table pay-table fade-in">
+      <thead><tr><th>Item</th><th>What it does</th><th>Indicative cost (AUD)</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Zedmed Cloud</strong></td><td>Practice management: bookings, notes, billing, eRx. Set up in your clinic's name</td><td class="highlight">$4,000 setup</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Halo Connect</strong></td><td>Healthcare-grade API bridge between your clinic and Zedmed, AU-hosted, ISO 27001</td><td class="highlight">$2,200 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Master PC or cloud server</strong></td><td>The clinic's brain: orchestrator and mini-server. Buy the box once, or rent the equivalent in the cloud</td><td class="highlight">$4,500 once, or ~$150 / mo</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Security stack</strong></td><td>Teramind monitoring, Malwarebytes enterprise endpoint protection, advanced EDR / NDR and patch management. Not optional in a clinic holding Schedule 8 records</td><td class="highlight">~$5,650 first year, ~$3,700 / yr after</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>HealthLink</strong></td><td>Secure clinical messaging with GPs, specialists and pharmacies</td><td>$599 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>My Health Record</strong></td><td>National record integration</td><td>$399 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Microsoft 365</strong></td><td>Clinic email, three accounts</td><td>$480 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Automation tooling</strong></td><td>n8n, Sentry, Hookdeck and Make: the plumbing that moves patients between systems</td><td>$1,100 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Nurse workstation</strong></td><td>A budget Chromebook. Zedmed Cloud and the console run in a browser</td><td>$399</td><td><span class="tag opt">Optional</span></td></tr>
+        <tr><td><strong>Business and indemnity insurance</strong></td><td>Your policy, in your name, written for telehealth Schedule 8 prescribing across states</td><td>~$3,500 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Cyber insurance</strong></td><td>Funded data-breach response. Worth having from day one, essential as the book grows</td><td>$1,500 to 3,000 / yr</td><td><span class="tag opt">Optional</span></td></tr>
+        <tr><td><strong>Legal setup</strong></td><td>Entity structure and agreements reviewed by your own lawyer before go-live</td><td>~$2,500</td><td><span class="tag opt">Optional</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="fade-in" style="margin-top: 32px;">Monthly</h3>
+    <div class="table-scroll"><table class="fee-table pay-table fade-in">
+      <thead><tr><th>Item</th><th>What it does</th><th>Indicative cost (AUD)</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Vercel</strong></td><td>Hosting and deployment for your patient site and console</td><td class="highlight">$80 / mo</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Supabase</strong></td><td>Your clinic database and authentication. Scales with your book</td><td class="highlight">$60 / mo</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Calilo</strong></td><td>Clinic phone number, video consults and patient SMS</td><td>$20 / mo</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Google Cloud identity</strong></td><td>Patient and staff login management</td><td>Usage-based, small</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Payment processing</strong></td><td>Card fees on consult payments, passed through at cost</td><td>~1.7% + 30c per transaction</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>Domain</strong></td><td>Your clinic's web address</td><td>~$30 / yr</td><td><span class="tag req">Required</span></td></tr>
+        <tr><td><strong>AI build assistant</strong></td><td>Automation and content help inside the console</td><td>$80 / mo</td><td><span class="tag opt">Optional</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="metric-row fade-in" style="margin-top: 32px;">
+      <div class="metric"><div class="metric-value">~$20,000</div><div class="metric-label">Year One, All Required Items, Including Your Insurance</div></div>
+      <div class="metric"><div class="metric-value">~$10,000</div><div class="metric-label">Each Year After, Renewals and Subscriptions</div></div>
+      <div class="metric"><div class="metric-value">$0</div><div class="metric-label">To Golden Ratio for the Build, the Platform or the IT</div></div>
+    </div>
+
+    <h3 class="fade-in" style="margin-top: 44px;">Services you can buy from us</h3>
+    <div class="table-scroll"><table class="fee-table pay-table fade-in">
+      <thead><tr><th>Service</th><th>What it covers</th><th>Cost</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Setup and launch package</strong></td><td>We provision every account above in your name, configure Zedmed, brand the site, write your protocols into the console, train your nurse and sit on the line for launch month</td><td>Quoted per clinic</td><td><span class="tag us">Golden Ratio</span></td></tr>
+        <tr><td><strong>Marketing</strong></td><td>Compliant patient acquisition: search, referral-line campaigns, GP outreach, content that survives TGA advertising rules. Monthly retainer, cancel any time</td><td>Quoted per clinic</td><td><span class="tag us">Golden Ratio</span></td></tr>
+        <tr><td><strong>Nurse recruitment</strong></td><td>We find, screen and onboard your practice nurse using the process that staffed our own clinic</td><td>Quoted per role</td><td><span class="tag us">Golden Ratio</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout blue fade-in" style="margin-top: 24px;">
+      <strong>Why the tooling is in your name and not ours.</strong> Three reasons. Your patient records should sit in an account you control, so that if we disappeared tomorrow your clinic would still open on Wednesday. The regulator expects a clinic to own its own practice-management system and security posture, and so do we. And it keeps us honest: the only thing we are paid for is the medicine, so the only way we grow is by making your clinic work.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="section section-alt" id="faq">
+  <div class="container-narrow">
+    <div class="overline fade-in">Questions</div>
+    <h2 class="section-title fade-in">The Ones We Get Asked First.</h2>
+    <div class="accordion fade-in">
+      <div class="accordion-item">
+        <button class="accordion-trigger">Is this actually a franchise?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">It is closer to a franchise than to anything else, which is why we use the word. You get a proven, finished operation and a brand behind it. It differs in the two places that matter: there is no franchise fee and no royalty, and the clinic is a company you own outright. The agreement is a platform and supply agreement, and your own lawyer should read it before you sign.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Do I have to prescribe only your medicine?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">No. You agree to carry our formulary and to prescribe it first-line where it is clinically appropriate. Where another product is the right one for the patient, you prescribe that, and nobody at Golden Ratio will raise it with you. Clinical independence is written into the agreement because the regulator expects it and because a clinic that loses it is not worth having.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">What if I already use Best Practice or another system?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">The platform is built on Zedmed Cloud and the Halo Connect bridge, and that is not negotiable, because it is what the console, the eScripts and the compliance reporting are wired to. If you run another system for other work you can keep it. The Golden Ratio clinic runs on Zedmed.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Who owns the patients and the data?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">You do. The Zedmed account, the Supabase project and the domain are provisioned in your clinic's name. We hold operator access to run and support the platform, under an agreement that spells out what we can and cannot do with it, and nothing leaves your clinic except what the law requires and what the pharmacy needs to dispense.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">How quickly can I be seeing patients?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">If you already hold Authorised Prescriber status, weeks. The platform exists; what takes time is provisioning your accounts, branding, training and your own insurance. If you are not yet approved, the TGA queue is the long pole and we will help you prepare the application while the clinic is being configured.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">What does it cost to leave?<span class="arrow">&#8964;</span></button>
+        <div class="accordion-content"><div class="accordion-content-inner">Notice, and nothing else. Your Zedmed account, your data and your domain are already yours. What you lose is the platform, the console and the formulary, because those are ours. There is no exit fee and no clawback of the build.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ APPLY ══════════════ -->
+<section class="section section-sage" id="apply">
+  <div class="container">
+    <div class="cta-banner fade-in">
+      <h2>Your Clinic. Our Platform. Half an Hour to Find Out.</h2>
+      <p>We are opening a limited number of clinics on the platform this year so that we can support every one of them properly. If you are a registered prescriber who would rather own a clinic than be a line item in someone else's, tell us where you want to practise and we will take it from there.</p>
+      <p style="margin-top: 14px; font-size: 0.95rem;"><strong>Maximillian Matthews</strong>, Operating Partner, Golden Ratio Clinics</p>
+      <a href="mailto:contact@goldenratio.clinic?subject=Golden%20Ratio%20Franchise%20Enquiry&body=Hi%20Max%2C%0A%0AI%27m%20interested%20in%20a%20Golden%20Ratio%20clinic.%0A%0AName%3A%0AAHPRA%20registration%3A%0AAuthorised%20Prescriber%20%2F%20SAS%3A%0AWhere%20I%20want%20to%20practise%3A%0AHours%20a%20week%3A%0A%0ATimes%20that%20suit%20me%20for%20a%20call%3A%0A1.%0A2.%0A3.%0A" class="btn">Apply for a clinic</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="brand">Golden Ratio Franchises</div>
+  <p>Golden Ratio Franchises is a division of Golden Ratio Clinics.<br>
+  All clinical operations are conducted under TGA and AHPRA regulatory requirements. Clinical decisions rest with the treating practitioner at all times.<br>
+  Tooling costs are indicative, based on what Golden Ratio pays for the identical stack today, and are confirmed at setup. Platform, supply and service terms are confirmed in writing.</p>
+  <p style="margin-top: 12px;">&copy; 2025 Golden Ratio Clinics. All rights reserved.</p>
+</footer>
+
+<script>
+// Nav scroll effect + reading-progress bar
+const nav = document.getElementById('nav');
+const progress = document.getElementById('scrollProgress');
+function onScroll() {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// Accordion
+document.querySelectorAll('.accordion-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const content = btn.nextElementSibling;
+    const isOpen = item.classList.contains('open');
+
+    item.parentElement.querySelectorAll('.accordion-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.accordion-content').style.maxHeight = null;
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Count-up for numeric stats (skips ranges/arrows) ──
+(function () {
+  const els = document.querySelectorAll('.metric-value, .range-num, .tier-amount, .annual-row-val');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); run(e.target); } });
+  }, { threshold: 0.6 });
+
+  els.forEach(el => {
+    const raw = el.textContent.trim();
+    if (/[→\-\/]/.test(raw)) return;            // skip ranges & arrows
+    const m = raw.match(/^([^\d]*)([\d.,]+)(.*)$/);
+    if (!m) return;
+    el.dataset.cuPre = m[1];
+    el.dataset.cuSuf = m[3];
+    el.dataset.cuNum = m[2].replace(/,/g, '');
+    el.dataset.cuDec = (m[2].split('.')[1] || '').length;
+    el.dataset.cuComma = m[2].indexOf(',') >= 0 ? '1' : '';
+    el.textContent = m[1] + '0' + m[3];
+    io.observe(el);
+  });
+
+  function fmt(v, dec, comma) {
+    let s = dec > 0 ? v.toFixed(dec) : Math.round(v).toString();
+    if (comma) { const p = s.split('.'); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); s = p.join('.'); }
+    return s;
+  }
+  function run(el) {
+    const pre = el.dataset.cuPre || '', suf = el.dataset.cuSuf || '';
+    const target = parseFloat(el.dataset.cuNum || '0');
+    const dec = parseInt(el.dataset.cuDec || '0', 10);
+    const comma = el.dataset.cuComma === '1';
+    const dur = 1400, start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + fmt(target * eased, dec, comma) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>
