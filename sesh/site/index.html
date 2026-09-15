@@ -246,6 +246,17 @@
   .fee.total b{font-size:28px;color:#fff}
   .fee.total u{font-size:14px;color:var(--gold)}
   .scope{margin-top:16px;font-size:13.5px;color:var(--muted);border-top:2px dashed var(--line);padding-top:14px}
+  .whobadge{display:inline-block;font-family:'Saira Condensed';font-weight:800;font-size:13px;letter-spacing:.09em;padding:3px 11px;border-radius:4px;margin-bottom:12px;background:var(--gold);color:var(--ink)}
+  .whobadge.them{background:var(--panel-2);color:var(--muted);border:1px solid var(--line)}
+  .terms{margin-top:18px;background:rgba(0,0,0,.3);border-left:3px solid var(--up);border-radius:0 8px 8px 0;padding:16px 18px}
+  .terms b{display:block;font-family:'Saira Condensed';font-size:19px;font-weight:700;color:var(--up);margin-bottom:6px}
+  .terms p{font-size:14.5px;color:var(--muted)}
+  .terms .halves{display:flex;gap:10px;margin-top:10px}
+  .terms .half{flex:1;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:6px;padding:10px 12px;text-align:center}
+  .terms .half b{font-family:'Saira Condensed';font-size:22px;font-weight:800;color:#fff;margin:0}
+  .terms .half u{text-decoration:none;display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+  tr.grp td{background:rgba(0,0,0,.28);font-family:'Saira Condensed';font-weight:700;color:var(--gold);letter-spacing:.04em;font-size:14px;padding-top:9px;padding-bottom:9px}
+  tr.sum td{background:rgba(245,198,76,.07);color:var(--text);font-weight:700}
 
   .paybox{background:rgba(0,0,0,.28);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 26px;margin-top:22px}
   .paybox b{display:block;font-family:'Saira Condensed';font-size:21px;font-weight:700;color:var(--gold);margin-bottom:8px}
@@ -557,9 +568,10 @@
   <section id="costs" style="padding-top:0">
     <div class="wrap">
       <h2>The numbers, all in</h2>
-      <p class="lede">One package price, itemised so you can see what's in it, quoted in Australian dollars and settled in USDT.</p>
+      <p class="lede">Two columns: what you pay us, and what you pay everyone else. We don't mark up third-party costs or take a cut of them &mdash; they go direct from you to each vendor, so you always see the real price.</p>
       <div class="split">
         <div class="feebox">
+          <span class="whobadge">PAID TO US</span>
           <h3>The package</h3>
           <div class="headline">10,710 USDT<small>A$15,000 &mdash; discount applied</small></div>
           <div class="hr"></div>
@@ -571,27 +583,53 @@
           <div class="fee disc"><span>Good-faith discount</span><span class="amt"><b>&minus;2,860</b><u>&minus;A$4,000</u></span></div>
           <div class="fee total"><span>Package price</span><span class="amt"><b>10,710 USDT</b><u>A$15,000</u></span></div>
           <p class="scope">Heavier customisation adds 1,430&ndash;3,570 USDT on top, to a hard ceiling of 14,280 USDT / A$20,000 with everything switched on. Scope: design, integration, deployment, handover and the runbook. Vendor accounts, the provider contract, licensing and data contracts are procured and held by you; the fees above cover building and wiring them together.</p>
+          <div class="terms">
+            <b>50% on signing, 50% on delivery</b>
+            <p>No milestone billing in between, no hourly creep. The second half falls due when the book is deployed, load-checked and handed over with the credentials.</p>
+            <div class="halves">
+              <div class="half"><b>5,355</b><u>USDT on signing</u></div>
+              <div class="half"><b>5,355</b><u>USDT on delivery</u></div>
+            </div>
+          </div>
         </div>
-        <div class="tbl-scroll"><table>
-          <thead><tr><th>Running cost (your side)</th><th>Stage one</th></tr></thead>
-          <tbody>
-            <tr class="rec"><td>Provider revenue share</td><td>20&ndash;35% of GGR</td></tr>
-            <tr><td>Licence</td><td>$0 &mdash; you're under theirs</td></tr>
-            <tr><td>Player bankroll</td><td>$0 &mdash; the provider is the counterparty</td></tr>
-            <tr><td>Betting engine</td><td>$0 &mdash; included in the revenue share</td></tr>
-            <tr><td>Odds feed</td><td>$0 &mdash; bundled with the engine</td></tr>
-            <tr><td>Payments &amp; ID checks</td><td>$0 &mdash; the provider's, under their licence</td></tr>
-            <tr><td>Hosting &amp; CDN</td><td>$100 to $300 /mo</td></tr>
-            <tr><td>Counsel &amp; tax advice, up front</td><td>2,140&ndash;5,710 USDT</td></tr>
-            <tr><td>Marketing</td><td>Whatever you choose &mdash; the only number that grows the book</td></tr>
-          </tbody>
-        </table></div>
+        <div>
+          <span class="whobadge them">PAID TO OTHERS</span>
+          <div class="tbl-scroll"><table>
+            <thead><tr><th>What</th><th>Who it goes to</th><th>Estimate</th></tr></thead>
+            <tbody>
+              <tr class="grp"><td colspan="3">Upfront, before launch</td></tr>
+              <tr><td>Company incorporation</td><td>Registered agent</td><td>350&ndash;2,150 USDT</td></tr>
+              <tr><td>Counsel &amp; tax advice</td><td>Your own lawyer</td><td>2,140&ndash;5,710 USDT</td></tr>
+              <tr><td>Provider setup fee</td><td>Platform</td><td>0&ndash;7,140 USDT &mdash; negotiable, often waived on a revenue-share deal</td></tr>
+              <tr><td>Domain</td><td>Registrar</td><td>15&ndash;150 USDT</td></tr>
+              <tr><td>Trademark, optional</td><td>IP agent</td><td>210&ndash;1,430 USDT</td></tr>
+              <tr class="sum"><td>Upfront, all in</td><td>&mdash;</td><td>roughly 2,700&ndash;16,600 USDT</td></tr>
+
+              <tr class="grp"><td colspan="3">Monthly</td></tr>
+              <tr><td>Hosting &amp; CDN</td><td>Vercel / Cloudflare</td><td>$100&ndash;300 /mo</td></tr>
+              <tr><td>Transactional email</td><td>Postmark or similar</td><td>$15&ndash;100 /mo</td></tr>
+              <tr><td>Support desk</td><td>Crisp or similar</td><td>$0&ndash;100 /mo</td></tr>
+
+              <tr class="grp"><td colspan="3">Out of revenue, not cash up front</td></tr>
+              <tr class="rec"><td>Provider revenue share</td><td>Platform</td><td>20&ndash;35% of GGR</td></tr>
+              <tr><td>Licence, engine, odds, payments, ID checks</td><td>&mdash;</td><td>$0 at stage one &mdash; all inside that share</td></tr>
+              <tr><td>Marketing</td><td>Your choice</td><td>The only line that grows the book</td></tr>
+
+              <tr class="grp"><td colspan="3">Stage two, when you take your own licence</td></tr>
+              <tr><td>Licence</td><td>Anjouan</td><td>&euro;22k&ndash;25k year one, &euro;17k /yr after</td></tr>
+              <tr><td>Player bankroll</td><td>Held by you</td><td>US$50,000&ndash;150,000</td></tr>
+              <tr><td>Crypto payments</td><td>CoinsPaid</td><td>~1% of volume</td></tr>
+              <tr><td>Age &amp; ID checks</td><td>Sumsub</td><td>from ~$149 /mo</td></tr>
+            </tbody>
+          </table></div>
+          <p class="routes-note" style="margin-top:14px"><b>Third-party costs are paid upfront, direct to each vendor,</b> as that vendor is engaged &mdash; not through us and not marked up. The ranges above are what these things cost today; each firms into a real number during selection, and the runbook tells you the order to engage them in so nothing is paid before it's needed.</p>
+        </div>
       </div>
 
       <div class="paybox">
         <b>Paid in USDT, on Tron</b>
         <p>Fees are set in Australian dollars and settled in <strong>USDT on the Tron network (TRC-20)</strong>. TRC-20 rather than Ethereum because the network fee is around a dollar instead of tens of dollars, and it confirms in seconds &mdash; on a six-figure programme that's noise, on a five-figure build fee it isn't.</p>
-        <p>USDT figures are struck at <strong>A$1 = US$0.7140</strong>, the rate on 14 September 2026. The rate is re-struck on the invoice date and <strong>held firm for seven days</strong>, so what's quoted is what's paid. Payment stages are set in the contract.</p>
+        <p>USDT figures are struck at <strong>A$1 = US$0.7140</strong>, the rate on 14 September 2026. The rate is re-struck on each of the two invoices and <strong>held firm for seven days</strong>, so what's quoted is what's paid. Our half-and-half applies to our fee only; third-party vendors set their own terms, and in practice all of them want paying upfront.</p>
       </div>
 
       <p class="routes-note"><b>The number that shows up at stage two.</b> The moment you hold your own licence, you are the counterparty to every bet, and you need a bankroll &mdash; US$50,000 to $150,000. A book has to pay every winner on the worst weekend of the season, before settlement, before the next deposit lands. Undercapitalised books don't fail because the software broke; they fail because a favourite-heavy Saturday cleaned out the float and withdrawals started queuing, and in a crypto market queued withdrawals kill a brand in about forty-eight hours. Stage one exists so that's a problem you solve with revenue instead of savings.</p>
@@ -632,7 +670,7 @@
       <div class="final">
         <div>
           <h2>Four weeks from yes.</h2>
-          <p>10,710 USDT all in, a hard ceiling of 14,280, and the runbook in your hands on day one.</p>
+          <p>5,355 USDT to start, 5,355 on delivery, a hard ceiling of 14,280, and the runbook in your hands on day one.</p>
         </div>
         <a href="mailto:hello@example.com">Start the build</a>
       </div>
