@@ -159,7 +159,7 @@
   .route.custom .badge{background:var(--panel-2);color:var(--muted);border:1px solid var(--line)}
   .route h3{font-family:'Saira Condensed';font-size:30px;font-weight:700;margin-bottom:2px}
   .route .time{color:var(--red-bright);font-family:'Saira Condensed';font-weight:700;font-size:20px;margin-bottom:14px}
-  .route .price{font-family:'Saira Condensed';font-weight:800;font-size:38px;margin:14px 0 0}
+  .route .price{font-family:'Saira Condensed';font-weight:800;font-size:38px;margin:14px 0 0;line-height:1.1}
   .route .price small{font-size:17px;font-weight:600;color:var(--muted)}
   .route .inusdt{font-family:'Saira Condensed';font-weight:700;font-size:17px;color:var(--gold);letter-spacing:.02em;margin-bottom:4px}
   .route .pricenote{color:var(--muted);font-size:14px;margin-bottom:16px}
@@ -178,8 +178,8 @@
   td{color:var(--muted)}
   .tbl-scroll{overflow-x:auto;border-radius:8px}
   .tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:3px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-  .tag.kyb{border-color:var(--red);color:var(--red-bright)}
   .tag.pick{border-color:var(--gold);color:var(--gold);background:rgba(245,198,76,.1)}
+  .tag.s2{border-color:#3A5387;color:#8FA6D4}
   tr.rec td{background:rgba(245,198,76,.06);box-shadow:inset 3px 0 0 var(--gold)}
   .dec td:nth-child(2){color:var(--text);font-weight:600}
   .dec td:nth-child(2) em{display:block;font-style:normal;font-weight:400;color:var(--muted);font-size:14px;margin-top:3px}
@@ -206,21 +206,44 @@
     linear-gradient(45deg,transparent 43%,var(--red-bright) 43%,var(--red-bright) 57%,transparent 57%),
     linear-gradient(-45deg,transparent 43%,var(--red-bright) 43%,var(--red-bright) 57%,transparent 57%)}
 
+  .stages{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .stg{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px}
+  .stg.one{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 12px 40px rgba(245,198,76,.07)}
+  .stg .num{display:inline-block;font-family:'Saira Condensed';font-weight:800;font-size:13px;letter-spacing:.09em;padding:3px 11px;border-radius:4px;margin-bottom:12px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted)}
+  .stg.one .num{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .stg h3{font-family:'Saira Condensed';font-size:28px;font-weight:700;margin-bottom:2px}
+  .stg .when{color:var(--red-bright);font-family:'Saira Condensed';font-weight:700;font-size:18px;margin-bottom:16px}
+  .stg dl{display:grid;grid-template-columns:132px 1fr;gap:0}
+  .stg dt{font-family:'Saira Condensed';font-size:15px;font-weight:700;color:var(--gold);padding:9px 0;border-bottom:1px solid rgba(38,57,92,.5)}
+  .stg dd{font-size:15px;color:var(--muted);padding:9px 0;border-bottom:1px solid rgba(38,57,92,.5)}
+  .stg dl > dt:last-of-type, .stg dl > dd:last-of-type{border-bottom:none}
+
+  .ask{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--gold);border-radius:10px;padding:28px;margin-top:22px}
+  .ask b.t{display:block;font-family:'Saira Condensed';font-size:24px;font-weight:700;color:var(--gold);margin-bottom:10px}
+  .ask > p{font-size:15px;color:var(--muted);margin-bottom:16px}
+  .ask ol{list-style:none;counter-reset:q}
+  .ask li{counter-increment:q;position:relative;padding:12px 0 12px 44px;border-bottom:1px solid rgba(38,57,92,.5);font-size:16px;color:var(--text);font-weight:600}
+  .ask li:last-child{border-bottom:none}
+  .ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:'Saira Condensed';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .ask li em{display:block;font-style:normal;font-weight:400;color:var(--muted);font-size:14.5px;margin-top:3px}
+
   .split{display:grid;grid-template-columns:1fr 1.3fr;gap:18px;align-items:start}
   .feebox{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--gold);border-radius:10px;padding:28px}
-  .feebox h3{font-family:'Saira Condensed';font-size:24px;font-weight:700;margin-bottom:16px}
+  .feebox h3{font-family:'Saira Condensed';font-size:24px;font-weight:700;margin-bottom:4px}
+  .feebox .headline{font-family:'Saira Condensed';font-weight:800;font-size:46px;color:#fff;line-height:1.05;margin-top:10px}
+  .feebox .headline small{display:block;font-size:17px;font-weight:600;color:var(--gold);margin-top:2px}
+  .feebox .hr{height:2px;background:var(--line);margin:20px 0 4px}
   .fee{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:11px 0;border-bottom:1px solid rgba(38,57,92,.6)}
   .fee span{color:var(--muted);font-size:15px}
   .fee .amt{display:flex;flex-direction:column;align-items:flex-end;gap:0;text-align:right}
-  .fee b{font-family:'Saira Condensed';font-weight:800;font-size:22px;color:var(--gold);white-space:nowrap;line-height:1.15}
+  .fee b{font-family:'Saira Condensed';font-weight:800;font-size:21px;color:var(--gold);white-space:nowrap;line-height:1.15}
   .fee u{text-decoration:none;font-size:12.5px;color:#6E7FA0;white-space:nowrap;font-variant-numeric:tabular-nums}
-  .fee.opt span::after{content:" (optional)";color:#6E7FA0;font-size:13px}
-  .fee.cap{border-top:2px solid var(--line)}
-  .fee.cap b{color:var(--text)}
+  .fee.sub{border-top:2px solid var(--line)}
+  .fee.sub b{color:var(--text)}
   .fee.disc b{color:var(--up)}
   .fee.total{border-bottom:none;border-top:2px solid var(--gold);margin-top:2px;padding-top:14px}
   .fee.total span{color:var(--text);font-weight:600}
-  .fee.total b{font-size:30px;color:#fff}
+  .fee.total b{font-size:28px;color:#fff}
   .fee.total u{font-size:14px;color:var(--gold)}
   .scope{margin-top:16px;font-size:13.5px;color:var(--muted);border-top:2px dashed var(--line);padding-top:14px}
 
@@ -235,18 +258,6 @@
   .ground b{display:block;font-size:17px;margin-bottom:6px}
   .ground p{font-size:15px;color:var(--muted)}
   .ground .who{display:inline-block;font-family:'Saira Condensed';font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--gold);margin-bottom:10px}
-
-  .struct{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
-  .ent{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px}
-  .ent.op{border-color:var(--gold)}
-  .ent .who{display:inline-block;font-family:'Saira Condensed';font-weight:700;font-size:13px;letter-spacing:.07em;padding:2px 10px;border-radius:4px;margin-bottom:12px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted)}
-  .ent.op .who{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-  .ent h3{font-family:'Saira Condensed';font-size:26px;font-weight:700;margin-bottom:4px}
-  .ent .sub{color:var(--muted);font-size:14px;margin-bottom:14px}
-  .ent ul{list-style:none}
-  .ent li{padding:7px 0 7px 20px;position:relative;font-size:15px;color:var(--muted);border-bottom:1px solid rgba(38,57,92,.5)}
-  .ent li:last-child{border-bottom:none}
-  .ent li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:2px;background:var(--gold)}
 
   .warn{background:rgba(217,48,62,.08);border:1px solid rgba(217,48,62,.45);border-radius:10px;padding:24px 26px;margin-top:22px}
   .warn b{display:block;font-family:'Saira Condensed';font-size:21px;font-weight:700;color:var(--red-bright);margin-bottom:8px;letter-spacing:.01em}
@@ -268,8 +279,9 @@
 
   @media(max-width:900px){
     .hero .wrap{grid-template-columns:1fr;gap:52px}
-    .cards,.routes,.compare,.split,.struct{grid-template-columns:1fr}
+    .cards,.routes,.compare,.split,.stages{grid-template-columns:1fr}
     .ground{grid-template-columns:1fr}
+    .stg dl{grid-template-columns:120px 1fr}
     .final{padding:36px}
     header nav a:not(.nav-cta){display:none}
   }
@@ -295,7 +307,7 @@
     <div class="wrap">
       <div>
         <h1>Your audience already bets. Give them <em>your book.</em></h1>
-        <p class="sub">A branded sportsbook, live in as little as four weeks. Built on a proven template, powered by a battle-tested betting engine, owned and run under your name.</p>
+        <p class="sub">A branded sportsbook, live in as little as four weeks. Launched under a licensed provider, skinned and wired by us, owned and run under your name.</p>
         <div class="cta-row">
           <a class="cta" href="#build">See the build</a>
           <a class="cta ghost" href="#costs">See the numbers</a>
@@ -307,9 +319,9 @@
           <div class="slip-head"><b>BET SLIP</b><small>#000001</small></div>
           <div class="leg"><span>Your brand, front and centre</span><span class="odds">1.01</span></div>
           <div class="leg"><span>Live in four weeks</span><span class="odds">1.25</span></div>
-          <div class="leg"><span>Every dollar on the ledger</span><span class="odds">1.10</span></div>
-          <div class="leg"><span>2,860 USDT off the full package</span><span class="odds">1.30</span></div>
-          <div class="slip-total"><span>Owning the platform</span><span class="odds">PAYS</span></div>
+          <div class="leg"><span>No licence of your own to start</span><span class="odds">1.10</span></div>
+          <div class="leg"><span>2,860 USDT off the package</span><span class="odds">1.30</span></div>
+          <div class="slip-total"><span>Owning the brand</span><span class="odds">PAYS</span></div>
           <div class="barcode" aria-hidden="true"></div>
         </aside>
       </div>
@@ -328,7 +340,7 @@
         <article>
           <svg viewBox="0 0 24 24"><polyline points="3 17 8 11 12 14 17 7 21 10"/><polyline points="17 7 21 7 21 11"/></svg>
           <h3>Live odds</h3>
-          <p>Prices on every major sport, streamed from professional data providers, moving in real time as games play out.</p>
+          <p>Prices on every major sport, priced and settled by a specialist betting engine, moving in real time as games play out.</p>
         </article>
         <article>
           <svg viewBox="0 0 24 24"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 13 2"/></svg>
@@ -346,130 +358,123 @@
 
   <section id="build">
     <div class="wrap">
-      <h2>Two ways to build it</h2>
-      <p class="lede">Both start from a proven, production-tested template and a white-label sportsbook engine. The difference is how much of it gets reshaped around your brand.</p>
+      <h2>What you're buying</h2>
+      <p class="lede">One package, priced flat. The brand and front end, the on-ramp and database wiring, the ID checks, and a written runbook so you can start provider and licence applications on day one while we build.</p>
       <div class="routes">
         <div class="route fast">
-          <span class="badge">FAST LANE</span>
-          <h3>Template launch</h3>
+          <span class="badge">THE PACKAGE</span>
+          <h3>Branded book, wired</h3>
           <div class="time">Live in 4 weeks</div>
-          <div class="price">5,710 <small>USDT flat build fee</small></div>
-          <p class="inusdt">A$8,000</p>
+          <div class="price">10,710 <small>USDT</small></div>
+          <p class="inusdt">A$15,000 &mdash; discount already applied</p>
           <p class="pricenote">Fixed scope, fixed price, no surprises.</p>
           <ul>
-            <li>Proven sportsbook template, skinned to your brand</li>
-            <li>White-label betting engine embedded: odds, bets, and settlement handled by a specialist provider</li>
+            <li>Brand and custom front end, built over the provider's licensed platform</li>
+            <li>On-ramp, payments and database wiring, done and tested</li>
+            <li>ID and age verification integrated into onboarding</li>
             <li>Geo-controls and the block list wired in from day one, logged</li>
-            <li>Payments and ID checks: added as plug-ins below, or bring your own vendor setup at no extra build cost</li>
-            <li>One round of visual changes included</li>
-            <li>Deployed, load-checked, handed over</li>
+            <li>Operator runbook: exactly what you sign, open and file, in order</li>
+            <li>One round of visual changes, then deployed, load-checked, handed over</li>
           </ul>
         </div>
         <div class="route custom">
-          <span class="badge">CUSTOM CUT</span>
+          <span class="badge">IF YOU WANT MORE</span>
           <h3>Heavier customisation</h3>
           <div class="time">6 to 8 weeks</div>
           <div class="price">+ 1,430&ndash;3,570 <small>USDT</small></div>
-          <p class="inusdt">A$2,000 to 5,000, on top of build fee</p>
-          <p class="pricenote">Priced by complexity and volume of changes.</p>
+          <p class="inusdt">A$2,000 to 5,000, on top of the package</p>
+          <p class="pricenote">Priced by complexity. Hard ceiling of 14,280 USDT / A$20,000, everything switched on.</p>
           <ul>
-            <li>Everything in the fast lane, plus</li>
-            <li>Custom layouts, flows, and features beyond the template</li>
-            <li>Bespoke promotions, bonus logic, and player features</li>
+            <li>Everything in the package, plus</li>
+            <li>Custom layouts, flows and features beyond the provider's template</li>
+            <li>Bespoke promotions, bonus logic and player features</li>
             <li>Two rounds of changes included, change orders after</li>
             <li>Deeper integration work across providers</li>
           </ul>
         </div>
       </div>
-      <p class="routes-note"><b>Why not build the betting engine from scratch?</b> Because a ground-up engine (placement, live pricing, risk, settlement) is a multi-month, six-figure programme with an ongoing trading operation attached. The smart structure is to own the brand, the players, and the platform, and plug in an engine that already prices millions of bets a day. Full comparison below.</p>
+      <p class="routes-note"><b>Why the runbook matters more than it sounds.</b> Provider onboarding and licence applications run on their clock, not yours, and they're the long pole. The runbook goes out on day one so those applications are moving while we build &mdash; which is the difference between launching in four weeks and launching in four months.</p>
     </div>
   </section>
 
   <section id="licence">
     <div class="wrap">
-      <h2>The licensing route</h2>
-      <p class="lede">Every operator asks this first: how is this actually legal? Here is the route, picked down to one option at every step. You hold the licence and carry the regulatory obligations; we build the platform and wire the controls it requires.</p>
+      <h2>How you get licensed. Or don't, yet.</h2>
+      <p class="lede">You do not need your own gaming licence to launch. You need a provider who has one and will let you trade under it. That's stage one, and it's weeks rather than months. Stage two is when the economics improve and the obligations become yours.</p>
 
-      <h3 class="group">Take the Anjouan licence</h3>
-      <div class="tbl-scroll"><table>
-        <thead><tr><th>Jurisdiction</th><th>Year one</th><th>Annual after</th><th>Timeline</th><th>The call</th></tr></thead>
-        <tbody>
-          <tr class="rec"><td>Anjouan <span class="tag pick">take this</span></td><td>&euro;22,000&ndash;25,000</td><td>&euro;17,000</td><td>4&ndash;8 weeks</td><td>A real gaming licence at the lowest price anyone issues one. 0% tax on gaming revenue, no local office, no resident director, crypto wagering permitted outright, and sportsbook, casino and poker all covered by the one permit.</td></tr>
-          <tr><td>Cura&ccedil;ao (LOK)</td><td>&euro;70,000&ndash;110,000</td><td>&euro;47,450</td><td>Months</td><td>Where you move when revenue justifies better recognition. Post-reform it wants a local director, a real office and decisions genuinely made on the island. Not a year-one option.</td></tr>
-          <tr><td>Costa Rica</td><td>US$10,000&ndash;20,000</td><td>US$1,000&ndash;2,500</td><td>4&ndash;8 weeks</td><td>Cheapest on paper and the wrong answer. Costa Rica issues no gaming licence at all &mdash; just a municipal data-processing permit &mdash; so there is no regulator to name when the engine, the processor and the ID-check vendor ask. You save &euro;15,000 and then can't buy the stack.</td></tr>
-        </tbody>
-      </table></div>
+      <div class="stages">
+        <div class="stg one">
+          <span class="num">STAGE ONE</span>
+          <h3>Launch under their licence</h3>
+          <div class="when">Live in weeks</div>
+          <dl>
+            <dt>Licence</dt><dd>The provider's. No application, no wait, nothing to buy.</dd>
+            <dt>Player funds</dt><dd>Held by the provider. They're the counterparty to every bet.</dd>
+            <dt>Bankroll</dt><dd>Theirs. You don't fund one.</dd>
+            <dt>Markets</dt><dd>Whatever their licence covers &mdash; ask for the geo-block list in writing.</dd>
+            <dt>You own</dt><dd>The brand, the audience, the front end, the marketing.</dd>
+            <dt>Cost</dt><dd>20&ndash;35% of gross gaming revenue, little or no setup.</dd>
+          </dl>
+        </div>
+        <div class="stg">
+          <span class="num">STAGE TWO</span>
+          <h3>Move to your own</h3>
+          <div class="when">When the arithmetic says so</div>
+          <dl>
+            <dt>Licence</dt><dd>Yours. Applied for in parallel, from day one.</dd>
+            <dt>Player funds</dt><dd>Yours. You're the counterparty now.</dd>
+            <dt>Bankroll</dt><dd><b style="color:var(--red-bright)">Yours.</b> US$50,000&ndash;150,000. Budget it before you move, not after.</dd>
+            <dt>Markets</dt><dd>Your choice, and your licence has to cover each one.</dd>
+            <dt>Where</dt><dd>Anjouan at &euro;22k&ndash;25k if you're offshore and geo-blocked. A national licence if you want a regulated market, at ten to fifty times that.</dd>
+            <dt>Cost</dt><dd>Licence, plus software-only fees instead of a revenue share.</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="routes-note"><b>The migration trigger is arithmetic, not ambition.</b> You move when 20&ndash;35% of your gross gaming revenue costs more than a licence, a bankroll and a software fee combined. Until then the provider's cut is cheap money. We'll model the crossover against your own projections before anyone signs anything.</p>
 
-      <p class="routes-note"><b>Anjouan is already the far edge of what still works.</b> There is no cheaper licence worth holding and nothing greyer that a serious counterparty will accept. Go one step further &mdash; an unlicensed structure, or a permit that isn't a gaming licence &mdash; and the vendors stop returning calls, which costs far more than the licence saves. <b>Take the direct licence, not a sublicence:</b> a sublicence is cheaper up front and makes you a tenant of somebody else's compliance record, with no way to move your own payment relationships if theirs goes wrong.</p>
-
-      <p class="routes-note"><b>One licence covers every vertical,</b> so running a sportsbook only is a product decision rather than a saving &mdash; there's no cheaper single-vertical tier to drop to. Take the licence, ship the book, and keep casino as a switch you can flip later without going back to the regulator.</p>
+      <div class="ask">
+        <b class="t">Ask every provider these three, in writing</b>
+        <p><b style="color:var(--text)">Never shop on the label.</b> &ldquo;White label&rdquo; and &ldquo;turnkey&rdquo; are used in opposite directions by different vendors &mdash; one calls turnkey the model where the provider holds the licence, another says exactly the reverse. Same words, inverted meanings, sometimes on the same website. The only way to know what you're buying is to ask directly:</p>
+        <ol>
+          <li>Whose licence does the brand trade under &mdash; yours or ours?<em>This is the one that decides whether stage one exists at all.</em></li>
+          <li>Who holds player funds, and who is the counterparty to the player?<em>If it's them, they carry the liability. If it's you, you needed a licence yesterday.</em></li>
+          <li>Who carries sportsbook risk, and is there negative carryover?<em>A losing month either costs you nothing or eats into next month's revenue until it's clawed back. Same headline percentage, completely different business.</em></li>
+        </ol>
+      </div>
 
       <h3 class="group">Where the grey is, and where it isn't</h3>
       <div class="compare">
         <div class="cmp ok">
           <h3>Fair game</h3>
           <ul>
-            <li>Licensing in the cheapest jurisdiction that issues a real gaming licence</li>
+            <li>Trading under a provider's licence rather than buying your own on day one</li>
+            <li>Licensing later in the cheapest jurisdiction that issues a real gaming licence</li>
             <li>Zero local substance &mdash; no resident director, no island office, no staff on the ground</li>
-            <li>Paying 0% tax on gaming revenue, because that's the rate the jurisdiction sets</li>
-            <li>Geo-blocking every market you're not licensed for, instead of licensing market by market</li>
-            <li>Crypto-only deposits, which sidesteps card-scheme gatekeeping entirely and legitimately</li>
+            <li>Paying 0% tax on gaming revenue offshore, because that's the rate the jurisdiction sets</li>
+            <li>Geo-blocking every market you aren't licensed for, instead of licensing market by market</li>
+            <li>Crypto-first deposits, which sidesteps card-scheme gatekeeping entirely and legitimately</li>
             <li>A thin operating company that can be wound up and replaced without touching the group</li>
-            <li>Holding a licence that covers casino and poker too, and simply not switching them on</li>
           </ul>
-          <div class="verdict">All of this is ordinary offshore structuring. It's how essentially every crypto book operates, and none of it needs hiding.</div>
+          <div class="verdict">All of this is ordinary structuring. It's how most crypto books operate, and none of it needs hiding from anyone.</div>
         </div>
         <div class="cmp no">
           <h3>Hard lines</h3>
           <ul>
             <li>Taking players from a blocked market once you know they're there</li>
             <li>Describing the business as something other than gambling to open a bank or processor account</li>
-            <li>Taking real money before the licence actually issues</li>
+            <li>Taking real money before the licence &mdash; yours or theirs &mdash; actually covers you</li>
             <li>Skipping age and identity checks, or running them as theatre</li>
             <li>Leaving the structure off your own tax return at home</li>
             <li>Marketing into a regulated market and calling it the affiliate's fault</li>
           </ul>
-          <div class="verdict">These aren't grey areas with extra risk &mdash; they're the ones that end the business, and usually the balance with it. The route above is built so none of them is ever necessary.</div>
+          <div class="verdict">These aren't grey areas with extra risk. They're the ones that end the business, and usually the balance with it. The route above is built so none of them is ever necessary.</div>
         </div>
       </div>
-
-      <h3 class="group">Two companies, not one</h3>
-      <div class="struct">
-        <div class="ent op">
-          <span class="who">LICENSED OPERATOR</span>
-          <h3>Anjouan IBC</h3>
-          <p class="sub">The book itself. Thin, ring-fenced, replaceable.</p>
-          <ul>
-            <li>Holds the gaming licence</li>
-            <li>Holds the domain and the brand</li>
-            <li>Holds the engine, data and payment contracts</li>
-            <li>Carries the player liability</li>
-            <li>Geo-controls and ID checks run here</li>
-          </ul>
-        </div>
-        <div class="ent">
-          <span class="who">SERVICES COMPANY</span>
-          <h3>Your existing company</h3>
-          <p class="sub">Your home jurisdiction. Banks like any other business.</p>
-          <ul>
-            <li>Marketing, content, support, audience</li>
-            <li>Invoices the operator for services</li>
-            <li>Holds the ordinary business and treasury accounts</li>
-            <li>Where your income is earned and declared</li>
-            <li>Survives a change of operator or licence</li>
-          </ul>
-        </div>
-      </div>
-      <p class="routes-note">The point of the split is banking. <b>A marketing and services company can hold a normal business account and a normal crypto treasury account. A licensed gambling operator cannot.</b> Keep the operator thin and let the services company be the one that banks. It also means a second brand later is a second operator under the same services company, not a rebuild.</p>
-
-      <h3 class="group">What the licence asks of the platform</h3>
-      <p class="routes-note">Being licensed in one place means <b>declining</b> everywhere you aren't, and that's a platform job we ship: geo-blocking on the United States, United Kingdom, Netherlands, France, Spain, Austria, Germany, Australia and Comoros, plus every FATF-blacklisted jurisdiction, with the list in config so it moves when the rules do. Two things operators routinely get wrong, and we wire both: <b>IP blocking alone isn't enough</b> &mdash; the ID document country, the payment method and the registration address all have to agree, or the control is decoration. And <b>marketing is in scope</b> &mdash; no traffic bought into a blocked market, affiliate terms that say so, with a clawback.</p>
 
       <div class="warn">
-        <b>Three things to go in knowing</b>
-        <p><strong>Anjouan is a two-to-three year position, not a permanent one.</strong> Gambling is prohibited under Comorian law at union level; Anjouan licenses under its own island legislation and the relationship between the two is unresolved. In practice it affects how third parties treat you more than the licence's day-to-day validity &mdash; but keep the structure portable and move to Cura&ccedil;ao once revenue covers it.</p>
-        <p><strong>Mainstream payments will not touch an offshore book.</strong> Stripe, Adyen, PayPal, the card schemes &mdash; all no, on any of these licences. Build on iGaming specialists from day one and never plan around a mainstream processor changing its mind.</p>
-        <p><strong>Your own tax residence follows the structure.</strong> An offshore operator doesn't make its profits untaxed to whoever controls it. Controlled-foreign-company rules in most countries can attribute that income to the owner personally whether or not it's ever distributed. Get it advised in your own jurisdiction before the company is formed, not after.</p>
+        <b>Two things to go in knowing</b>
+        <p><strong>&ldquo;Nobody enforces it&rdquo; holds until you're worth enforcing against.</strong> In April 2026 Brazil blocked Polymarket and twenty-six other prediction sites &mdash; after the licensed sportsbook industry lobbied for it. It isn't only regulators who come for an unlicensed book taking share in their market. The incumbents file the complaint, and the regulator is the weapon. Polymarket's own answer was to buy a CFTC-licensed exchange for $112 million. Scale attracts the rules.</p>
+        <p><strong>Your own tax residence follows the structure.</strong> An offshore operator doesn't make its profits untaxed to whoever controls it. Controlled-foreign-company rules in most countries can attribute that income to the owner personally whether or not it's ever distributed. Get it advised in your own jurisdiction before anything is incorporated &mdash; it's the highest-return money in the whole budget.</p>
       </div>
     </div>
   </section>
@@ -477,58 +482,46 @@
   <section id="stack">
     <div class="wrap">
       <h2>The stack, decided</h2>
-      <p class="lede">One pick per slot, not a menu. Each has a fallback named in case onboarding goes against you, but the first column is what we'd sign. These accounts are opened and held by you; the build wires them together.</p>
+      <p class="lede">One pick per slot, not a menu, with a fallback named in case onboarding goes against you. Rows marked <span class="tag s2">stage 2</span> don't apply until you move to your own licence.</p>
 
       <div class="tbl-scroll"><table class="dec">
         <thead><tr><th>Slot</th><th>Take this</th><th>Cost</th><th>If they say no</th></tr></thead>
         <tbody>
-          <tr>
-            <td>Licence</td>
-            <td>Anjouan, direct<em>Not a sublicence, whatever the saving</em></td>
-            <td class="usd">&euro;22k&ndash;25k y1</td>
-            <td>Cura&ccedil;ao, at roughly five times the cost</td>
-          </tr>
-          <tr>
-            <td>Operating entity</td>
-            <td>Anjouan IBC<em>One director, no residency test</em></td>
-            <td class="usd">Included</td>
-            <td>&mdash;</td>
+          <tr class="rec">
+            <td>Platform &amp; licence</td>
+            <td>SOFTSWISS white label<em>Carries the licence, and its sportsbook module is Betby &mdash; so you get the specialist engine without buying a licence to run it</em></td>
+            <td class="usd">20&ndash;35% GGR</td>
+            <td>BetConstruct, then NuxGame or Slotegrator</td>
           </tr>
           <tr>
             <td>Betting engine</td>
-            <td>Betby<em>Sportsbook-only specialist, crypto-native operator base, live suspension precise enough to survive without a trading desk</em></td>
-            <td class="usd">~$5k&ndash;15k setup, then rev share</td>
-            <td>Altenar. Then BetConstruct at &euro;10k&ndash;15k and 10&ndash;30%</td>
+            <td>Betby<em>Sportsbook-only specialist. Live suspension precise enough to survive without a trading desk of your own</em></td>
+            <td class="usd">Included above</td>
+            <td>Altenar, if you ever license the engine directly</td>
           </tr>
           <tr>
             <td>Odds &amp; results</td>
-            <td>Nothing extra<em>Betby brings its own pricing and settlement &mdash; a separate feed is a cost most new books pay for twice</em></td>
+            <td>Nothing extra<em>The engine brings its own pricing and settlement. A separate feed is a cost most new books pay for twice</em></td>
             <td class="usd">$0</td>
             <td>GoalServe at $800/mo, only if you ever unbundle</td>
           </tr>
           <tr>
             <td>Player payments</td>
-            <td>CoinsPaid<em>The iGaming standard: 20+ coins, custody, instant swaps, payouts, fiat conversion</em></td>
-            <td class="usd">~1% per transaction</td>
-            <td>NOWPayments &mdash; and run it as a second rail regardless</td>
+            <td>The provider's, at stage one<em>Under their licence, their processor, their player funds. Nothing for you to open yet</em></td>
+            <td class="usd">Included above</td>
+            <td>&mdash;</td>
           </tr>
           <tr>
-            <td>Player funds custody</td>
-            <td>Self-custody multisig<em>2-of-3, keys held separately. Working float stays in the processor balance</em></td>
-            <td class="usd">$0</td>
-            <td>MPCVault, if you want approval workflows</td>
+            <td>Your on-ramp</td>
+            <td>Wired by us<em>So revenue share, vendor payments and treasury move without manual steps from week one</em></td>
+            <td class="usd">In the package</td>
+            <td>&mdash;</td>
           </tr>
           <tr>
             <td>Treasury &amp; fiat out</td>
-            <td>Zengo Business<em>Held by the services company, never the operator &mdash; its Iron and MoonPay rails won't clear a gambling entity, and they don't need to</em></td>
+            <td>Zengo Business<em>Held by your services company, never the operator &mdash; its Iron and MoonPay rails won't clear a gambling entity, and at stage one they don't have to</em></td>
             <td class="usd">Account-level</td>
-            <td>Bankera or Orbital, for an IBAN in the operator's own name</td>
-          </tr>
-          <tr>
-            <td>Age &amp; ID checks</td>
-            <td>Sumsub<em>KYC, AML screening and monitoring in one contract, which is what an offshore licence expects to see</em></td>
-            <td class="usd">from ~$149/mo</td>
-            <td>Shufti Pro, cheaper and narrower</td>
+            <td>Bankera or Orbital, for a dedicated IBAN</td>
           </tr>
           <tr>
             <td>Card on-ramp</td>
@@ -536,62 +529,61 @@
             <td class="usd">$0</td>
             <td>Mercuryo, when funnel data says casuals are bouncing at deposit</td>
           </tr>
+          <tr>
+            <td>Licence <span class="tag s2">stage 2</span></td>
+            <td>Anjouan, direct<em>Not a sublicence, whatever the saving &mdash; a sublicence makes you a tenant of someone else's compliance record</em></td>
+            <td class="usd">&euro;22k&ndash;25k y1</td>
+            <td>Cura&ccedil;ao, at roughly five times the cost</td>
+          </tr>
+          <tr>
+            <td>Payments <span class="tag s2">stage 2</span></td>
+            <td>CoinsPaid<em>The iGaming standard. An Anjouan licence passes their vetting; nothing passes without one</em></td>
+            <td class="usd">~1% per transaction</td>
+            <td>NOWPayments &mdash; and run it as a second rail regardless</td>
+          </tr>
+          <tr>
+            <td>ID checks <span class="tag s2">stage 2</span></td>
+            <td>Sumsub<em>KYC, AML screening and monitoring in one contract, which is what a licence expects to see</em></td>
+            <td class="usd">from ~$149/mo</td>
+            <td>Shufti Pro, cheaper and narrower</td>
+          </tr>
         </tbody>
       </table></div>
 
-      <p class="routes-note"><b>The negotiation that's worth the most:</b> ask the engine for no monthly minimum for the first six months, stepping in after. It's granted more often than people expect, because their marginal cost of carrying a new book is close to zero. Then: revenue share on net revenue <em>after</em> payment fees rather than gross, setup amortised across year one, and a 90-day exit with your player data portable. Ask all four in the first call, in writing, along with the one question that decides everything &mdash; <b>"do you onboard Anjouan-licensed operators?"</b></p>
-    </div>
-  </section>
-
-  <section id="compare" style="padding-top:0">
-    <div class="wrap">
-      <h2>From scratch vs. plugging in</h2>
-      <p class="lede">Two places where the build-or-buy question matters. Same answer both times, for the same reason: speed and proven reliability now, optionality forever. Nothing stops you replacing a vendor with your own build later, once revenue justifies it.</p>
-      <div class="compare">
-        <div class="cmp">
-          <h3>Sportsbook engine</h3>
-          <div class="row"><b>Scratch</b><p>4 to 6+ months, six-figure build, plus a trading and risk operation to run daily. Settlement edge cases alone are a career.</p></div>
-          <div class="row"><b>Plug in</b><p>2 to 4 weeks. Setup around $5,000 to $15,000 plus revenue share or a monthly minimum, carried by the operation. Odds, risk, and settlement are the vendor's problem.</p></div>
-          <div class="verdict">Plug in. Own the brand and the players, rent the engine.</div>
-        </div>
-        <div class="cmp">
-          <h3>Crypto custody</h3>
-          <div class="row"><b>Scratch</b><p>2 to 3 months for multi-coin custody done properly: key management, chain watchers, sweeping, withdrawal signing. And you carry theft risk forever.</p></div>
-          <div class="row"><b>Plug in</b><p>Days. A processor at 0.5% to 1% per transaction across every major coin, or self-hosted BTCPay at zero fees if BTC-first is acceptable.</p></div>
-          <div class="verdict">Plug in, or BTCPay self-hosted if you want zero processing fees on day one.</div>
-        </div>
-      </div>
+      <p class="routes-note"><b>Why a casino-first platform for a sportsbook-only brand?</b> Because the platforms that carry a licence are the casino-first ones, and at stage one the licence is the whole point. The revenue share stacking on top of the engine's own cut is simply the price of not buying a licence &mdash; and it's a fraction of what a licence, a bankroll and four months would cost you. Once you hold your own licence, that calculation flips, which is exactly what stage two is for.</p>
     </div>
   </section>
 
   <section id="costs" style="padding-top:0">
     <div class="wrap">
       <h2>The numbers, all in</h2>
-      <p class="lede">Itemised and capped, quoted in Australian dollars and settled in USDT. The 2,860 USDT good-faith discount applies to the full package, when the payments and ID-check wiring is done by us.</p>
+      <p class="lede">One package price, itemised so you can see what's in it, quoted in Australian dollars and settled in USDT.</p>
       <div class="split">
         <div class="feebox">
-          <h3>Build fee, itemised</h3>
-          <div class="fee"><span>Sportsbook template site</span><span class="amt"><b>5,710 USDT</b><u>A$8,000</u></span></div>
-          <div class="fee"><span>Customisation, by complexity</span><span class="amt"><b>1,430&ndash;3,570</b><u>A$2,000&ndash;5,000</u></span></div>
-          <div class="fee opt"><span>Payments plug-in, wired by us</span><span class="amt"><b>1,780&ndash;3,210</b><u>A$2,500&ndash;4,500</u></span></div>
-          <div class="fee opt"><span>ID-check plug-in, wired by us</span><span class="amt"><b>1,070&ndash;1,780</b><u>A$1,500&ndash;2,500</u></span></div>
-          <div class="fee cap"><span>Hard ceiling, everything switched on</span><span class="amt"><b>14,280 USDT</b><u>A$20,000</u></span></div>
-          <div class="fee disc"><span>Good-faith discount, full package only</span><span class="amt"><b>&minus;2,860</b><u>&minus;A$4,000</u></span></div>
-          <div class="fee total"><span>Full package, absolute worst case</span><span class="amt"><b>11,420 USDT</b><u>A$16,000</u></span></div>
-          <p class="scope">The discount applies when the payments and ID-check plug-ins are part of the build; the base site and customisation are already priced tight and carry no discount. Prefer to handle payments and ID checks yourselves? Those two lines drop to zero and the build links out to your vendors' hosted flows instead. Scope: design, integration, deployment, and handover. Vendor accounts, licensing, payments, and data contracts are procured and held by the operator; fees above cover wiring them together.</p>
+          <h3>The package</h3>
+          <div class="headline">10,710 USDT<small>A$15,000 &mdash; discount applied</small></div>
+          <div class="hr"></div>
+          <div class="fee"><span>Brand &amp; custom front end</span><span class="amt"><b>5,710</b><u>A$8,000</u></span></div>
+          <div class="fee"><span>On-ramp, payments &amp; database wiring</span><span class="amt"><b>4,280</b><u>A$6,000</u></span></div>
+          <div class="fee"><span>ID &amp; age verification integration</span><span class="amt"><b>1,430</b><u>A$2,000</u></span></div>
+          <div class="fee"><span>Operator runbook &amp; launch support</span><span class="amt"><b>2,140</b><u>A$3,000</u></span></div>
+          <div class="fee sub"><span>Everything, before discount</span><span class="amt"><b>13,570</b><u>A$19,000</u></span></div>
+          <div class="fee disc"><span>Good-faith discount</span><span class="amt"><b>&minus;2,860</b><u>&minus;A$4,000</u></span></div>
+          <div class="fee total"><span>Package price</span><span class="amt"><b>10,710 USDT</b><u>A$15,000</u></span></div>
+          <p class="scope">Heavier customisation adds 1,430&ndash;3,570 USDT on top, to a hard ceiling of 14,280 USDT / A$20,000 with everything switched on. Scope: design, integration, deployment, handover and the runbook. Vendor accounts, the provider contract, licensing and data contracts are procured and held by you; the fees above cover building and wiring them together.</p>
         </div>
         <div class="tbl-scroll"><table>
-          <thead><tr><th>Running cost (operator side)</th><th>Typical range</th></tr></thead>
+          <thead><tr><th>Running cost (your side)</th><th>Stage one</th></tr></thead>
           <tbody>
-            <tr><td>Licence (Anjouan)</td><td>&euro;22k&ndash;25k year one, then &euro;17k /yr</td></tr>
-            <tr><td>Counsel &amp; tax advice, up front</td><td>2,140&ndash;5,710 USDT</td></tr>
-            <tr><td>Betting engine (Betby)</td><td>$5k to $15k setup, then rev share or monthly minimum</td></tr>
-            <tr><td>Crypto payments (CoinsPaid)</td><td>~1% of volume</td></tr>
-            <tr><td>Age &amp; ID checks (Sumsub)</td><td>from ~$149 /mo</td></tr>
-            <tr><td>Hosting &amp; CDN</td><td>$100 to $300 /mo</td></tr>
+            <tr class="rec"><td>Provider revenue share</td><td>20&ndash;35% of GGR</td></tr>
+            <tr><td>Licence</td><td>$0 &mdash; you're under theirs</td></tr>
+            <tr><td>Player bankroll</td><td>$0 &mdash; the provider is the counterparty</td></tr>
+            <tr><td>Betting engine</td><td>$0 &mdash; included in the revenue share</td></tr>
             <tr><td>Odds feed</td><td>$0 &mdash; bundled with the engine</td></tr>
-            <tr><td>Card on-ramp</td><td>$0 &mdash; not at launch</td></tr>
-            <tr class="rec"><td>Player bankroll</td><td>US$50,000 to $150,000+</td></tr>
+            <tr><td>Payments &amp; ID checks</td><td>$0 &mdash; the provider's, under their licence</td></tr>
+            <tr><td>Hosting &amp; CDN</td><td>$100 to $300 /mo</td></tr>
+            <tr><td>Counsel &amp; tax advice, up front</td><td>2,140&ndash;5,710 USDT</td></tr>
+            <tr><td>Marketing</td><td>Whatever you choose &mdash; the only number that grows the book</td></tr>
           </tbody>
         </table></div>
       </div>
@@ -599,37 +591,37 @@
       <div class="paybox">
         <b>Paid in USDT, on Tron</b>
         <p>Fees are set in Australian dollars and settled in <strong>USDT on the Tron network (TRC-20)</strong>. TRC-20 rather than Ethereum because the network fee is around a dollar instead of tens of dollars, and it confirms in seconds &mdash; on a six-figure programme that's noise, on a five-figure build fee it isn't.</p>
-        <p>USDT figures above are struck at <strong>A$1 = US$0.7140</strong>, the rate on 14 September 2026. The rate is re-struck on the invoice date and <strong>held firm for seven days</strong>, so what's quoted is what's paid. Payment stages are set in the contract.</p>
+        <p>USDT figures are struck at <strong>A$1 = US$0.7140</strong>, the rate on 14 September 2026. The rate is re-struck on the invoice date and <strong>held firm for seven days</strong>, so what's quoted is what's paid. Payment stages are set in the contract.</p>
       </div>
 
-      <p class="routes-note"><b>The bankroll is the real capital requirement, and no pricing page mentions it.</b> A book has to pay every winner on the worst weekend of the season &mdash; before settlement, before the next deposit lands. Undercapitalised books don't fail because the software broke; they fail because a favourite-heavy Saturday cleaned out the float and withdrawals started queuing. In a crypto market, queued withdrawals kill a brand in about forty-eight hours, because the community talks. Budget the float first and treat it as untouchable. Everything above is the cheap part.</p>
+      <p class="routes-note"><b>The number that shows up at stage two.</b> The moment you hold your own licence, you are the counterparty to every bet, and you need a bankroll &mdash; US$50,000 to $150,000. A book has to pay every winner on the worst weekend of the season, before settlement, before the next deposit lands. Undercapitalised books don't fail because the software broke; they fail because a favourite-heavy Saturday cleaned out the float and withdrawals started queuing, and in a crypto market queued withdrawals kill a brand in about forty-eight hours. Stage one exists so that's a problem you solve with revenue instead of savings.</p>
     </div>
   </section>
 
   <section id="ground">
     <div class="wrap">
       <h2>Who does what</h2>
-      <p class="lede">The platform is one half of a sportsbook. The licence, the player money and the regulatory obligations sit with you as the operator &mdash; we build the software and wire the controls into it. We don't hold the licence, the funds or the liability, and we aren't your counsel.</p>
+      <p class="lede">We build the software and wire the controls into it. The provider contract, the player money and the regulatory obligations sit with you &mdash; we don't hold the licence, the funds or the liability, and we aren't your counsel. The runbook tells you exactly what to do, in order, so none of it stalls the build.</p>
       <div class="ground">
         <article>
           <span class="who">YOU + YOUR COUNSEL</span>
-          <b>Operating licence</b>
-          <p>A book needs one before it takes real money. The route is Anjouan, roughly &euro;22,000 to &euro;25,000 in year one, issued in four to eight weeks. Your counsel confirms it and you hold it; we ship the geo-controls and reporting hooks it comes with.</p>
+          <b>The provider contract</b>
+          <p>Signed by you, with the three questions answered in writing first. It sets your licence cover, your markets, your revenue share and who eats a losing month. We'll sit in the calls and read the draft; we don't sign it.</p>
+        </article>
+        <article>
+          <span class="who">US</span>
+          <b>Brand, front end &amp; wiring</b>
+          <p>The custom front end over the provider's platform, the on-ramp, the database, the ID-check flow, the geo-controls and the block-list logging. Deployed, load-checked and handed over with the credentials.</p>
+        </article>
+        <article>
+          <span class="who">US, FOR YOU</span>
+          <b>The runbook</b>
+          <p>What to sign, what to open, what to file, in order, with the documents each one wants ready in advance. It ships on day one so provider onboarding runs alongside the build instead of after it.</p>
         </article>
         <article>
           <span class="who">YOU</span>
-          <b>Payments accounts</b>
-          <p>CoinsPaid as the processor, NOWPayments as the second rail, both under your merchant accounts and opened once the licence issues. Player funds never touch us. We integrate whatever you sign.</p>
-        </article>
-        <article>
-          <span class="who">YOU</span>
-          <b>Identity checks</b>
-          <p>Sumsub on your account, plugged into onboarding. It's what makes the geo-block real rather than decorative, and it's the first thing a regulator or a processor asks to see working.</p>
-        </article>
-        <article>
-          <span class="who">YOU</span>
-          <b>Engine contract</b>
-          <p>Betby licensed in your name, with Altenar run in parallel for leverage. We build against it from day one and hand over working integrations and the credentials.</p>
+          <b>Audience &amp; bankroll</b>
+          <p>The players are the half of this we can't build. And when you move to your own licence, the bankroll is yours &mdash; plan for it from the first month of revenue, not from the month you migrate.</p>
         </article>
       </div>
     </div>
@@ -640,7 +632,7 @@
       <div class="final">
         <div>
           <h2>Four weeks from yes.</h2>
-          <p>Itemised fees, a hard 14,280 USDT ceiling, and 2,860 USDT off the full package as a good-faith start.</p>
+          <p>10,710 USDT all in, a hard ceiling of 14,280, and the runbook in your hands on day one.</p>
         </div>
         <a href="mailto:hello@example.com">Start the build</a>
       </div>
