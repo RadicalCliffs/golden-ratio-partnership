@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesh | A sportsbook built for one brand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0A101E;
+    --panel:#131F36;
+    --panel-2:#182844;
+    --line:#26395C;
+    --paper:#F4ECDB;
+    --paper-2:#EBE0C8;
+    --ink:#1C2030;
+    --gold:#F5C64C;
+    --gold-deep:#D9A521;
+    --red:#D9303E;
+    --red-bright:#E84755;
+    --up:#4ADE80;
+    --down:#F87171;
+    --stamp:#C0392B;
+    --text:#EEF2F8;
+    --muted:#9AA8C4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1200px 700px at 75% -10%, #16294A 0%, transparent 60%),
+      radial-gradient(900px 600px at -10% 40%, #101E38 0%, transparent 55%),
+      var(--pitch);
+    color:var(--text);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  ::selection{background:var(--red);color:#fff}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,16,30,.84);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .logo{font-family:'Saira Condensed';font-weight:800;font-size:27px;letter-spacing:.05em;color:var(--text);text-decoration:none;line-height:1}
+  .logo span{color:var(--red)}
+  header nav{display:flex;align-items:center;gap:22px}
+  header nav a{color:var(--muted);text-decoration:none;font-size:15px;transition:color .15s}
+  header nav a:hover{color:var(--text)}
+  .nav-cta{background:var(--red);color:#fff!important;font-weight:600;padding:9px 18px;border-radius:5px}
+  .nav-cta:hover{background:var(--red-bright)}
+
+  .hero{padding:80px 0 60px}
+  .hero .wrap{display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center}
+  h1{
+    font-family:'Saira Condensed';font-weight:700;
+    font-size:clamp(46px,6vw,74px);line-height:.98;
+    text-wrap:balance;letter-spacing:.005em;
+  }
+  h1 em{font-style:normal;color:var(--red-bright)}
+  .hero .sub{color:var(--muted);margin-top:22px;max-width:47ch;font-size:18px}
+  .cta-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .cta{
+    display:inline-block;background:var(--red);color:#fff;
+    font-weight:700;text-decoration:none;padding:15px 30px;border-radius:6px;
+    transition:box-shadow .25s,transform .15s,background .15s;
+  }
+  .cta:hover{background:var(--red-bright);box-shadow:0 8px 28px rgba(217,48,62,.35);transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none;font-weight:600}
+  .cta.ghost:hover{border-color:var(--gold);color:var(--gold);transform:none}
+
+  .slip-holder{position:relative;filter:drop-shadow(0 30px 45px rgba(0,0,0,.5))}
+  .slip{
+    position:relative;
+    background:linear-gradient(178deg,var(--paper) 0%,var(--paper-2) 100%);
+    color:var(--ink);
+    padding:28px 28px 22px;
+    transform:rotate(2deg);
+    font-size:15px;border-radius:3px;
+    -webkit-mask:
+      radial-gradient(circle 7px at 7px 100%, transparent 6.5px, black 7px) -7px 0 / 22px 100% repeat-x,
+      linear-gradient(black,black) 0 0 / 100% calc(100% - 8px) no-repeat;
+    mask:
+      radial-gradient(circle 7px at 7px 100%, transparent 6.5px, black 7px) -7px 0 / 22px 100% repeat-x,
+      linear-gradient(black,black) 0 0 / 100% calc(100% - 8px) no-repeat;
+  }
+  .slip-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed #C6B896;padding-bottom:13px;margin-bottom:6px}
+  .slip-head b{font-family:'Saira Condensed';font-weight:800;font-size:22px;letter-spacing:.06em}
+  .slip-head small{color:#83765B;font-weight:600}
+  .leg{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid #DFD3B4}
+  .leg .odds{font-family:'Saira Condensed';font-weight:800;font-size:20px;background:var(--ink);color:var(--paper);padding:2px 9px;border-radius:3px}
+  .slip-total{display:flex;justify-content:space-between;align-items:center;padding-top:14px;font-weight:700}
+  .slip-total .odds{font-family:'Saira Condensed';font-weight:800;font-size:26px;color:#B4820E}
+  .barcode{margin-top:16px;height:34px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 10px);opacity:.85}
+  .stamp{
+    position:absolute;top:34%;left:52%;z-index:2;
+    font-family:'Saira Condensed';font-weight:800;font-size:30px;letter-spacing:.12em;
+    color:var(--stamp);border:4px solid var(--stamp);border-radius:6px;
+    padding:4px 16px;transform:rotate(-14deg);
+    opacity:.9;mix-blend-mode:multiply;pointer-events:none;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .slip-holder{animation:slipIn .7s cubic-bezier(.2,.9,.3,1) both}
+    @keyframes slipIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    .stamp{animation:stampIn .35s cubic-bezier(.34,1.56,.64,1) .9s both}
+    @keyframes stampIn{from{opacity:0;transform:rotate(-14deg) scale(2.4)}to{opacity:.9;transform:rotate(-14deg) scale(1)}}
+  }
+
+  .board-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(0,0,0,.3);overflow:hidden;position:relative}
+  .board-strip::before,.board-strip::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+  .board-strip::before{left:0;background:linear-gradient(90deg,var(--pitch),transparent)}
+  .board-strip::after{right:0;background:linear-gradient(-90deg,var(--pitch),transparent)}
+  .ticker{display:flex;width:max-content;gap:0}
+  @media (prefers-reduced-motion:no-preference){
+    .ticker{animation:scroll 42s linear infinite}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+  }
+  .fix{display:flex;align-items:center;gap:14px;padding:15px 28px;border-right:1px solid var(--line);white-space:nowrap}
+  .fix .live-dot{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 8px var(--up)}
+  .fix .teams{font-weight:600;font-size:15px}
+  .fix .mins{color:var(--muted);font-size:13px}
+  .odd{
+    font-family:'Saira Condensed';font-weight:700;font-size:18px;
+    background:var(--panel-2);border:1px solid var(--line);border-radius:4px;
+    padding:3px 10px;min-width:58px;text-align:center;color:var(--gold);
+    transition:background .3s,color .3s;font-variant-numeric:tabular-nums;
+  }
+  .odd.up{background:rgba(74,222,128,.18);color:var(--up)}
+  .odd.down{background:rgba(248,113,113,.18);color:var(--down)}
+
+  section{padding:80px 0}
+  h2{font-family:'Saira Condensed';font-weight:700;font-size:42px;line-height:1.05;margin-bottom:10px}
+  h3.group{font-family:'Saira Condensed';font-weight:700;font-size:24px;color:var(--gold);margin:36px 0 14px}
+  .lede{color:var(--muted);max-width:64ch;margin-bottom:40px;font-size:17px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .cards article{
+    background:linear-gradient(180deg,var(--panel) 0%,rgba(19,31,54,.4) 100%);
+    border:1px solid var(--line);border-radius:8px;padding:28px 24px;position:relative;overflow:hidden;
+    transition:border-color .2s,transform .2s;
+  }
+  .cards article::before{content:"";position:absolute;top:0;left:24px;right:24px;height:3px;background:var(--red);border-radius:0 0 3px 3px}
+  .cards article:hover{border-color:#3A5387;transform:translateY(-3px)}
+  .cards svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.6;margin-bottom:16px}
+  .cards h3{font-family:'Saira Condensed';font-size:24px;font-weight:700;margin-bottom:8px}
+  .cards p{font-size:15px;color:var(--muted)}
+
+  .routes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .route{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:30px 28px;position:relative}
+  .route.fast{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold), 0 12px 40px rgba(245,198,76,.08)}
+  .route .badge{display:inline-block;font-family:'Saira Condensed';font-weight:700;font-size:16px;letter-spacing:.04em;padding:3px 12px;border-radius:4px;margin-bottom:14px}
+  .route.fast .badge{background:var(--gold);color:var(--ink)}
+  .route.custom .badge{background:var(--panel-2);color:var(--muted);border:1px solid var(--line)}
+  .route h3{font-family:'Saira Condensed';font-size:30px;font-weight:700;margin-bottom:2px}
+  .route .time{color:var(--red-bright);font-family:'Saira Condensed';font-weight:700;font-size:20px;margin-bottom:14px}
+  .route .price{font-family:'Saira Condensed';font-weight:800;font-size:38px;margin:14px 0 2px}
+  .route .price small{font-size:17px;font-weight:600;color:var(--muted)}
+  .route .pricenote{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .route ul{list-style:none;margin-top:8px}
+  .route li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:var(--muted);border-bottom:1px solid rgba(38,57,92,.5)}
+  .route li:last-child{border-bottom:none}
+  .route li::before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+  .routes-note{margin-top:20px;color:var(--muted);font-size:15px;max-width:78ch}
+  .routes-note b{color:var(--text)}
+
+  table{width:100%;border-collapse:collapse;font-size:15px;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-family:'Saira Condensed';font-size:16px;font-weight:700;color:var(--gold);background:rgba(0,0,0,.25);letter-spacing:.03em}
+  tbody tr:last-child td{border-bottom:none}
+  td:first-child{font-weight:600;white-space:nowrap;color:var(--text)}
+  td{color:var(--muted)}
+  .tbl-scroll{overflow-x:auto;border-radius:8px}
+  .tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:3px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .tag.kyb{border-color:var(--red);color:var(--red-bright)}
+  .tag.pick{border-color:var(--gold);color:var(--gold);background:rgba(245,198,76,.1)}
+  tr.rec td{background:rgba(245,198,76,.06);box-shadow:inset 3px 0 0 var(--gold)}
+  tr.avoid td:first-child{color:var(--muted)}
+
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .cmp{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px}
+  .cmp h3{font-family:'Saira Condensed';font-size:24px;font-weight:700;margin-bottom:16px}
+  .cmp .row{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid rgba(38,57,92,.5);font-size:15px}
+  .cmp .row:last-child{border-bottom:none}
+  .cmp .row b{font-family:'Saira Condensed';font-size:17px;color:var(--gold)}
+  .cmp .row p{color:var(--muted)}
+  .cmp .verdict{margin-top:14px;padding:12px 16px;background:rgba(0,0,0,.25);border-left:3px solid var(--red);border-radius:0 6px 6px 0;font-size:14.5px;color:var(--text)}
+
+  .split{display:grid;grid-template-columns:1fr 1.3fr;gap:18px;align-items:start}
+  .feebox{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--gold);border-radius:10px;padding:28px}
+  .feebox h3{font-family:'Saira Condensed';font-size:24px;font-weight:700;margin-bottom:16px}
+  .fee{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid rgba(38,57,92,.6)}
+  .fee span{color:var(--muted);font-size:15px}
+  .fee b{font-family:'Saira Condensed';font-weight:800;font-size:22px;color:var(--gold);white-space:nowrap}
+  .fee.opt span::after{content:" (optional)";color:#6E7FA0;font-size:13px}
+  .fee.cap{border-top:2px solid var(--line)}
+  .fee.cap b{color:var(--text)}
+  .fee.disc b{color:var(--up)}
+  .fee.total{border-bottom:none;border-top:2px solid var(--gold);margin-top:2px;padding-top:14px}
+  .fee.total span{color:var(--text);font-weight:600}
+  .fee.total b{font-size:30px;color:#fff}
+  .scope{margin-top:16px;font-size:13.5px;color:var(--muted);border-top:2px dashed var(--line);padding-top:14px}
+
+  .ground{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ground article{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:8px;padding:24px}
+  .ground b{display:block;font-size:17px;margin-bottom:6px}
+  .ground p{font-size:15px;color:var(--muted)}
+  .ground .who{display:inline-block;font-family:'Saira Condensed';font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--gold);margin-bottom:10px}
+
+  .struct{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .ent{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px}
+  .ent.op{border-color:var(--gold)}
+  .ent .who{display:inline-block;font-family:'Saira Condensed';font-weight:700;font-size:13px;letter-spacing:.07em;padding:2px 10px;border-radius:4px;margin-bottom:12px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted)}
+  .ent.op .who{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .ent h3{font-family:'Saira Condensed';font-size:26px;font-weight:700;margin-bottom:4px}
+  .ent .sub{color:var(--muted);font-size:14px;margin-bottom:14px}
+  .ent ul{list-style:none}
+  .ent li{padding:7px 0 7px 20px;position:relative;font-size:15px;color:var(--muted);border-bottom:1px solid rgba(38,57,92,.5)}
+  .ent li:last-child{border-bottom:none}
+  .ent li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:2px;background:var(--gold)}
+
+  .warn{background:rgba(217,48,62,.08);border:1px solid rgba(217,48,62,.45);border-radius:10px;padding:24px 26px;margin-top:22px}
+  .warn b{display:block;font-family:'Saira Condensed';font-size:21px;font-weight:700;color:var(--red-bright);margin-bottom:8px;letter-spacing:.01em}
+  .warn p{font-size:15px;color:var(--muted)}
+  .warn p + p{margin-top:10px}
+  .warn strong{color:var(--text);font-weight:600}
+
+  .final{background:linear-gradient(135deg,var(--red) 0%,#B7222F 100%);color:#fff;border-radius:14px;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .final h2{color:#fff;margin-bottom:6px}
+  .final p{color:rgba(255,255,255,.82);font-size:17px;max-width:48ch}
+  .final a{
+    background:var(--pitch);color:var(--gold);font-weight:700;text-decoration:none;
+    padding:17px 34px;border-radius:8px;font-size:17px;white-space:nowrap;transition:transform .15s,box-shadow .2s;
+  }
+  .final a:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+
+  footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;width:100%}
+
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:52px}
+    .cards,.routes,.compare,.split,.struct{grid-template-columns:1fr}
+    .ground{grid-template-columns:1fr}
+    .final{padding:36px}
+    header nav a:not(.nav-cta){display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">SESH<span>.</span></a>
+    <nav>
+      <a href="#build">The build</a>
+      <a href="#licence">Licensing</a>
+      <a href="#stack">The stack</a>
+      <a href="#costs">Costs</a>
+      <a class="nav-cta" href="#talk">Start the build</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Your audience already bets. Give them <em>your book.</em></h1>
+        <p class="sub">A branded sportsbook, live in as little as four weeks. Built on a proven template, powered by a battle-tested betting engine, owned and run under your name.</p>
+        <div class="cta-row">
+          <a class="cta" href="#build">See the build</a>
+          <a class="cta ghost" href="#costs">See the numbers</a>
+        </div>
+      </div>
+      <div class="slip-holder">
+        <div class="stamp">ACCEPTED</div>
+        <aside class="slip" aria-label="Example bet slip">
+          <div class="slip-head"><b>BET SLIP</b><small>#000001</small></div>
+          <div class="leg"><span>Your brand, front and centre</span><span class="odds">1.01</span></div>
+          <div class="leg"><span>Live in four weeks</span><span class="odds">1.25</span></div>
+          <div class="leg"><span>Every dollar on the ledger</span><span class="odds">1.10</span></div>
+          <div class="leg"><span>A$4,000 off the full package</span><span class="odds">1.30</span></div>
+          <div class="slip-total"><span>Owning the platform</span><span class="odds">PAYS</span></div>
+          <div class="barcode" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-strip" aria-hidden="true">
+    <div class="ticker" id="ticker"></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>What your players get</h2>
+      <p class="lede">The experience they already know from the household names, under your brand, on your platform.</p>
+      <div class="cards">
+        <article>
+          <svg viewBox="0 0 24 24"><polyline points="3 17 8 11 12 14 17 7 21 10"/><polyline points="17 7 21 7 21 11"/></svg>
+          <h3>Live odds</h3>
+          <p>Prices on every major sport, streamed from professional data providers, moving in real time as games play out.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 13 2"/></svg>
+          <h3>Instant bets</h3>
+          <p>Tap a price, set a stake, bet locked in under a second. If a line moves mid-tap, the player sees the new price and chooses. Nobody gets stale odds.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l2 2 4-5"/></svg>
+          <h3>Crypto in, crypto out</h3>
+          <p>Deposits and withdrawals in the coins your audience already holds, settled fast, with card on-ramps available where it makes sense.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="wrap">
+      <h2>Two ways to build it</h2>
+      <p class="lede">Both start from a proven, production-tested template and a white-label sportsbook engine. The difference is how much of it gets reshaped around your brand.</p>
+      <div class="routes">
+        <div class="route fast">
+          <span class="badge">FAST LANE</span>
+          <h3>Template launch</h3>
+          <div class="time">Live in 4 weeks</div>
+          <div class="price">A$8,000 <small>flat build fee</small></div>
+          <p class="pricenote">Fixed scope, fixed price, no surprises.</p>
+          <ul>
+            <li>Proven sportsbook template, skinned to your brand</li>
+            <li>White-label betting engine embedded: odds, bets, and settlement handled by a specialist provider</li>
+            <li>Geo-controls and the block list wired in from day one, logged</li>
+            <li>Payments and ID checks: added as plug-ins below, or bring your own vendor setup at no extra build cost</li>
+            <li>One round of visual changes included</li>
+            <li>Deployed, load-checked, handed over</li>
+          </ul>
+        </div>
+        <div class="route custom">
+          <span class="badge">CUSTOM CUT</span>
+          <h3>Heavier customisation</h3>
+          <div class="time">6 to 8 weeks</div>
+          <div class="price">+ A$2,000 to 5,000 <small>on top of build fee</small></div>
+          <p class="pricenote">Priced by complexity and volume of changes.</p>
+          <ul>
+            <li>Everything in the fast lane, plus</li>
+            <li>Custom layouts, flows, and features beyond the template</li>
+            <li>Bespoke promotions, bonus logic, and player features</li>
+            <li>Two rounds of changes included, change orders after</li>
+            <li>Deeper integration work across providers</li>
+          </ul>
+        </div>
+      </div>
+      <p class="routes-note"><b>Why not build the betting engine from scratch?</b> Because a ground-up engine (placement, live pricing, risk, settlement) is a multi-month, six-figure programme with an ongoing trading operation attached. The smart structure is to own the brand, the players, and the platform, and plug in an engine that already prices millions of bets a day. Full comparison below.</p>
+    </div>
+  </section>
+
+  <section id="licence">
+    <div class="wrap">
+      <h2>The licensing route</h2>
+      <p class="lede">Every operator asks this first: how is this actually legal? Here is the route we see bootstrapped books take, and what it costs. We build the platform; your own counsel and tax adviser sign off the structure.</p>
+
+      <h3 class="group">Where to be licensed</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Jurisdiction</th><th>Year one</th><th>Annual after</th><th>Timeline</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr class="rec"><td>Anjouan <span class="tag pick">our pick</span></td><td>€22,000&ndash;25,000</td><td>€17,000</td><td>4&ndash;8 weeks</td><td>A real gaming licence. 0% GGR tax, no local substance required, no residency requirement on the owner or director.</td></tr>
+          <tr><td>Cura&ccedil;ao (LOK)</td><td>€70,000&ndash;110,000</td><td>€47,450</td><td>Months</td><td>Better recognised, and priced like it. Post-reform it wants a local director, a real office, and decisions genuinely made on the island.</td></tr>
+          <tr class="avoid"><td>Costa Rica</td><td>US$10,000&ndash;20,000</td><td>US$1,000&ndash;2,500</td><td>4&ndash;8 weeks</td><td><b>Not a gaming licence.</b> A municipal data-processing permit. Cheapest on paper, but see below.</td></tr>
+        </tbody>
+      </table></div>
+
+      <p class="routes-note"><b>Why not Costa Rica, when it's the cheapest?</b> Because Costa Rica doesn't issue gambling licences at all &mdash; operators hold a municipal data-processing permit and rely on games of chance simply not being enforced against them. It's fast and cheap, and it leaves you with nothing to show a counterparty. Betting engines, crypto processors and ID-check vendors all ask which regulator you answer to, and a data-processing permit is not an answer that passes their onboarding. You save €15,000 on the licence and then can't buy the engine.</p>
+
+      <p class="routes-note"><b>One licence covers both verticals.</b> Anjouan, Cura&ccedil;ao and Costa Rica all license sportsbook, casino and poker together &mdash; there is no cheaper sportsbook-only tier to drop down to. So running a book only is a product decision, not a saving. Take the licence, ship the sportsbook, and keep casino as a switch you can flip later without going back to the regulator.</p>
+
+      <h3 class="group">How the company is structured</h3>
+      <div class="struct">
+        <div class="ent op">
+          <span class="who">LICENSED OPERATOR</span>
+          <h3>Anjouan IBC</h3>
+          <p class="sub">The book itself. Thin, ring-fenced, replaceable.</p>
+          <ul>
+            <li>Holds the gaming licence</li>
+            <li>Holds the domain and the brand</li>
+            <li>Holds the engine, data and payment contracts</li>
+            <li>Carries the player liability</li>
+            <li>Geo-controls and ID checks run here</li>
+          </ul>
+        </div>
+        <div class="ent">
+          <span class="who">SERVICES COMPANY</span>
+          <h3>Your existing company</h3>
+          <p class="sub">Home jurisdiction. Banks like any other business.</p>
+          <ul>
+            <li>Development, design, marketing, support</li>
+            <li>Owns the codebase and the IP</li>
+            <li>Invoices the operator for services</li>
+            <li>Holds the ordinary business and treasury accounts</li>
+            <li>Where your income is earned and declared</li>
+          </ul>
+        </div>
+      </div>
+      <p class="routes-note">The point of the split is banking. <b>A software and marketing company can hold a normal business account and a normal crypto treasury account. A licensed gambling operator cannot.</b> Keep the operator thin and let the services company be the one that banks. It also means a second brand later is a second operator under the same services company, not a rebuild.</p>
+
+      <h3 class="group">What the licence asks of the platform</h3>
+      <p class="routes-note">Being licensed in one place means <b>declining</b> everywhere you aren't. That's a platform job, and it's in the build: geo-blocking on the United States, United Kingdom, Netherlands, France, Spain, Austria, Germany, Australia and Comoros, plus every FATF-blacklisted jurisdiction, with the list in config so it can move. Two things operators routinely get wrong, and we wire both: <b>IP blocking alone isn't enough</b> &mdash; the ID document country, the payment method and the registration address all have to agree, or the control is decoration. And <b>marketing is in scope</b> &mdash; no traffic bought into a blocked market, affiliate terms that say so, with a clawback.</p>
+
+      <div class="warn">
+        <b>Three things to go in knowing</b>
+        <p><strong>Anjouan is a two-to-three year position, not a permanent one.</strong> Gambling is prohibited under Comorian law at union level; Anjouan licenses under its own island legislation and the relationship between the two is unresolved. In practice it affects how third parties treat you more than the licence's day-to-day validity &mdash; but keep the structure portable and revisit Cura&ccedil;ao once revenue covers it.</p>
+        <p><strong>Mainstream payments will not touch an offshore book.</strong> Stripe, Adyen, PayPal, the card schemes &mdash; all no, on any of these licences. Build on iGaming specialists from day one and never plan around a mainstream processor changing its mind. Equally: never describe the business as something else to get an account. That's the fastest way to lose the balance and the company at once.</p>
+        <p><strong>Your own tax residence follows you.</strong> An offshore operator doesn't make its profits untaxed to whoever controls it. Controlled-foreign-company rules in most home jurisdictions can attribute that income to you personally whether or not it's distributed. Get this advised before the company is formed, not after &mdash; it's the highest-return money in the whole budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <h2>The stack, priced</h2>
+      <p class="lede">Every vendor slot has a budget option and a step-up. These accounts are opened and held by you; the build wires them together. Prices are typical published or quoted rates in USD, confirmed during vendor selection.</p>
+
+      <h3 class="group">Betting engine</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Provider</th><th>Typical cost</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="rec"><td>Betby <span class="tag pick">our pick</span></td><td>~$5k to $15k setup, then rev share</td><td>Sportsbook-only specialist with a crypto-native operator base. Precise market suspension tied to live event status, which is what keeps settlement clean when you're not running a big trading desk.</td></tr>
+          <tr><td>Altenar <span class="tag kyb">vets operators</span></td><td>Quote-based</td><td>The other sportsbook-pure option. Stronger in regulated markets, which cuts both ways. Run it in parallel &mdash; the quote is your leverage.</td></tr>
+          <tr><td>BetConstruct</td><td>€10k to €15k setup, 10&ndash;30% rev share</td><td>The most transparent entry pricing in the market. Solid budget floor.</td></tr>
+          <tr><td>NuxGame / UltraPlay</td><td>$10k to $30k setup</td><td>Crypto-capable turnkey fallbacks if the specialists' minimums don't fit year one.</td></tr>
+          <tr class="avoid"><td>Casino-first platforms</td><td>&mdash;</td><td>Avoid for a book. Their sportsbook is a module and its revenue share stacks on top of the platform share: two cuts for one product you're not fully using.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="routes-note"><b>The ask that's worth the most:</b> no monthly minimum for the first six months, stepping in after. It's granted more often than people expect, because the provider's marginal cost of carrying a new book is close to zero. After that: revenue share calculated on net revenue <em>after</em> payment fees rather than gross, setup amortised across year one, and a 90-day exit with your player data portable.</p>
+
+      <h3 class="group">Odds &amp; results data</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Provider</th><th>Typical cost</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>The Odds API</td><td>$30 to $249 /mo</td><td>Cheapest entry, credit-based, ~40 bookmakers, strong pre-match</td></tr>
+          <tr><td>OddsPapi</td><td>Per-request, low entry</td><td>350+ books including sharps and crypto books, transparent pricing</td></tr>
+          <tr><td>BetsAPI</td><td>$300 to $600 /mo</td><td>Odds plus results, widely used at this tier</td></tr>
+          <tr><td>GoalServe</td><td>$125/sport, $800 /mo all sports</td><td>In-play odds plus results, long-standing workhorse of small books</td></tr>
+          <tr><td>LSports <span class="tag kyb">vets operators</span></td><td>~$1,500 to $4,000 /mo</td><td>The robust step-up: managed odds and settlement-grade results</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 class="group">Crypto payments &amp; wallets</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Provider</th><th>Typical cost</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="rec"><td>CoinsPaid <span class="tag kyb">vets operators</span></td><td>~1% per transaction</td><td>The iGaming standard: 20+ coins, custody, instant swaps, payouts, fiat conversion. An Anjouan licence passes; nothing passes without one.</td></tr>
+          <tr><td>NOWPayments</td><td>0.5% to 1% per transaction</td><td>Lighter onboarding, 300+ coins, non-custodial option. <b>Run it as a second rail from day one</b> &mdash; the day your primary pauses for a review is not the day to start an onboarding.</td></tr>
+          <tr><td>CoinPayments</td><td>~0.5% to 1% per transaction</td><td>Veteran processor, broad coin support</td></tr>
+          <tr><td>BTCPay Server</td><td>$0 fees, ~$30 /mo hosting</td><td>Self-hosted, you hold keys. BTC and Lightning first. Zero fees, but you own the key management and the theft risk.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 class="group">Treasury &amp; getting paid out</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Provider</th><th>Held by</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="rec"><td>Zengo Business</td><td>Services company</td><td>MPC self-custody with approval workflows, role permissions and audit-ready exports &mdash; no seed phrase, which meaningfully lowers operational risk on a small team. Fiat rails via Iron and MoonPay. <b>Onboard the services company, not the operator</b> &mdash; those rails won't clear a gambling entity, and they don't need to.</td></tr>
+          <tr><td>MPCVault</td><td>Operator</td><td>Same governance model on the operator side, without the fiat-rail dependency.</td></tr>
+          <tr><td>Self-custody multisig</td><td>Operator</td><td>Cold reserve, 2-of-3, keys held separately. Working float stays in the processor balance.</td></tr>
+          <tr><td>Bankera / Orbital</td><td>Operator</td><td>iGaming-tolerant EMIs with real IBANs and stablecoin settlement, for when the book needs fiat of its own.</td></tr>
+          <tr class="avoid"><td>Mainstream neobanks</td><td>&mdash;</td><td>Wise, Revolut Business, Mercury, Airwallex, Stripe. They offboard gambling operators on discovery and freeze the balance during the review. Not a workaround &mdash; a dead end.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 class="group">Card on-ramps (optional)</h3>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Provider</th><th>Typical cost</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Mercuryo</td><td>~3% to 4% card fees</td><td>Works with iGaming operators, widget or API integration</td></tr>
+          <tr><td>MoonPay / Transak / Ramp <span class="tag kyb">vets operators</span></td><td>~2.5% to 5% card fees</td><td>Mainstream on-ramps; onboarding depends on your licensing setup</td></tr>
+        </tbody>
+      </table></div>
+      <p class="routes-note">On-ramps are genuinely optional, and they should stay late. A crypto-native audience deposits straight from wallets and exchanges, which costs you 0% and ships day one. A card ramp costs 3&ndash;5% and drags your whole compliance surface into card-scheme territory. Add one when the funnel data says casual players are bouncing at deposit, not before.</p>
+    </div>
+  </section>
+
+  <section id="compare" style="padding-top:0">
+    <div class="wrap">
+      <h2>From scratch vs. plugging in</h2>
+      <p class="lede">Two places where the build-or-buy question matters. Same answer both times, for the same reason: speed and proven reliability now, optionality forever. Nothing stops you replacing a vendor with your own build later, once revenue justifies it.</p>
+      <div class="compare">
+        <div class="cmp">
+          <h3>Sportsbook engine</h3>
+          <div class="row"><b>Scratch</b><p>4 to 6+ months, six-figure build, plus a trading and risk operation to run daily. Settlement edge cases alone are a career.</p></div>
+          <div class="row"><b>Plug in</b><p>2 to 4 weeks. Setup around $5,000 to $15,000 plus revenue share or a monthly minimum, carried by the operation. Odds, risk, and settlement are the vendor's problem.</p></div>
+          <div class="verdict">Plug in. Own the brand and the players, rent the engine.</div>
+        </div>
+        <div class="cmp">
+          <h3>Crypto custody</h3>
+          <div class="row"><b>Scratch</b><p>2 to 3 months for multi-coin custody done properly: key management, chain watchers, sweeping, withdrawal signing. And you carry theft risk forever.</p></div>
+          <div class="row"><b>Plug in</b><p>Days. A processor at 0.5% to 1% per transaction across every major coin, or self-hosted BTCPay at zero fees if BTC-first is acceptable.</p></div>
+          <div class="verdict">Plug in, or BTCPay self-hosted if you want zero processing fees on day one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="costs" style="padding-top:0">
+    <div class="wrap">
+      <h2>The numbers, all in</h2>
+      <p class="lede">Itemised and capped. The base build is priced tight and stands on its own; the A$4,000 good-faith discount applies to the full package, when the payments and ID-check wiring is done by us.</p>
+      <div class="split">
+        <div class="feebox">
+          <h3>Build fee, itemised</h3>
+          <div class="fee"><span>Sportsbook template site</span><b>A$8,000</b></div>
+          <div class="fee"><span>Customisation, by complexity</span><b>A$2,000&ndash;5,000</b></div>
+          <div class="fee opt"><span>Payments plug-in, wired by us</span><b>A$2,500&ndash;4,500</b></div>
+          <div class="fee opt"><span>ID-check plug-in, wired by us</span><b>A$1,500&ndash;2,500</b></div>
+          <div class="fee cap"><span>Hard ceiling, everything switched on</span><b>A$20,000</b></div>
+          <div class="fee disc"><span>Good-faith discount, full package only</span><b>&minus;A$4,000</b></div>
+          <div class="fee total"><span>Full package, absolute worst case</span><b>A$16,000</b></div>
+          <p class="scope">The discount applies when the payments and ID-check plug-ins are part of the build; the base site and customisation are already priced tight and carry no discount. Prefer to handle payments and ID checks yourselves? Those two lines drop to zero and the build links out to your vendors' hosted flows instead. Scope: design, integration, deployment, and handover. Vendor accounts, licensing, payments, and data contracts are procured and held by the operator; fees above cover wiring them together.</p>
+        </div>
+        <div class="tbl-scroll"><table>
+          <thead><tr><th>Running cost (operator side)</th><th>Typical range</th></tr></thead>
+          <tbody>
+            <tr><td>Licence (Anjouan)</td><td>€22k&ndash;25k year one, then €17k /yr</td></tr>
+            <tr><td>Counsel &amp; tax advice, up front</td><td>A$3,000 to $8,000</td></tr>
+            <tr><td>Sportsbook engine</td><td>$5k to $15k setup, then rev share or monthly minimum</td></tr>
+            <tr><td>Odds/results feed (if separate)</td><td>$30 to $800 /mo</td></tr>
+            <tr><td>Crypto payments</td><td>0.5% to 1% of volume, or $0 self-hosted</td></tr>
+            <tr><td>Card on-ramp (optional)</td><td>~3% to 5% of card volume</td></tr>
+            <tr><td>Hosting &amp; CDN</td><td>$100 to $300 /mo</td></tr>
+            <tr><td>ID checks</td><td>~$1 to $2 per verification</td></tr>
+            <tr class="rec"><td>Player bankroll</td><td>US$50,000 to $150,000+</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <p class="routes-note"><b>The bankroll is the real capital requirement, and no pricing page mentions it.</b> A book has to pay every winner on the worst weekend of the season &mdash; before settlement, before the next deposit lands. Undercapitalised books don't fail because the software broke; they fail because a favourite-heavy Saturday cleaned out the float and withdrawals started queuing. In a crypto market, queued withdrawals kill a brand in about forty-eight hours, because the community talks. Budget the float first and treat it as untouchable. Everything above is the cheap part.</p>
+    </div>
+  </section>
+
+  <section id="ground">
+    <div class="wrap">
+      <h2>Who does what</h2>
+      <p class="lede">The platform is one half of a sportsbook. These four sit with you, and the build plugs straight into whichever partners you choose &mdash; several of the vendors above will ask about them during onboarding.</p>
+      <div class="ground">
+        <article>
+          <span class="who">YOU + YOUR COUNSEL</span>
+          <b>Operating licence</b>
+          <p>A book needs one before it takes real money. The route above is Anjouan at roughly €22,000 to €25,000 in year one, issued in four to eight weeks. Your counsel confirms it; we ship the geo-controls and reporting hooks it comes with.</p>
+        </article>
+        <article>
+          <span class="who">YOU</span>
+          <b>Payments accounts</b>
+          <p>The crypto processor and any card ramp run under your merchant accounts &mdash; CoinsPaid primary, NOWPayments as the second rail. Opened in the operator's name once the licence is issued. We integrate whatever you sign.</p>
+        </article>
+        <article>
+          <span class="who">YOU</span>
+          <b>Identity checks</b>
+          <p>Player age and ID verification runs through a specialist provider on your account, plugged into onboarding. Around $1 to $2 a check. Standard equipment on every licensed book, and the thing that makes the geo-block real rather than decorative.</p>
+        </article>
+        <article>
+          <span class="who">YOU</span>
+          <b>Engine &amp; data contracts</b>
+          <p>The betting engine and odds feed are licensed in your name &mdash; Betby is where we'd start, with Altenar run in parallel for leverage. We build against them from day one and hand over working integrations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="talk" style="padding-top:0">
+    <div class="wrap">
+      <div class="final">
+        <div>
+          <h2>Four weeks from yes.</h2>
+          <p>Itemised fees, a hard A$20,000 ceiling, and A$4,000 off the full package as a good-faith start.</p>
+        </div>
+        <a href="mailto:hello@example.com">Start the build</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Sesh. A branded sportsbook build.</span>
+    <span>Platform architecture &amp; engineering. Not legal, financial or tax advice.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var fixtures = [
+    ["Harbour City v Northline","64'","2.10","3.40","3.75"],
+    ["Velocity @ Monarchs","Q3","1.85","","1.95"],
+    ["Redgate v Atlas FC","31'","1.62","3.90","5.50"],
+    ["Coastal v Ironbark","78'","4.20","3.60","1.80"],
+    ["Summit @ Rovers","Q1","2.30","","1.61"],
+    ["Kestrels v Old Town","12'","2.75","3.10","2.60"],
+    ["Pioneers @ Lakeshore","Q4","1.44","","2.85"],
+    ["Southbank v Ferndale","55'","3.15","3.25","2.28"]
+  ];
+  var t = document.getElementById('ticker');
+  var html = "";
+  for (var r=0;r<2;r++){
+    fixtures.forEach(function(f){
+      html += '<div class="fix"><span class="live-dot"></span><span class="teams">'+f[0]+'</span><span class="mins">'+f[1]+'</span>';
+      for (var i=2;i<5;i++){ if(f[i]) html += '<span class="odd">'+f[i]+'</span>'; }
+      html += '</div>';
+    });
+  }
+  t.innerHTML = html;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+  setInterval(function(){
+    var odds = t.querySelectorAll('.odd');
+    for (var k=0;k<3;k++){
+      var el = odds[Math.floor(Math.random()*odds.length)];
+      var v = parseFloat(el.textContent);
+      if (isNaN(v)) continue;
+      var delta = (Math.random()*0.08 + 0.01) * (Math.random() < 0.5 ? -1 : 1);
+      var nv = Math.max(1.05, v + delta);
+      el.textContent = nv.toFixed(2);
+      el.classList.remove('up','down');
+      void el.offsetWidth;
+      el.classList.add(delta > 0 ? 'up' : 'down');
+      (function(e){ setTimeout(function(){ e.classList.remove('up','down'); }, 900); })(el);
+    }
+  }, 1600);
+})();
+</script>
+
+</body>
+</html>
