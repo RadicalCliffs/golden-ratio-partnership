@@ -18,9 +18,7 @@ DR DANIEL DEPP
 
 (Qualifications: ____________________)
 
-AHPRA Registration No. ____________________
-
-Prescriber No. ____________________
+AHPRA Registration No., Medicare Provider No. and Prescriber No.: as recorded by the Contractor in the execution block at the end of this Agreement
 
 (hereinafter called "the CONTRACTOR")
 
@@ -292,9 +290,9 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 6.1 The Contractor warrants that they hold:
 
-   (a) Current registration with AHPRA as a medical practitioner (AHPRA Registration No. ____________________);
+   (a) Current registration with AHPRA as a medical practitioner, under the AHPRA Registration No. recorded by the Contractor in the execution block at the end of this Agreement;
 
-   (b) Current Prescriber Number with AUSPD (Prescriber No. ____________________);
+   (b) A current Medicare Provider Number and a current Prescriber Number with AUSPD, as recorded by the Contractor in the execution block at the end of this Agreement;
 
    (c) Current Authorised Prescriber status or equivalent authority to prescribe medicinal cannabis for the indications contemplated by Clause 2.3;
 
@@ -606,29 +604,47 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 SIGNED as an AGREEMENT:
 
-GOLDEN RATIO CLINICS PTY LTD
+EXECUTED by GOLDEN RATIO CLINICS PTY LTD (ACN 697 157 565) in accordance with section 127(1) of the Corporations Act 2001 (Cth):
 
-By: _______________________________
+By: Quentin Leon Tetz
 
 Name: Quentin Leon Tetz
 
 Title: Director
 
-Date: ______________________________
+Date: 16 September 2026
 
-By: _______________________________
+By: Jullian James Westlake
 
 Name: Jullian James Westlake
 
 Title: Director
 
-Date: ______________________________
+Date: 16 September 2026
+
+COUNTERSIGNED for the Employer:
+
+By: Maximillian Matthews
+
+Name: Maximillian Matthews
+
+Title: Operating Partner
+
+Date: 16 September 2026
 
 DR DANIEL DEPP
 
 Signed: ____________________________
 
+Name: ______________________________
+
 Date: ______________________________
+
+AHPRA Registration No.: _____________________
+
+Medicare Provider No.: ______________________
+
+Prescriber No.: _____________________________
 
 ---
 
