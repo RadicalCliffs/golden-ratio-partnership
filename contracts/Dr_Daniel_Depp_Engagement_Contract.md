@@ -120,19 +120,39 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 3.1 The Employer shall pay the Contractor for services rendered at the rate of AUD $60.00 (plus applicable GST) per Consultation.
 
-3.2 DEFINITION OF CONSULTATION: For the purposes of this Agreement, a "Consultation" means a patient consultation that is:
+3.2 DEFINITION OF CONSULTATION: For the purposes of this Agreement, a "Consultation" means either an Attended Consultation or a Non-Attended Consultation, each as defined below, and both are payable at the rate in Clause 3.1.
 
-   (a) Booked through the Employer's booking system and attended by the patient, whether in person or by telehealth;
+   (a) ATTENDED CONSULTATION: a patient consultation that is:
 
-   (b) Conducted personally by the Contractor; and
+      (i) Booked through the Employer's booking system and attended by the patient, whether in person or by telehealth;
 
-   (c) Completed and documented contemporaneously by the Contractor in ZedMed, including any resulting prescription, in accordance with Clause 2.4.
+      (ii) Conducted personally by the Contractor; and
 
-3.3 The rate in Clause 3.1 is a flat rate per Consultation. It applies equally to every Consultation, whether an initial Consultation, a review Consultation or a re-script Consultation, and does not vary with the duration or complexity of the Consultation.
+      (iii) Completed and documented contemporaneously by the Contractor in ZedMed, including any resulting prescription, in accordance with Clause 2.4.
 
-3.4 NO PAYMENT FOR NON-ATTENDANCE OR INCOMPLETE RECORDS: No fee is payable in respect of:
+   (b) NON-ATTENDED CONSULTATION: a booked appointment that remains on the Contractor's list at the commencement of the rostered session in which it falls, which the patient does not attend, and in respect of which the Contractor has completed and recorded the Contact Protocol in Clause 3.2A.
 
-   (a) Patient no-shows, cancellations, or bookings the patient does not attend;
+   (c) An appointment cancelled, rescheduled or released by the Employer before the rostered session commences is not a Consultation and no fee is payable for it.
+
+3.2A CONTACT PROTOCOL: Where a patient does not attend a booked appointment, the Contractor shall, before that appointment may be treated as a Non-Attended Consultation:
+
+   (a) Attempt to contact the patient at or about the scheduled appointment time, using the contact details and method recorded in ZedMed;
+
+   (b) Make at least one further attempt to contact the patient during the same rostered session;
+
+   (c) Return to the patient at the end of the consult list for that session and make a final attempt, so that not fewer than three (3) attempts are made in total, at separate times;
+
+   (d) Where the patient responds and can be seen within the rostered session, conduct the Consultation, in which case it is an Attended Consultation and not a Non-Attended Consultation;
+
+   (e) Record in ZedMed the time, method and outcome of each attempt.
+
+A single unanswered attempt is not sufficient. Where the Contact Protocol is not completed and recorded, no fee is payable for that appointment.
+
+3.3 The rate in Clause 3.1 is a flat rate per Consultation. It applies equally to every Consultation, whether an initial Consultation, a review Consultation or a re-script Consultation, and whether attended or non-attended, and does not vary with the duration or complexity of the Consultation.
+
+3.4 NO PAYMENT WHERE REQUIREMENTS NOT MET: No fee is payable in respect of:
+
+   (a) Any appointment the patient does not attend where the Contact Protocol in Clause 3.2A has not been completed and recorded;
 
    (b) Any Consultation not documented in ZedMed in accordance with Clause 2.4;
 
@@ -144,7 +164,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 3.6 Payment shall be made monthly in arrears, on or before the 28th day of each calendar month, upon submission of a valid tax invoice detailing:
 
-   - Number of Consultations completed
+   - Number of Consultations completed, identifying Attended and Non-Attended Consultations separately
 
    - Dates of service
 
