@@ -46,19 +46,29 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 2.1 The Contractor shall provide medical services as a qualified medical practitioner at the Employer's premises located at Level 14, 60 Margaret Street, Sydney NSW 2000, and such other locations as the Employer may reasonably designate, and by telehealth where clinically appropriate.
 
-2.2 The Contractor shall make themselves available for two (2) clinical sessions per week as follows:
+2.2 ROSTERED HOURS: The Contractor shall make themselves available for rostered clinical sessions totalling no more than ten (10) hours per week (the "Weekly Maximum"), as follows:
 
-   (a) One (1) morning session (time to be confirmed);
+   (a) The days, start times and duration of each session shall be mutually agreed and confirmed in writing prior to the Commencement Date;
 
-   (b) One (1) afternoon session (time to be confirmed);
+   (b) The Employer may adjust the roster within the Weekly Maximum by giving two (2) weeks' written notice;
 
-   (c) Specific days of the week to be mutually agreed and confirmed in writing prior to Commencement Date;
+   (c) The Contractor shall not cancel or reschedule a rostered session without prior written approval from the Employer;
 
-   (d) Schedule may be adjusted by the Employer with two (2) weeks' written notice;
+   (d) The Weekly Maximum is a ceiling on the hours the Contractor is required to make available. It is not a commitment by the Employer to roster that number of hours in any week, and creates no entitlement to be rostered.
 
-   (e) The Contractor shall not cancel or reschedule sessions without prior written approval from the Employer.
+2.2A ADDITIONAL HOURS: The Employer may from time to time offer the Contractor hours in excess of the Weekly Maximum, and the Contractor may accept or decline any such offer.
 
-2.2A The Contractor is remunerated per Consultation in accordance with Clause 3 and not by reference to session length. Sessions define the Contractor's availability for patient bookings; they do not create any entitlement to a minimum payment, a minimum number of Consultations, or payment for time during which no Consultation is conducted.
+   (a) Additional hours are worked only where the Employer requires them and the Contractor is willing and available to work them;
+
+   (b) Each arrangement for additional hours shall be agreed in writing, which may be by email, on each occasion;
+
+   (c) Neither party is obliged to offer, or to accept, additional hours, and a refusal by either party is not a breach of this Agreement and shall not of itself be grounds for termination;
+
+   (d) Consultations conducted during additional hours are remunerated at the rate in Clause 3.1 without variation;
+
+   (e) Where additional hours are worked regularly, the parties may agree in writing to vary the Weekly Maximum in accordance with Clause 17.1.
+
+2.2B The Contractor is remunerated per Consultation in accordance with Clause 3 and not by reference to rostered hours. Rostered hours define the Contractor's availability for patient bookings; they do not create any entitlement to a minimum payment, a minimum number of Consultations, or payment for time during which no Consultation is conducted.
 
 2.3 SCOPE OF CANNABIS PRESCRIBING: The Contractor, as a qualified General Practitioner Authorised Prescriber, is authorized to prescribe medicinal cannabis for all cannabis-related therapeutic indications, subject to:
 
@@ -128,7 +138,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
    (c) Time spent on administration, training, meetings, clinical governance activities under Clause 9, or handover under Clause 12, all of which form part of the engagement and are not separately remunerated;
 
-   (d) Availability during a session in which no Consultation is conducted.
+   (d) Availability during a rostered session, or any part of one, in which no Consultation is conducted.
 
 3.5 GST of 10% shall be added to all invoices submitted by the Contractor. The Contractor is responsible for remitting GST to the Australian Tax Office as required by law.
 
@@ -468,7 +478,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
    (d) Not engage in conduct that brings the clinic into disrepute;
 
-   (e) Report to work on time and fulfill scheduled sessions;
+   (e) Attend on time and fulfil rostered sessions;
 
    (f) Maintain professional relationships with colleagues and staff.
 
