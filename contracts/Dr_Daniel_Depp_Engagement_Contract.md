@@ -1,6 +1,6 @@
 CONTRACTOR ENGAGEMENT AGREEMENT
 
-THIS AGREEMENT made this _____ day of ____________ 2026
+THIS AGREEMENT made this 16th day of September 2026
 
 BETWEEN:
 
@@ -32,7 +32,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 1\. ENGAGEMENT AND COMMENCEMENT
 
-1.1 The Employer engages the Contractor as a sessional medical practitioner on a part-time basis, commencing on ____________________ (the "Commencement Date"), on the terms and conditions set out herein.
+1.1 The Employer engages the Contractor as a sessional medical practitioner on a part-time basis, commencing on Friday, 18 September 2026 (the "Commencement Date"), on the terms and conditions set out herein.
 
 1.2 The Contractor accepts this engagement and agrees to perform the duties outlined herein in accordance with all applicable laws, regulations, and professional standards.
 
@@ -48,7 +48,9 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 2.2 ROSTERED HOURS: The Contractor shall make themselves available for rostered clinical sessions totalling no more than ten (10) hours per week (the "Weekly Maximum"), as follows:
 
-   (a) The days, start times and duration of each session shall be mutually agreed and confirmed in writing prior to the Commencement Date;
+   (a) The first rostered session shall be an initial catch-up session of five (5) hours on the Commencement Date, at a start time confirmed in writing by the Employer;
+
+   (aa) The ongoing weekly roster of days, start times and durations shall be mutually agreed and confirmed in writing within fourteen (14) days of the Commencement Date, and until it is so confirmed the Employer shall give the Contractor not less than three (3) days' notice of each rostered session;
 
    (b) The Employer may adjust the roster within the Weekly Maximum by giving two (2) weeks' written notice;
 
@@ -322,7 +324,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
    (a) Current registration with AHPRA as a medical practitioner, under the AHPRA Registration No. recorded by the Contractor in the execution block at the end of this Agreement;
 
-   (b) A current Medicare Provider Number and a current Prescriber Number with AUSPD, as recorded by the Contractor in the execution block at the end of this Agreement;
+   (b) A current Medicare Provider Number and a current Prescriber Number, each issued by Services Australia, as recorded by the Contractor in the execution block at the end of this Agreement;
 
    (c) Current Authorised Prescriber status or equivalent authority to prescribe medicinal cannabis for the indications contemplated by Clause 2.3;
 
