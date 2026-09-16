@@ -72,7 +72,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 2.3 SCOPE OF CANNABIS PRESCRIBING: The Contractor, as a qualified General Practitioner Authorised Prescriber, is authorized to prescribe medicinal cannabis for all cannabis-related therapeutic indications, subject to:
 
-   (a) Compliance with all TGA regulatory requirements and RANZCP guidelines;
+   (a) Compliance with all TGA regulatory requirements and Royal Australian College of General Practitioners (RACGP) guidelines;
 
    (b) Adherence to the Employer's clinical protocols and patient eligibility criteria;
 
@@ -364,7 +364,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
    (c) Submit to clinical peer review and performance evaluation;
 
-   (d) Maintain compliance with RANZCP guidelines and TGA regulations for medicinal cannabis prescribing;
+   (d) Maintain compliance with RACGP guidelines and TGA regulations for medicinal cannabis prescribing;
 
    (e) Participate in continuing professional development relevant to cannabis therapeutics;
 
