@@ -32,7 +32,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 ---
 
-1. ENGAGEMENT AND COMMENCEMENT
+1\. ENGAGEMENT AND COMMENCEMENT
 
 1.1 The Employer engages the Contractor as a sessional medical practitioner on a part-time basis, commencing on ____________________ (the "Commencement Date"), on the terms and conditions set out herein.
 
@@ -44,7 +44,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 ---
 
-2. ROLE AND RESPONSIBILITIES
+2\. ROLE AND RESPONSIBILITIES
 
 2.1 The Contractor shall provide medical services as a qualified medical practitioner at the Employer's premises located at Level 14, 60 Margaret Street, Sydney NSW 2000, and such other locations as the Employer may reasonably designate, and by telehealth where clinically appropriate.
 
@@ -108,7 +108,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 ---
 
-3. REMUNERATION
+3\. REMUNERATION
 
 3.1 The Employer shall pay the Contractor for services rendered at the rate of AUD $60.00 (plus applicable GST) per Consultation.
 
@@ -158,7 +158,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
 ---
 
-4. PATIENT OWNERSHIP AND RESTRICTION ON SOLICITATION
+4\. PATIENT OWNERSHIP AND RESTRICTION ON SOLICITATION
 
 4.1 CLINIC PATIENTS: Patients who present to the Employer's clinic for services ("Clinic Patients") are registered with and billed through the Employer's clinic. The Contractor acknowledges:
 
@@ -274,7 +274,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-5. PROFESSIONAL INDEMNITY INSURANCE
+5\. PROFESSIONAL INDEMNITY INSURANCE
 
 5.1 The Contractor shall maintain professional indemnity insurance coverage throughout the term of this Agreement at a minimum level of AUD $20,000,000 per claim, as is standard for medical practitioners in Australia.
 
@@ -288,7 +288,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-6. PROFESSIONAL REGISTRATION AND QUALIFICATIONS
+6\. PROFESSIONAL REGISTRATION AND QUALIFICATIONS
 
 6.1 The Contractor warrants that they hold:
 
@@ -316,7 +316,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-7. CONFIDENTIALITY AND PRIVACY
+7\. CONFIDENTIALITY AND PRIVACY
 
 7.1 The Contractor shall maintain strict confidentiality regarding:
 
@@ -336,7 +336,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-8. DATA PROTECTION AND CONFIDENTIALITY
+8\. DATA PROTECTION AND CONFIDENTIALITY
 
 8.1 PATIENT DATA CONFIDENTIALITY: The Contractor acknowledges that all patient data, medical records, and health information relating to Clinic Patients is strictly confidential and the exclusive property of the Employer. The Contractor shall maintain absolute confidentiality of all patient data, comply with the Privacy Act 1988 (Cth) and applicable state health privacy laws, and not disclose patient data to any third party except as authorized by the Employer or required by law.
 
@@ -346,7 +346,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-9. CLINICAL GOVERNANCE AND QUALITY ASSURANCE
+9\. CLINICAL GOVERNANCE AND QUALITY ASSURANCE
 
 9.1 The Contractor shall:
 
@@ -368,7 +368,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-10. MANDATORY REPORTING OBLIGATIONS
+10\. MANDATORY REPORTING OBLIGATIONS
 
 10.1 The Contractor shall:
 
@@ -386,7 +386,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-11. BREACH NOTIFICATION
+11\. BREACH NOTIFICATION
 
 11.1 The Contractor shall notify the Employer in writing within 24 hours of:
 
@@ -410,7 +410,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-12. PATIENT HANDOVER AND CONTINUITY OF CARE
+12\. PATIENT HANDOVER AND CONTINUITY OF CARE
 
 12.1 Upon termination of this Agreement or at the Employer's direction, the Contractor shall:
 
@@ -458,7 +458,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-13. CONDUCT AND COMPLIANCE
+13\. CONDUCT AND COMPLIANCE
 
 13.1 The Contractor shall:
 
@@ -490,7 +490,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-14. TERMINATION
+14\. TERMINATION
 
 14.1 TRIAL PERIOD TERMINATION: During the Trial Period (first three months), either party may terminate this Agreement by providing one (1) week's written notice, without cause or penalty.
 
@@ -532,7 +532,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-15. INDEPENDENT CONTRACTOR STATUS
+15\. INDEPENDENT CONTRACTOR STATUS
 
 15.1 The Contractor is an independent contractor and not an employee of the Employer for the purposes of the Fair Work Act 2009 (Cth), the Income Tax Assessment Act 1997 (Cth), or any other legislation.
 
@@ -554,7 +554,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-16. LIABILITY AND INDEMNITY
+16\. LIABILITY AND INDEMNITY
 
 16.1 The Contractor indemnifies and holds harmless the Employer from and against all claims, damages, losses, costs, and expenses arising from:
 
@@ -574,7 +574,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-17. VARIATION AND DISPUTE RESOLUTION
+17\. VARIATION AND DISPUTE RESOLUTION
 
 17.1 This Agreement may only be varied by written agreement signed by both parties.
 
@@ -586,7 +586,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-18. GOVERNING LAW
+18\. GOVERNING LAW
 
 18.1 This Agreement shall be governed by and construed in accordance with the laws of New South Wales, Australia.
 
@@ -594,7 +594,7 @@ The Contractor consents to the granting of injunctive relief to restrain breach 
 
 ---
 
-19. ENTIRE AGREEMENT
+19\. ENTIRE AGREEMENT
 
 19.1 This Agreement constitutes the entire agreement between the parties and supersedes all prior negotiations, representations, and agreements.
 
