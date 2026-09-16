@@ -116,9 +116,9 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
    (b) Conducted personally by the Contractor; and
 
-   (c) Completed and documented by the Contractor in ZedMed, including any resulting prescription, within the timeframes required by Clause 2.4.
+   (c) Completed and documented contemporaneously by the Contractor in ZedMed, including any resulting prescription, in accordance with Clause 2.4.
 
-3.3 The rate in Clause 3.1 is a flat rate per Consultation. It applies to initial and review Consultations alike, and does not vary with the duration or complexity of the Consultation.
+3.3 The rate in Clause 3.1 is a flat rate per Consultation. It applies equally to every Consultation, whether an initial Consultation, a review Consultation or a re-script Consultation, and does not vary with the duration or complexity of the Consultation.
 
 3.4 NO PAYMENT FOR NON-ATTENDANCE OR INCOMPLETE RECORDS: No fee is payable in respect of:
 
@@ -250,7 +250,7 @@ NOW IT IS HEREBY AGREED AS FOLLOWS:
 
    (c) Loss of a Clinic Patient through Contractor solicitation or breach of non-solicitation provisions causes irreparable harm that is difficult to quantify;
 
-   (d) As a genuine pre-estimate of loss, the Contractor shall be liable for liquidated damages of AUD $20,000 per Clinic Patient stolen, diverted, or induced to transfer their care as a result of breach of Clauses 4.3, 4.4, 4.6, or 4.7;
+   (d) As a genuine pre-estimate of loss, the Contractor shall be liable for liquidated damages of AUD $20,000 per Clinic Patient stolen, diverted, or induced to transfer their care as a result of breach of Clauses 4.3, 4.3A, 4.4, 4.5, 4.6, or 4.7;
 
    (e) Liquidated damages are in addition to, and not in place of, the Employer's right to recover actual damages, consequential losses, lost profits, and the cost of patient re-acquisition;
 
